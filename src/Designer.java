@@ -1,0 +1,31 @@
+import static javax.swing.JOptionPane.*;
+
+public class Designer extends Persona {
+  protected int salario;
+
+  public Designer() {
+    super();
+    salario = 0;
+  }
+
+  public Designer(String nombre, int edad, String correo, String direccion, int salario) // Builder
+  {
+    super(nombre, edad, correo, direccion);
+    this.salario = salario;
+  }
+
+  @Override
+  public String toString() {
+    return super.toString() + " Salario: " + salario;
+  }
+
+  public void leer() {
+    super.leer();
+    salario = Integer.parseInt(showInputDialog("Ingrese el salario: "));
+  }
+
+  public void operar() {
+    System.out.print("Estoy operando xdxd");
+  }
+
+}
