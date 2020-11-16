@@ -1,7 +1,7 @@
 package clases;
 
-
 public class App {
+
     String url;
 
     public App() {
@@ -12,6 +12,7 @@ public class App {
         this.url = url;
     }
 
+    @Override
     public String toString() {
         return "APP{" + "url=" + url + '}';
     }
