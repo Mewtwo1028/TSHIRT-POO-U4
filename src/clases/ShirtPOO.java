@@ -1,3 +1,5 @@
+package clases;
+
 import static javax.swing.JOptionPane.*;
 
 public class ShirtPOO {
