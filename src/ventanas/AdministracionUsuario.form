@@ -32,7 +32,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
       <SubComponents>
-        <Container class="ventanas.PanelCompra" name="panelCompra1">
+        <Container class="ventanas.PanelCompra" name="pnlCompra">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="Compra">
@@ -54,7 +54,7 @@
             </DimensionLayout>
           </Layout>
         </Container>
-        <Container class="ventanas.PanelDesign" name="panelDesign1">
+        <Container class="ventanas.PanelDesign" name="pnlDesign">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="Design">
@@ -76,7 +76,7 @@
             </DimensionLayout>
           </Layout>
         </Container>
-        <Container class="ventanas.PanelCuenta" name="panelCuenta1">
+        <Container class="ventanas.PanelCuenta" name="pnlCuenta">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="Cuenta">

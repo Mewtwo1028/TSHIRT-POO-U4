@@ -28,50 +28,50 @@ public class AdministracionUsuario extends javax.swing.JFrame {
     private void initComponents() {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        panelCompra1 = new ventanas.PanelCompra();
-        panelDesign1 = new ventanas.PanelDesign();
-        panelCuenta1 = new ventanas.PanelCuenta();
+        pnlCompra = new ventanas.PanelCompra();
+        pnlDesign = new ventanas.PanelDesign();
+        pnlCuenta = new ventanas.PanelCuenta();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout panelCompra1Layout = new javax.swing.GroupLayout(panelCompra1);
-        panelCompra1.setLayout(panelCompra1Layout);
-        panelCompra1Layout.setHorizontalGroup(
-            panelCompra1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout pnlCompraLayout = new javax.swing.GroupLayout(pnlCompra);
+        pnlCompra.setLayout(pnlCompraLayout);
+        pnlCompraLayout.setHorizontalGroup(
+            pnlCompraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 795, Short.MAX_VALUE)
         );
-        panelCompra1Layout.setVerticalGroup(
-            panelCompra1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        pnlCompraLayout.setVerticalGroup(
+            pnlCompraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 572, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Compra", panelCompra1);
+        jTabbedPane1.addTab("Compra", pnlCompra);
 
-        javax.swing.GroupLayout panelDesign1Layout = new javax.swing.GroupLayout(panelDesign1);
-        panelDesign1.setLayout(panelDesign1Layout);
-        panelDesign1Layout.setHorizontalGroup(
-            panelDesign1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout pnlDesignLayout = new javax.swing.GroupLayout(pnlDesign);
+        pnlDesign.setLayout(pnlDesignLayout);
+        pnlDesignLayout.setHorizontalGroup(
+            pnlDesignLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 795, Short.MAX_VALUE)
         );
-        panelDesign1Layout.setVerticalGroup(
-            panelDesign1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        pnlDesignLayout.setVerticalGroup(
+            pnlDesignLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 572, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Design", panelDesign1);
+        jTabbedPane1.addTab("Design", pnlDesign);
 
-        javax.swing.GroupLayout panelCuenta1Layout = new javax.swing.GroupLayout(panelCuenta1);
-        panelCuenta1.setLayout(panelCuenta1Layout);
-        panelCuenta1Layout.setHorizontalGroup(
-            panelCuenta1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout pnlCuentaLayout = new javax.swing.GroupLayout(pnlCuenta);
+        pnlCuenta.setLayout(pnlCuentaLayout);
+        pnlCuentaLayout.setHorizontalGroup(
+            pnlCuentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 795, Short.MAX_VALUE)
         );
-        panelCuenta1Layout.setVerticalGroup(
-            panelCuenta1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        pnlCuentaLayout.setVerticalGroup(
+            pnlCuentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 572, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Cuenta", panelCuenta1);
+        jTabbedPane1.addTab("Cuenta", pnlCuenta);
 
         getContentPane().add(jTabbedPane1, java.awt.BorderLayout.CENTER);
 
@@ -80,8 +80,8 @@ public class AdministracionUsuario extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTabbedPane jTabbedPane1;
-    private ventanas.PanelCompra panelCompra1;
-    private ventanas.PanelCuenta panelCuenta1;
-    private ventanas.PanelDesign panelDesign1;
+    private ventanas.PanelCompra pnlCompra;
+    private ventanas.PanelCuenta pnlCuenta;
+    private ventanas.PanelDesign pnlDesign;
     // End of variables declaration//GEN-END:variables
 }
