@@ -5,6 +5,13 @@
  */
 package ventanas;
 
+import clases.Cliente;
+import clases.Cuenta;
+import java.awt.Frame;
+import java.awt.Point;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Hydra
@@ -16,6 +23,12 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
+        agregarCuentas();
+    }
+
+    private void agregarCuentas() {
+        cuentas.add(new Cuenta("admin", "admin", new Cliente("Juan Jesus Mata", 21, "j@a.com", "mi casa", false), Cuenta.ADMINISTRADOR));
+        cuentas.add(new Cuenta("user", "user", new Cliente("Osmar", 21, "o@a.com", "mi casa", false), Cuenta.CLIENTE));
     }
 
     /**
@@ -28,6 +41,7 @@ public class Login extends javax.swing.JFrame {
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
+        pnlLogin = new javax.swing.JPanel();
         lblPassword = new javax.swing.JLabel();
         lblLogo = new javax.swing.JLabel();
         lblUsuario = new javax.swing.JLabel();
@@ -35,107 +49,277 @@ public class Login extends javax.swing.JFrame {
         txtPassword = new javax.swing.JPasswordField();
         btnLogin = new javax.swing.JButton();
         btnRegistrar = new javax.swing.JButton();
-        filler3 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 25), new java.awt.Dimension(0, 25), new java.awt.Dimension(0, 25));
-        filler4 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 15), new java.awt.Dimension(0, 15), new java.awt.Dimension(0, 15));
+        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 10));
+        filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 10));
+        pnlCabecera = new javax.swing.JPanel();
+        pnlOpciones = new javax.swing.JPanel();
+        lblMinimizar = new javax.swing.JLabel();
+        lblMaximizar = new javax.swing.JLabel();
+        lblCerrar = new javax.swing.JLabel();
+        pnlTitulos = new javax.swing.JPanel();
+        lblIcono = new javax.swing.JLabel();
+        lblTitular = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login");
+        setBackground(new java.awt.Color(122, 108, 105));
         setMinimumSize(new java.awt.Dimension(400, 500));
+        setName("Login"); // NOI18N
+        setUndecorated(true);
         setPreferredSize(new java.awt.Dimension(400, 500));
-        getContentPane().setLayout(new java.awt.GridBagLayout());
+        setResizable(false);
+
+        pnlLogin.setBackground(new java.awt.Color(122, 108, 105));
+        pnlLogin.setLayout(new java.awt.GridBagLayout());
 
         lblPassword.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        lblPassword.setForeground(new java.awt.Color(255, 255, 255));
         lblPassword.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblPassword.setText("Password");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 13;
+        gridBagConstraints.gridy = 3;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.ipadx = 30;
         gridBagConstraints.ipady = 10;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        getContentPane().add(lblPassword, gridBagConstraints);
+        pnlLogin.add(lblPassword, gridBagConstraints);
 
         lblLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventanas/images/letras.png"))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
         gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.gridheight = 10;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 200;
-        gridBagConstraints.ipady = 88;
-        getContentPane().add(lblLogo, gridBagConstraints);
+        pnlLogin.add(lblLogo, gridBagConstraints);
 
         lblUsuario.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        lblUsuario.setForeground(new java.awt.Color(255, 255, 255));
         lblUsuario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblUsuario.setText("Usuario");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 12;
+        gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.ipadx = 30;
         gridBagConstraints.ipady = 10;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        getContentPane().add(lblUsuario, gridBagConstraints);
+        pnlLogin.add(lblUsuario, gridBagConstraints);
 
+        txtUsuario.setBackground(new java.awt.Color(122, 108, 105));
         txtUsuario.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        txtUsuario.setForeground(new java.awt.Color(255, 255, 255));
         txtUsuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtUsuario.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 12;
+        gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.ipadx = 40;
         gridBagConstraints.ipady = 10;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        getContentPane().add(txtUsuario, gridBagConstraints);
+        pnlLogin.add(txtUsuario, gridBagConstraints);
 
+        txtPassword.setBackground(new java.awt.Color(122, 108, 105));
         txtPassword.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        txtPassword.setForeground(new java.awt.Color(255, 255, 255));
         txtPassword.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtPassword.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 13;
+        gridBagConstraints.gridy = 3;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.ipadx = 40;
         gridBagConstraints.ipady = 10;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        getContentPane().add(txtPassword, gridBagConstraints);
+        pnlLogin.add(txtPassword, gridBagConstraints);
 
+        btnLogin.setBackground(new java.awt.Color(122, 108, 105));
+        btnLogin.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        btnLogin.setForeground(new java.awt.Color(255, 255, 255));
         btnLogin.setText("Iniciar Sesion");
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 16;
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.ipadx = 30;
         gridBagConstraints.ipady = 10;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        getContentPane().add(btnLogin, gridBagConstraints);
+        pnlLogin.add(btnLogin, gridBagConstraints);
 
+        btnRegistrar.setBackground(new java.awt.Color(122, 108, 105));
+        btnRegistrar.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        btnRegistrar.setForeground(new java.awt.Color(255, 255, 255));
         btnRegistrar.setText("Registrar");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 15;
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.ipadx = 40;
         gridBagConstraints.ipady = 10;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        getContentPane().add(btnRegistrar, gridBagConstraints);
+        pnlLogin.add(btnRegistrar, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 11;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipady = 25;
-        getContentPane().add(filler3, gridBagConstraints);
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.ipady = 10;
+        pnlLogin.add(filler1, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 14;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipady = 15;
-        getContentPane().add(filler4, gridBagConstraints);
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.ipady = 10;
+        pnlLogin.add(filler2, gridBagConstraints);
+
+        getContentPane().add(pnlLogin, java.awt.BorderLayout.CENTER);
+
+        pnlCabecera.setBackground(new java.awt.Color(0, 148, 2));
+        pnlCabecera.setLayout(new java.awt.BorderLayout());
+
+        pnlOpciones.setLayout(new java.awt.GridLayout(1, 3));
+
+        lblMinimizar.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        lblMinimizar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMinimizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventanas/images/-.png"))); // NOI18N
+        lblMinimizar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblMinimizar.setOpaque(true);
+        lblMinimizar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblMinimizarMouseClicked(evt);
+            }
+        });
+        pnlOpciones.add(lblMinimizar);
+
+        lblMaximizar.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        lblMaximizar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMaximizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventanas/images/O.png"))); // NOI18N
+        lblMaximizar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblMaximizar.setOpaque(true);
+        lblMaximizar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblMaximizarMouseClicked(evt);
+            }
+        });
+        pnlOpciones.add(lblMaximizar);
+
+        lblCerrar.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        lblCerrar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventanas/images/X.png"))); // NOI18N
+        lblCerrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblCerrar.setOpaque(true);
+        lblCerrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblCerrarMouseClicked(evt);
+            }
+        });
+        pnlOpciones.add(lblCerrar);
+
+        pnlCabecera.add(pnlOpciones, java.awt.BorderLayout.EAST);
+
+        pnlTitulos.setOpaque(false);
+        pnlTitulos.setLayout(new java.awt.BorderLayout());
+
+        lblIcono.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblIcono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventanas/images/T.png"))); // NOI18N
+        pnlTitulos.add(lblIcono, java.awt.BorderLayout.WEST);
+
+        lblTitular.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        lblTitular.setForeground(new java.awt.Color(255, 255, 255));
+        lblTitular.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitular.setText("Login");
+        lblTitular.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                lblTitularMouseDragged(evt);
+            }
+        });
+        lblTitular.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lblTitularMousePressed(evt);
+            }
+        });
+        pnlTitulos.add(lblTitular, java.awt.BorderLayout.CENTER);
+
+        pnlCabecera.add(pnlTitulos, java.awt.BorderLayout.CENTER);
+
+        getContentPane().add(pnlCabecera, java.awt.BorderLayout.NORTH);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void lblMinimizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMinimizarMouseClicked
+        this.setState(Frame.ICONIFIED);
+    }//GEN-LAST:event_lblMinimizarMouseClicked
+
+    private void lblMaximizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMaximizarMouseClicked
+        this.setState(Frame.MAXIMIZED_BOTH);
+    }//GEN-LAST:event_lblMaximizarMouseClicked
+
+    private void lblCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCerrarMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_lblCerrarMouseClicked
+
+    private void lblTitularMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTitularMousePressed
+        this.puntoInicial = evt.getPoint();
+    }//GEN-LAST:event_lblTitularMousePressed
+
+    private void lblTitularMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTitularMouseDragged
+        //Puntos iniciales
+        int thisX = this.getLocation().x;
+        int thisY = this.getLocation().y;
+
+        //Movimiento de arrastre
+        int xMov = evt.getX() - this.puntoInicial.x;
+        int yMov = evt.getY() - this.puntoInicial.y;
+
+        //Nuevas posiciones
+        int x = thisX + xMov;
+        int y = thisY + yMov;
+
+        this.setLocation(x, y);
+    }//GEN-LAST:event_lblTitularMouseDragged
+
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+        String user, pass;
+        user = txtUsuario.getText().trim();
+        pass = String.valueOf(txtPassword.getPassword());
+
+        boolean existe = false;
+        for (Cuenta c : cuentas) {
+            if (c.getNickName().equals(user)) {
+                existe = true;
+                if (c.getContrasena().equals(pass)) {
+                    switch (c.getTipo()) {
+                        case Cuenta.ADMINISTRADOR:
+                            AdministracionAdmin aa = new AdministracionAdmin();
+                            aa.setLocationRelativeTo(null);
+                            aa.setVisible(true);
+                            Login.this.dispose();
+                            break;
+                        case Cuenta.CLIENTE:
+                            AdministracionUsuario au = new AdministracionUsuario();
+                            au.setLocationRelativeTo(null);
+                            au.setDefaultCloseOperation(EXIT_ON_CLOSE);
+                            au.setVisible(true);
+                            Login.this.dispose();
+                            break;
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(this, "Introduzca la password correcta", "Password incorrecta", JOptionPane.ERROR_MESSAGE);
+                    break;
+                }
+            }
+        }
+
+        if (!existe) {
+            JOptionPane.showMessageDialog(this, "No existe el usuario ingresado", "Usuario no encontrado", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnLoginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -170,14 +354,25 @@ public class Login extends javax.swing.JFrame {
         });
     }
 
+    private Point puntoInicial;
+    private ArrayList<Cuenta> cuentas = new ArrayList<>();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnRegistrar;
-    private javax.swing.Box.Filler filler3;
-    private javax.swing.Box.Filler filler4;
+    private javax.swing.Box.Filler filler1;
+    private javax.swing.Box.Filler filler2;
+    private javax.swing.JLabel lblCerrar;
+    private javax.swing.JLabel lblIcono;
     private javax.swing.JLabel lblLogo;
+    private javax.swing.JLabel lblMaximizar;
+    private javax.swing.JLabel lblMinimizar;
     private javax.swing.JLabel lblPassword;
+    private javax.swing.JLabel lblTitular;
     private javax.swing.JLabel lblUsuario;
+    private javax.swing.JPanel pnlCabecera;
+    private javax.swing.JPanel pnlLogin;
+    private javax.swing.JPanel pnlOpciones;
+    private javax.swing.JPanel pnlTitulos;
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
