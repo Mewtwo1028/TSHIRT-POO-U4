@@ -5,8 +5,12 @@
  */
 package ventanas;
 
+import clases.Cliente;
+import clases.Cuenta;
 import java.awt.Frame;
 import java.awt.Point;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -19,6 +23,12 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
+        agregarCuentas();
+    }
+
+    private void agregarCuentas() {
+        cuentas.add(new Cuenta("admin", "admin", new Cliente("Juan Jesus Mata", 21, "j@a.com", "mi casa", false), Cuenta.ADMINISTRADOR));
+        cuentas.add(new Cuenta("user", "user", new Cliente("Osmar", 21, "o@a.com", "mi casa", false), Cuenta.CLIENTE));
     }
 
     /**
@@ -128,7 +138,11 @@ public class Login extends javax.swing.JFrame {
         btnLogin.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnLogin.setForeground(new java.awt.Color(255, 255, 255));
         btnLogin.setText("Iniciar Sesion");
-        btnLogin.setOpaque(false);
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 6;
@@ -143,7 +157,6 @@ public class Login extends javax.swing.JFrame {
         btnRegistrar.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnRegistrar.setForeground(new java.awt.Color(255, 255, 255));
         btnRegistrar.setText("Registrar");
-        btnRegistrar.setOpaque(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 5;
@@ -214,9 +227,6 @@ public class Login extends javax.swing.JFrame {
 
         lblIcono.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblIcono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventanas/images/T.png"))); // NOI18N
-        lblIcono.setMaximumSize(new java.awt.Dimension(35, 35));
-        lblIcono.setMinimumSize(new java.awt.Dimension(35, 35));
-        lblIcono.setPreferredSize(new java.awt.Dimension(35, 35));
         pnlTitulos.add(lblIcono, java.awt.BorderLayout.WEST);
 
         lblTitular.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
@@ -274,6 +284,43 @@ public class Login extends javax.swing.JFrame {
         this.setLocation(x, y);
     }//GEN-LAST:event_lblTitularMouseDragged
 
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+        String user, pass;
+        user = txtUsuario.getText().trim();
+        pass = String.valueOf(txtPassword.getPassword());
+
+        boolean existe = false;
+        for (Cuenta c : cuentas) {
+            if (c.getNickName().equals(user)) {
+                existe = true;
+                if (c.getContrasena().equals(pass)) {
+                    switch (c.getTipo()) {
+                        case Cuenta.ADMINISTRADOR:
+                            AdministracionAdmin aa = new AdministracionAdmin();
+                            aa.setLocationRelativeTo(null);
+                            aa.setVisible(true);
+                            Login.this.dispose();
+                            break;
+                        case Cuenta.CLIENTE:
+                            AdministracionUsuario au = new AdministracionUsuario();
+                            au.setLocationRelativeTo(null);
+                            au.setDefaultCloseOperation(EXIT_ON_CLOSE);
+                            au.setVisible(true);
+                            Login.this.dispose();
+                            break;
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(this, "Introduzca la password correcta", "Password incorrecta", JOptionPane.ERROR_MESSAGE);
+                    break;
+                }
+            }
+        }
+
+        if (!existe) {
+            JOptionPane.showMessageDialog(this, "No existe el usuario ingresado", "Usuario no encontrado", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_btnLoginActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -308,6 +355,7 @@ public class Login extends javax.swing.JFrame {
     }
 
     private Point puntoInicial;
+    private ArrayList<Cuenta> cuentas = new ArrayList<>();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnRegistrar;
