@@ -26,20 +26,320 @@ public class panelVenta extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 700, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
-        );
+        pnlCabecera = new javax.swing.JPanel();
+        pnlOpciones = new javax.swing.JPanel();
+        pnlTitulos = new javax.swing.JPanel();
+        pnlVenta = new javax.swing.JPanel();
+        lblUsuario = new javax.swing.JLabel();
+        cmbUsuario = new javax.swing.JComboBox<>();
+        cmbProducto = new javax.swing.JComboBox<>();
+        lblProducto = new javax.swing.JLabel();
+        lblFecha = new javax.swing.JLabel();
+        txtFecha = new javax.swing.JFormattedTextField();
+        cmbFolio = new javax.swing.JComboBox<>();
+        lblFolio = new javax.swing.JLabel();
+        lblGarantia = new javax.swing.JLabel();
+        cmbGarantia = new javax.swing.JComboBox<>();
+        chkExpirado = new javax.swing.JCheckBox();
+        lblExpirado = new javax.swing.JLabel();
+        lblCobertura = new javax.swing.JLabel();
+        chkCobrado = new javax.swing.JCheckBox();
+        lblCobrado = new javax.swing.JLabel();
+        pnlCobertura = new javax.swing.JPanel();
+        txtArchivoCobertura = new javax.swing.JTextField();
+        lblBuscarArchivo = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblVentas = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
+        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 10));
+
+        setMinimumSize(new java.awt.Dimension(900, 400));
+        setPreferredSize(new java.awt.Dimension(900, 400));
+        setLayout(new java.awt.BorderLayout());
+
+        pnlCabecera.setBackground(new java.awt.Color(0, 148, 2));
+        pnlCabecera.setLayout(new java.awt.BorderLayout());
+
+        pnlOpciones.setLayout(new java.awt.GridLayout(1, 3));
+        pnlCabecera.add(pnlOpciones, java.awt.BorderLayout.EAST);
+
+        pnlTitulos.setOpaque(false);
+        pnlTitulos.setLayout(new java.awt.BorderLayout());
+        pnlCabecera.add(pnlTitulos, java.awt.BorderLayout.CENTER);
+
+        add(pnlCabecera, java.awt.BorderLayout.NORTH);
+
+        pnlVenta.setLayout(new java.awt.GridBagLayout());
+
+        lblUsuario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblUsuario.setText("Usuario");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 30;
+        gridBagConstraints.ipady = 20;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        pnlVenta.add(lblUsuario, gridBagConstraints);
+
+        cmbUsuario.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        cmbUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione" }));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 40;
+        gridBagConstraints.ipady = 5;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        pnlVenta.add(cmbUsuario, gridBagConstraints);
+
+        cmbProducto.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        cmbProducto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione" }));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 40;
+        gridBagConstraints.ipady = 5;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        pnlVenta.add(cmbProducto, gridBagConstraints);
+
+        lblProducto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblProducto.setText("Producto");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 30;
+        gridBagConstraints.ipady = 20;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        pnlVenta.add(lblProducto, gridBagConstraints);
+
+        lblFecha.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblFecha.setText("Fecha");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 30;
+        gridBagConstraints.ipady = 20;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        pnlVenta.add(lblFecha, gridBagConstraints);
+
+        txtFecha.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
+        txtFecha.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtFecha.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 40;
+        gridBagConstraints.ipady = 5;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        pnlVenta.add(txtFecha, gridBagConstraints);
+
+        cmbFolio.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        cmbFolio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione" }));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 40;
+        gridBagConstraints.ipady = 5;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        pnlVenta.add(cmbFolio, gridBagConstraints);
+
+        lblFolio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblFolio.setText("Folio");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 30;
+        gridBagConstraints.ipady = 20;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        pnlVenta.add(lblFolio, gridBagConstraints);
+
+        lblGarantia.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblGarantia.setText("Garantia");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 30;
+        gridBagConstraints.ipady = 20;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        pnlVenta.add(lblGarantia, gridBagConstraints);
+
+        cmbGarantia.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        cmbGarantia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione" }));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 40;
+        gridBagConstraints.ipady = 5;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        pnlVenta.add(cmbGarantia, gridBagConstraints);
+
+        chkExpirado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 45;
+        gridBagConstraints.ipady = 5;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        pnlVenta.add(chkExpirado, gridBagConstraints);
+
+        lblExpirado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblExpirado.setText("Expirado");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 30;
+        gridBagConstraints.ipady = 20;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        pnlVenta.add(lblExpirado, gridBagConstraints);
+
+        lblCobertura.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblCobertura.setText("Cobertura");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 7;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 30;
+        gridBagConstraints.ipady = 20;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        pnlVenta.add(lblCobertura, gridBagConstraints);
+
+        chkCobrado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 45;
+        gridBagConstraints.ipady = 5;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        pnlVenta.add(chkCobrado, gridBagConstraints);
+
+        lblCobrado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblCobrado.setText("Cobrado");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 30;
+        gridBagConstraints.ipady = 20;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        pnlVenta.add(lblCobrado, gridBagConstraints);
+
+        pnlCobertura.setLayout(new java.awt.BorderLayout());
+
+        txtArchivoCobertura.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        txtArchivoCobertura.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        pnlCobertura.add(txtArchivoCobertura, java.awt.BorderLayout.CENTER);
+
+        lblBuscarArchivo.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        lblBuscarArchivo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblBuscarArchivo.setText("Crear Archivo");
+        pnlCobertura.add(lblBuscarArchivo, java.awt.BorderLayout.PAGE_END);
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel1.setText("...");
+        pnlCobertura.add(jLabel1, java.awt.BorderLayout.LINE_END);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 7;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 45;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        pnlVenta.add(pnlCobertura, gridBagConstraints);
+
+        tblVentas.setAutoCreateRowSorter(true);
+        tblVentas.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        tblVentas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Usuario", "Producto", "Fecha", "Folio", "Garantia", "Expirado", "Cobertura", "Cobrado"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class, java.lang.String.class, java.lang.Boolean.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tblVentas);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridheight = 13;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 600;
+        gridBagConstraints.ipady = 100;
+        pnlVenta.add(jScrollPane1, gridBagConstraints);
+
+        jButton1.setText("Cobrar");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 10;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        pnlVenta.add(jButton1, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 9;
+        gridBagConstraints.ipady = 10;
+        pnlVenta.add(filler1, gridBagConstraints);
+
+        add(pnlVenta, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox chkCobrado;
+    private javax.swing.JCheckBox chkExpirado;
+    private javax.swing.JComboBox<String> cmbFolio;
+    private javax.swing.JComboBox<String> cmbGarantia;
+    private javax.swing.JComboBox<String> cmbProducto;
+    private javax.swing.JComboBox<String> cmbUsuario;
+    private javax.swing.Box.Filler filler1;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblBuscarArchivo;
+    private javax.swing.JLabel lblCobertura;
+    private javax.swing.JLabel lblCobrado;
+    private javax.swing.JLabel lblExpirado;
+    private javax.swing.JLabel lblFecha;
+    private javax.swing.JLabel lblFolio;
+    private javax.swing.JLabel lblGarantia;
+    private javax.swing.JLabel lblProducto;
+    private javax.swing.JLabel lblUsuario;
+    private javax.swing.JPanel pnlCabecera;
+    private javax.swing.JPanel pnlCobertura;
+    private javax.swing.JPanel pnlOpciones;
+    private javax.swing.JPanel pnlTitulos;
+    private javax.swing.JPanel pnlVenta;
+    private javax.swing.JTable tblVentas;
+    private javax.swing.JTextField txtArchivoCobertura;
+    private javax.swing.JFormattedTextField txtFecha;
     // End of variables declaration//GEN-END:variables
 }

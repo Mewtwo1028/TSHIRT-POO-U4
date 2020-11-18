@@ -219,6 +219,8 @@ public class Login extends javax.swing.JFrame {
         lblIcono.setPreferredSize(new java.awt.Dimension(35, 35));
         pnlTitulos.add(lblIcono, java.awt.BorderLayout.WEST);
 
+        lblTitular.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        lblTitular.setForeground(new java.awt.Color(255, 255, 255));
         lblTitular.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitular.setText("Login");
         lblTitular.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {

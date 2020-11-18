@@ -91,17 +91,7 @@ public class AdministracionAdmin extends javax.swing.JFrame {
 
         tpnlAdministracion.addTab("Productos", pnlProductos);
 
-        javax.swing.GroupLayout pnlVentaLayout = new javax.swing.GroupLayout(pnlVenta);
-        pnlVenta.setLayout(pnlVentaLayout);
-        pnlVentaLayout.setHorizontalGroup(
-            pnlVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 995, Short.MAX_VALUE)
-        );
-        pnlVentaLayout.setVerticalGroup(
-            pnlVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 672, Short.MAX_VALUE)
-        );
-
+        pnlVenta.setLayout(new java.awt.GridBagLayout());
         tpnlAdministracion.addTab("Ventas", pnlVenta);
 
         getContentPane().add(tpnlAdministracion, java.awt.BorderLayout.CENTER);
