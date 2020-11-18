@@ -18,6 +18,11 @@ public class AdministracionAdmin extends javax.swing.JFrame {
         initComponents();
     }
 
+    public static void main(String[] args) {
+        AdministracionAdmin a = new AdministracionAdmin();
+        a.setVisible(true);
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -35,43 +40,37 @@ public class AdministracionAdmin extends javax.swing.JFrame {
         pnlVenta = new ventanas.panelVenta();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(800, 600));
+        setMinimumSize(new java.awt.Dimension(1000, 700));
+        setPreferredSize(new java.awt.Dimension(1000, 700));
+        setSize(new java.awt.Dimension(1000, 700));
 
         javax.swing.GroupLayout pnlClientesLayout = new javax.swing.GroupLayout(pnlClientes);
         pnlClientes.setLayout(pnlClientesLayout);
         pnlClientesLayout.setHorizontalGroup(
             pnlClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 795, Short.MAX_VALUE)
+            .addGap(0, 995, Short.MAX_VALUE)
         );
         pnlClientesLayout.setVerticalGroup(
             pnlClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 572, Short.MAX_VALUE)
+            .addGap(0, 672, Short.MAX_VALUE)
         );
 
         tpnlAdministracion.addTab("Clientes", pnlClientes);
 
-        javax.swing.GroupLayout pnlInfoVentasLayout = new javax.swing.GroupLayout(pnlInfoVentas);
-        pnlInfoVentas.setLayout(pnlInfoVentasLayout);
-        pnlInfoVentasLayout.setHorizontalGroup(
-            pnlInfoVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 795, Short.MAX_VALUE)
-        );
-        pnlInfoVentasLayout.setVerticalGroup(
-            pnlInfoVentasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 572, Short.MAX_VALUE)
-        );
-
+        pnlInfoVentas.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        pnlInfoVentas.setMinimumSize(new java.awt.Dimension(795, 600));
+        pnlInfoVentas.setPreferredSize(new java.awt.Dimension(795, 600));
         tpnlAdministracion.addTab("InfoVentas", pnlInfoVentas);
 
         javax.swing.GroupLayout pnlInventarioLayout = new javax.swing.GroupLayout(pnlInventario);
         pnlInventario.setLayout(pnlInventarioLayout);
         pnlInventarioLayout.setHorizontalGroup(
             pnlInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 795, Short.MAX_VALUE)
+            .addGap(0, 995, Short.MAX_VALUE)
         );
         pnlInventarioLayout.setVerticalGroup(
             pnlInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 572, Short.MAX_VALUE)
+            .addGap(0, 672, Short.MAX_VALUE)
         );
 
         tpnlAdministracion.addTab("Inventario", pnlInventario);
@@ -83,11 +82,11 @@ public class AdministracionAdmin extends javax.swing.JFrame {
         pnlProductos.setLayout(pnlProductosLayout);
         pnlProductosLayout.setHorizontalGroup(
             pnlProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 795, Short.MAX_VALUE)
+            .addGap(0, 995, Short.MAX_VALUE)
         );
         pnlProductosLayout.setVerticalGroup(
             pnlProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 572, Short.MAX_VALUE)
+            .addGap(0, 672, Short.MAX_VALUE)
         );
 
         tpnlAdministracion.addTab("Productos", pnlProductos);
@@ -96,11 +95,11 @@ public class AdministracionAdmin extends javax.swing.JFrame {
         pnlVenta.setLayout(pnlVentaLayout);
         pnlVentaLayout.setHorizontalGroup(
             pnlVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 795, Short.MAX_VALUE)
+            .addGap(0, 995, Short.MAX_VALUE)
         );
         pnlVentaLayout.setVerticalGroup(
             pnlVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 572, Short.MAX_VALUE)
+            .addGap(0, 672, Short.MAX_VALUE)
         );
 
         tpnlAdministracion.addTab("Ventas", pnlVenta);
