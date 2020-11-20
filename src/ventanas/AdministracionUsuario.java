@@ -5,6 +5,9 @@
  */
 package ventanas;
 
+import java.awt.Frame;
+import java.awt.Point;
+
 /**
  *
  * @author Hydra
@@ -27,12 +30,24 @@ public class AdministracionUsuario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        tpnlAdminUser = new javax.swing.JTabbedPane();
         pnlCompra = new ventanas.PanelCompra();
         pnlDesign = new ventanas.PanelDesign();
         pnlCuenta = new ventanas.PanelCuenta();
+        pnlCabecera = new javax.swing.JPanel();
+        pnlOpciones = new javax.swing.JPanel();
+        lblMinimizar = new javax.swing.JLabel();
+        lblMaximizar = new javax.swing.JLabel();
+        lblCerrar = new javax.swing.JLabel();
+        pnlTitulos = new javax.swing.JPanel();
+        lblIcono = new javax.swing.JLabel();
+        lblTitular = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(122, 108, 105));
+        setUndecorated(true);
+
+        tpnlAdminUser.setOpaque(true);
 
         javax.swing.GroupLayout pnlCompraLayout = new javax.swing.GroupLayout(pnlCompra);
         pnlCompra.setLayout(pnlCompraLayout);
@@ -42,10 +57,10 @@ public class AdministracionUsuario extends javax.swing.JFrame {
         );
         pnlCompraLayout.setVerticalGroup(
             pnlCompraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 572, Short.MAX_VALUE)
+            .addGap(0, 537, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Compra", pnlCompra);
+        tpnlAdminUser.addTab("Compra", pnlCompra);
 
         javax.swing.GroupLayout pnlDesignLayout = new javax.swing.GroupLayout(pnlDesign);
         pnlDesign.setLayout(pnlDesignLayout);
@@ -55,10 +70,10 @@ public class AdministracionUsuario extends javax.swing.JFrame {
         );
         pnlDesignLayout.setVerticalGroup(
             pnlDesignLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 572, Short.MAX_VALUE)
+            .addGap(0, 537, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Design", pnlDesign);
+        tpnlAdminUser.addTab("Design", pnlDesign);
 
         javax.swing.GroupLayout pnlCuentaLayout = new javax.swing.GroupLayout(pnlCuenta);
         pnlCuenta.setLayout(pnlCuentaLayout);
@@ -68,20 +83,131 @@ public class AdministracionUsuario extends javax.swing.JFrame {
         );
         pnlCuentaLayout.setVerticalGroup(
             pnlCuentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 572, Short.MAX_VALUE)
+            .addGap(0, 537, Short.MAX_VALUE)
         );
 
-        jTabbedPane1.addTab("Cuenta", pnlCuenta);
+        tpnlAdminUser.addTab("Cuenta", pnlCuenta);
 
-        getContentPane().add(jTabbedPane1, java.awt.BorderLayout.CENTER);
+        getContentPane().add(tpnlAdminUser, java.awt.BorderLayout.CENTER);
+
+        pnlCabecera.setBackground(new java.awt.Color(0, 148, 2));
+        pnlCabecera.setLayout(new java.awt.BorderLayout());
+
+        pnlOpciones.setLayout(new java.awt.GridLayout(1, 3));
+
+        lblMinimizar.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        lblMinimizar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMinimizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventanas/images/-.png"))); // NOI18N
+        lblMinimizar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblMinimizar.setOpaque(true);
+        lblMinimizar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblMinimizarMouseClicked(evt);
+            }
+        });
+        pnlOpciones.add(lblMinimizar);
+
+        lblMaximizar.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        lblMaximizar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMaximizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventanas/images/O.png"))); // NOI18N
+        lblMaximizar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblMaximizar.setOpaque(true);
+        lblMaximizar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblMaximizarMouseClicked(evt);
+            }
+        });
+        pnlOpciones.add(lblMaximizar);
+
+        lblCerrar.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        lblCerrar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventanas/images/X.png"))); // NOI18N
+        lblCerrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblCerrar.setOpaque(true);
+        lblCerrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblCerrarMouseClicked(evt);
+            }
+        });
+        pnlOpciones.add(lblCerrar);
+
+        pnlCabecera.add(pnlOpciones, java.awt.BorderLayout.EAST);
+
+        pnlTitulos.setOpaque(false);
+        pnlTitulos.setLayout(new java.awt.BorderLayout());
+
+        lblIcono.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblIcono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventanas/images/T.png"))); // NOI18N
+        pnlTitulos.add(lblIcono, java.awt.BorderLayout.WEST);
+
+        lblTitular.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        lblTitular.setForeground(new java.awt.Color(255, 255, 255));
+        lblTitular.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitular.setText("T-ShirtPOO Cliente");
+        lblTitular.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                lblTitularMouseDragged(evt);
+            }
+        });
+        lblTitular.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lblTitularMousePressed(evt);
+            }
+        });
+        pnlTitulos.add(lblTitular, java.awt.BorderLayout.CENTER);
+
+        pnlCabecera.add(pnlTitulos, java.awt.BorderLayout.CENTER);
+
+        getContentPane().add(pnlCabecera, java.awt.BorderLayout.NORTH);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void lblMinimizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMinimizarMouseClicked
+        this.setState(Frame.ICONIFIED);
+    }//GEN-LAST:event_lblMinimizarMouseClicked
+
+    private void lblMaximizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMaximizarMouseClicked
+        this.setExtendedState(Frame.MAXIMIZED_BOTH);
+    }//GEN-LAST:event_lblMaximizarMouseClicked
+
+    private void lblCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCerrarMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_lblCerrarMouseClicked
+
+    private void lblTitularMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTitularMouseDragged
+        //Puntos iniciales
+        int thisX = this.getLocation().x;
+        int thisY = this.getLocation().y;
+
+        //Movimiento de arrastre
+        int xMov = evt.getX() - this.puntoInicial.x;
+        int yMov = evt.getY() - this.puntoInicial.y;
+
+        //Nuevas posiciones
+        int x = thisX + xMov;
+        int y = thisY + yMov;
+
+        this.setLocation(x, y);
+    }//GEN-LAST:event_lblTitularMouseDragged
+
+    private void lblTitularMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTitularMousePressed
+        this.puntoInicial = evt.getPoint();
+    }//GEN-LAST:event_lblTitularMousePressed
+
+     private Point puntoInicial;
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JLabel lblCerrar;
+    private javax.swing.JLabel lblIcono;
+    private javax.swing.JLabel lblMaximizar;
+    private javax.swing.JLabel lblMinimizar;
+    private javax.swing.JLabel lblTitular;
+    private javax.swing.JPanel pnlCabecera;
     private ventanas.PanelCompra pnlCompra;
     private ventanas.PanelCuenta pnlCuenta;
     private ventanas.PanelDesign pnlDesign;
+    private javax.swing.JPanel pnlOpciones;
+    private javax.swing.JPanel pnlTitulos;
+    private javax.swing.JTabbedPane tpnlAdminUser;
     // End of variables declaration//GEN-END:variables
 }

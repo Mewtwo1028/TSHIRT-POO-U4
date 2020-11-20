@@ -257,7 +257,11 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_lblMinimizarMouseClicked
 
     private void lblMaximizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMaximizarMouseClicked
-        this.setState(Frame.MAXIMIZED_BOTH);
+        if (this.getExtendedState() == Frame.MAXIMIZED_BOTH) {
+            this.setExtendedState(Frame.NORMAL);
+        } else {
+            this.setExtendedState(Frame.MAXIMIZED_BOTH);
+        }
     }//GEN-LAST:event_lblMaximizarMouseClicked
 
     private void lblCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCerrarMouseClicked
@@ -355,7 +359,7 @@ public class Login extends javax.swing.JFrame {
     }
 
     private Point puntoInicial;
-    private ArrayList<Cuenta> cuentas = new ArrayList<>();
+    private final ArrayList<Cuenta> cuentas = new ArrayList<>();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnRegistrar;
