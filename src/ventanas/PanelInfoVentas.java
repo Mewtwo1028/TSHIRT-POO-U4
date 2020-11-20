@@ -88,7 +88,10 @@ public class PanelInfoVentas extends javax.swing.JPanel {
         gridBagConstraints.gridheight = 10;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.ipadx = 600;
-        gridBagConstraints.ipady = 100;
+        gridBagConstraints.ipady = 300;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         add(jScrollPane1, gridBagConstraints);
 
         lblUsuario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

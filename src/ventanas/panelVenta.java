@@ -28,9 +28,6 @@ public class panelVenta extends javax.swing.JPanel {
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
-        pnlCabecera = new javax.swing.JPanel();
-        pnlOpciones = new javax.swing.JPanel();
-        pnlTitulos = new javax.swing.JPanel();
         pnlVenta = new javax.swing.JPanel();
         lblUsuario = new javax.swing.JLabel();
         cmbUsuario = new javax.swing.JComboBox<>();
@@ -60,18 +57,8 @@ public class panelVenta extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(900, 400));
         setLayout(new java.awt.BorderLayout());
 
-        pnlCabecera.setBackground(new java.awt.Color(0, 148, 2));
-        pnlCabecera.setLayout(new java.awt.BorderLayout());
-
-        pnlOpciones.setLayout(new java.awt.GridLayout(1, 3));
-        pnlCabecera.add(pnlOpciones, java.awt.BorderLayout.EAST);
-
-        pnlTitulos.setOpaque(false);
-        pnlTitulos.setLayout(new java.awt.BorderLayout());
-        pnlCabecera.add(pnlTitulos, java.awt.BorderLayout.CENTER);
-
-        add(pnlCabecera, java.awt.BorderLayout.NORTH);
-
+        pnlVenta.setMinimumSize(new java.awt.Dimension(900, 400));
+        pnlVenta.setPreferredSize(new java.awt.Dimension(900, 400));
         pnlVenta.setLayout(new java.awt.GridBagLayout());
 
         lblUsuario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -294,7 +281,10 @@ public class panelVenta extends javax.swing.JPanel {
         gridBagConstraints.gridheight = 13;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.ipadx = 600;
-        gridBagConstraints.ipady = 100;
+        gridBagConstraints.ipady = 300;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         pnlVenta.add(jScrollPane1, gridBagConstraints);
 
         jButton1.setText("Cobrar");
@@ -302,6 +292,7 @@ public class panelVenta extends javax.swing.JPanel {
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 10;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         pnlVenta.add(jButton1, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
@@ -333,10 +324,7 @@ public class panelVenta extends javax.swing.JPanel {
     private javax.swing.JLabel lblGarantia;
     private javax.swing.JLabel lblProducto;
     private javax.swing.JLabel lblUsuario;
-    private javax.swing.JPanel pnlCabecera;
     private javax.swing.JPanel pnlCobertura;
-    private javax.swing.JPanel pnlOpciones;
-    private javax.swing.JPanel pnlTitulos;
     private javax.swing.JPanel pnlVenta;
     private javax.swing.JTable tblVentas;
     private javax.swing.JTextField txtArchivoCobertura;
