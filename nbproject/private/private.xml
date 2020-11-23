@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+        <file>
+            <url>src/ventanas/Login.java</url>
+            <bookmark id="1">
+                <name/>
+                <line>352</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/D:/SEMESTRE_4/CLASES/POO/U4/TSHIRT-POO-U4/src/ventanas/AdministracionAdmin.java</file>
             <file>file:/D:/SEMESTRE_4/CLASES/POO/U4/TSHIRT-POO-U4/src/ventanas/PanelInfoVentas.java</file>
             <file>file:/D:/SEMESTRE_4/CLASES/POO/U4/TSHIRT-POO-U4/src/ventanas/AdministracionUsuario.java</file>
@@ -12,6 +22,9 @@
             <file>file:/D:/SEMESTRE_4/CLASES/POO/U4/TSHIRT-POO-U4/src/ventanas/Login.java</file>
             <file>file:/D:/SEMESTRE_4/CLASES/POO/U4/TSHIRT-POO-U4/src/ventanas/panelVenta.java</file>
             <file>file:/D:/SEMESTRE_4/CLASES/POO/U4/TSHIRT-POO-U4/src/ventanas/PanelProductos.java</file>
+=======
+            <file>file:/C:/Users/Jose/Documents/POO/TSHIRT-POO-U4/src/ventanas/PanelCompra.java</file>
+>>>>>>> devJose
         </group>
     </open-files>
 </project-private>
