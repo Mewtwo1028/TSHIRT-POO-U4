@@ -28,6 +28,7 @@ public class PanelCompra extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         pnlCabecera = new javax.swing.JPanel();
         pnlOpciones = new javax.swing.JPanel();
@@ -36,7 +37,8 @@ public class PanelCompra extends javax.swing.JPanel {
         lblCerrar = new javax.swing.JLabel();
         icono = new javax.swing.JLabel();
         lblTitulo = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        PanelContenido = new javax.swing.JPanel();
+        Foto = new javax.swing.JLabel();
         Name = new javax.swing.JLabel();
         tip = new javax.swing.JLabel();
         Nombre1 = new javax.swing.JLabel();
@@ -45,6 +47,7 @@ public class PanelCompra extends javax.swing.JPanel {
         tablacompras = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(122, 108, 105));
+        setLayout(new java.awt.BorderLayout());
 
         pnlCabecera.setBackground(new java.awt.Color(0, 148, 2));
         pnlCabecera.setLayout(new java.awt.BorderLayout());
@@ -98,41 +101,78 @@ public class PanelCompra extends javax.swing.JPanel {
         lblTitulo.setText("Compras");
         pnlCabecera.add(lblTitulo, java.awt.BorderLayout.CENTER);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventanas/images/iconousuario.png"))); // NOI18N
+        add(pnlCabecera, java.awt.BorderLayout.NORTH);
+
+        PanelContenido.setBackground(new java.awt.Color(122, 108, 105));
+        PanelContenido.setLayout(new java.awt.GridBagLayout());
+
+        Foto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Foto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventanas/images/iconousuario.png"))); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridheight = 5;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.ipady = 100;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        PanelContenido.add(Foto, gridBagConstraints);
 
         Name.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         Name.setForeground(new java.awt.Color(255, 255, 255));
-        Name.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Name.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Name.setText("Nick");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 50;
+        gridBagConstraints.ipady = 20;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        PanelContenido.add(Name, gridBagConstraints);
 
         tip.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         tip.setForeground(new java.awt.Color(255, 255, 255));
-        tip.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        tip.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         tip.setText("Tipo");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 50;
+        gridBagConstraints.ipady = 20;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        PanelContenido.add(tip, gridBagConstraints);
 
         Nombre1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         Nombre1.setForeground(new java.awt.Color(255, 255, 255));
-        Nombre1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        Nombre1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Nombre1.setText("Nombre");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 50;
+        gridBagConstraints.ipady = 20;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        PanelContenido.add(Nombre1, gridBagConstraints);
 
         dire.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         dire.setForeground(new java.awt.Color(255, 255, 255));
-        dire.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        dire.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         dire.setText("Direccion");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 50;
+        gridBagConstraints.ipady = 20;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        PanelContenido.add(dire, gridBagConstraints);
 
         tablacompras.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Producto", "Precio", "Cantidad", "Id"
@@ -140,43 +180,23 @@ public class PanelCompra extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(tablacompras);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlCabecera, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tip, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Nombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Name, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dire, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(382, Short.MAX_VALUE))
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(pnlCabecera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(Name, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Nombre1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(tip)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(dire))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(22, 22, 22)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 194, Short.MAX_VALUE))
-        );
-    }// </editor-fold>//GEN-END:initComponents
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 600;
+        gridBagConstraints.ipady = 200;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        PanelContenido.add(jScrollPane2, gridBagConstraints);
 
+        add(PanelContenido, java.awt.BorderLayout.CENTER);
+    }// </editor-fold>//GEN-END:initComponents
+   
+    
+    
     private void lblMinimizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMinimizarMouseClicked
         this.setState(Frame.ICONIFIED);
     }//GEN-LAST:event_lblMinimizarMouseClicked
@@ -188,14 +208,15 @@ public class PanelCompra extends javax.swing.JPanel {
     private void lblCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCerrarMouseClicked
         System.exit(0);
     }//GEN-LAST:event_lblCerrarMouseClicked
-
+   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Foto;
     private javax.swing.JLabel Name;
     private javax.swing.JLabel Nombre1;
+    private javax.swing.JPanel PanelContenido;
     private javax.swing.JLabel dire;
     private javax.swing.JLabel icono;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblCerrar;
     private javax.swing.JLabel lblMaximizar;
