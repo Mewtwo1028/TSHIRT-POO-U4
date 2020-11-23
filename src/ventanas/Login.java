@@ -66,13 +66,11 @@ public class Login extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(400, 500));
         setName("Login"); // NOI18N
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(400, 500));
         setResizable(false);
 
         pnlLogin.setBackground(new java.awt.Color(122, 108, 105));
         pnlLogin.setLayout(new java.awt.GridBagLayout());
 
-        lblPassword.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         lblPassword.setForeground(new java.awt.Color(255, 255, 255));
         lblPassword.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblPassword.setText("Password");
@@ -93,7 +91,6 @@ public class Login extends javax.swing.JFrame {
         gridBagConstraints.gridwidth = 3;
         pnlLogin.add(lblLogo, gridBagConstraints);
 
-        lblUsuario.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         lblUsuario.setForeground(new java.awt.Color(255, 255, 255));
         lblUsuario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblUsuario.setText("Usuario");
@@ -107,7 +104,6 @@ public class Login extends javax.swing.JFrame {
         pnlLogin.add(lblUsuario, gridBagConstraints);
 
         txtUsuario.setBackground(new java.awt.Color(122, 108, 105));
-        txtUsuario.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         txtUsuario.setForeground(new java.awt.Color(255, 255, 255));
         txtUsuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtUsuario.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
@@ -121,7 +117,6 @@ public class Login extends javax.swing.JFrame {
         pnlLogin.add(txtUsuario, gridBagConstraints);
 
         txtPassword.setBackground(new java.awt.Color(122, 108, 105));
-        txtPassword.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         txtPassword.setForeground(new java.awt.Color(255, 255, 255));
         txtPassword.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtPassword.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
@@ -135,7 +130,6 @@ public class Login extends javax.swing.JFrame {
         pnlLogin.add(txtPassword, gridBagConstraints);
 
         btnLogin.setBackground(new java.awt.Color(122, 108, 105));
-        btnLogin.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnLogin.setForeground(new java.awt.Color(255, 255, 255));
         btnLogin.setText("Iniciar Sesion");
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
@@ -154,7 +148,6 @@ public class Login extends javax.swing.JFrame {
         pnlLogin.add(btnLogin, gridBagConstraints);
 
         btnRegistrar.setBackground(new java.awt.Color(122, 108, 105));
-        btnRegistrar.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnRegistrar.setForeground(new java.awt.Color(255, 255, 255));
         btnRegistrar.setText("Registrar");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -184,7 +177,6 @@ public class Login extends javax.swing.JFrame {
 
         pnlOpciones.setLayout(new java.awt.GridLayout(1, 3));
 
-        lblMinimizar.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         lblMinimizar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblMinimizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventanas/images/-.png"))); // NOI18N
         lblMinimizar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -196,7 +188,6 @@ public class Login extends javax.swing.JFrame {
         });
         pnlOpciones.add(lblMinimizar);
 
-        lblMaximizar.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         lblMaximizar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblMaximizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventanas/images/O.png"))); // NOI18N
         lblMaximizar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -208,7 +199,6 @@ public class Login extends javax.swing.JFrame {
         });
         pnlOpciones.add(lblMaximizar);
 
-        lblCerrar.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         lblCerrar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventanas/images/X.png"))); // NOI18N
         lblCerrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -257,7 +247,11 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_lblMinimizarMouseClicked
 
     private void lblMaximizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMaximizarMouseClicked
-        this.setState(Frame.MAXIMIZED_BOTH);
+        if (this.getExtendedState() == Frame.MAXIMIZED_BOTH) {
+            this.setExtendedState(Frame.NORMAL);
+        } else {
+            this.setExtendedState(Frame.MAXIMIZED_BOTH);
+        }
     }//GEN-LAST:event_lblMaximizarMouseClicked
 
     private void lblCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCerrarMouseClicked
@@ -355,7 +349,7 @@ public class Login extends javax.swing.JFrame {
     }
 
     private Point puntoInicial;
-    private ArrayList<Cuenta> cuentas = new ArrayList<>();
+    private final ArrayList<Cuenta> cuentas = new ArrayList<>();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnRegistrar;
