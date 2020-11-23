@@ -5,7 +5,6 @@
  */
 package ventanas;
 
-import java.awt.Color;
 import java.awt.Frame;
 import java.awt.Point;
 
@@ -61,11 +60,6 @@ public class AdministracionAdmin extends javax.swing.JFrame {
         tpnlAdminAdmin.setBackground(new java.awt.Color(0, 0, 0));
         tpnlAdminAdmin.setForeground(new java.awt.Color(255, 255, 255));
         tpnlAdminAdmin.setOpaque(true);
-        tpnlAdminAdmin.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                tpnlAdminAdminStateChanged(evt);
-            }
-        });
 
         javax.swing.GroupLayout pnlClientesLayout = new javax.swing.GroupLayout(pnlClientes);
         pnlClientes.setLayout(pnlClientesLayout);
@@ -227,11 +221,6 @@ public class AdministracionAdmin extends javax.swing.JFrame {
     private void lblTitularMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTitularMousePressed
         this.puntoInicial = evt.getPoint();
     }//GEN-LAST:event_lblTitularMousePressed
-
-    private void tpnlAdminAdminStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_tpnlAdminAdminStateChanged
-        tpnlAdminAdmin.setBackgroundAt(tpnlAdminAdmin.getSelectedIndex(), Color.BLUE);
-        tpnlAdminAdmin.setBackgroundAt();
-    }//GEN-LAST:event_tpnlAdminAdminStateChanged
 
     private Point puntoInicial;
     // Variables declaration - do not modify//GEN-BEGIN:variables
