@@ -32,8 +32,8 @@ public class AdministracionUsuario extends javax.swing.JFrame {
 
         tpnlAdminUser = new javax.swing.JTabbedPane();
         pnlCompra = new ventanas.PanelCompra();
-        pnlDesign = new ventanas.PanelDesign();
         pnlCuenta = new ventanas.PanelCuenta();
+        panelDesign1 = new ventanas.PanelDesign();
         pnlCabecera = new javax.swing.JPanel();
         pnlOpciones = new javax.swing.JPanel();
         lblMinimizar = new javax.swing.JLabel();
@@ -62,19 +62,6 @@ public class AdministracionUsuario extends javax.swing.JFrame {
 
         tpnlAdminUser.addTab("Compra", pnlCompra);
 
-        javax.swing.GroupLayout pnlDesignLayout = new javax.swing.GroupLayout(pnlDesign);
-        pnlDesign.setLayout(pnlDesignLayout);
-        pnlDesignLayout.setHorizontalGroup(
-            pnlDesignLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 795, Short.MAX_VALUE)
-        );
-        pnlDesignLayout.setVerticalGroup(
-            pnlDesignLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 537, Short.MAX_VALUE)
-        );
-
-        tpnlAdminUser.addTab("Design", pnlDesign);
-
         javax.swing.GroupLayout pnlCuentaLayout = new javax.swing.GroupLayout(pnlCuenta);
         pnlCuenta.setLayout(pnlCuentaLayout);
         pnlCuentaLayout.setHorizontalGroup(
@@ -87,6 +74,7 @@ public class AdministracionUsuario extends javax.swing.JFrame {
         );
 
         tpnlAdminUser.addTab("Cuenta", pnlCuenta);
+        tpnlAdminUser.addTab("Design", panelDesign1);
 
         getContentPane().add(tpnlAdminUser, java.awt.BorderLayout.CENTER);
 
@@ -95,7 +83,6 @@ public class AdministracionUsuario extends javax.swing.JFrame {
 
         pnlOpciones.setLayout(new java.awt.GridLayout(1, 3));
 
-        lblMinimizar.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         lblMinimizar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblMinimizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventanas/images/-.png"))); // NOI18N
         lblMinimizar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -107,7 +94,6 @@ public class AdministracionUsuario extends javax.swing.JFrame {
         });
         pnlOpciones.add(lblMinimizar);
 
-        lblMaximizar.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         lblMaximizar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblMaximizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventanas/images/O.png"))); // NOI18N
         lblMaximizar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -119,7 +105,6 @@ public class AdministracionUsuario extends javax.swing.JFrame {
         });
         pnlOpciones.add(lblMaximizar);
 
-        lblCerrar.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         lblCerrar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventanas/images/X.png"))); // NOI18N
         lblCerrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -202,10 +187,10 @@ public class AdministracionUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel lblMaximizar;
     private javax.swing.JLabel lblMinimizar;
     private javax.swing.JLabel lblTitular;
+    private ventanas.PanelDesign panelDesign1;
     private javax.swing.JPanel pnlCabecera;
     private ventanas.PanelCompra pnlCompra;
     private ventanas.PanelCuenta pnlCuenta;
-    private ventanas.PanelDesign pnlDesign;
     private javax.swing.JPanel pnlOpciones;
     private javax.swing.JPanel pnlTitulos;
     private javax.swing.JTabbedPane tpnlAdminUser;
