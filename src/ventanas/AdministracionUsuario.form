@@ -83,7 +83,7 @@
             </DimensionLayout>
           </Layout>
         </Container>
-        <Component class="ventanas.PanelDesign" name="panelDesign1">
+        <Component class="ventanas.PanelDesign" name="panelDesign2">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="Design">

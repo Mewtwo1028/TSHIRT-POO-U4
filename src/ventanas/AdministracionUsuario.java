@@ -33,7 +33,7 @@ public class AdministracionUsuario extends javax.swing.JFrame {
         tpnlAdminUser = new javax.swing.JTabbedPane();
         pnlCompra = new ventanas.PanelCompra();
         pnlCuenta = new ventanas.PanelCuenta();
-        panelDesign1 = new ventanas.PanelDesign();
+        panelDesign2 = new ventanas.PanelDesign();
         pnlCabecera = new javax.swing.JPanel();
         pnlOpciones = new javax.swing.JPanel();
         lblMinimizar = new javax.swing.JLabel();
@@ -74,7 +74,7 @@ public class AdministracionUsuario extends javax.swing.JFrame {
         );
 
         tpnlAdminUser.addTab("Cuenta", pnlCuenta);
-        tpnlAdminUser.addTab("Design", panelDesign1);
+        tpnlAdminUser.addTab("Design", panelDesign2);
 
         getContentPane().add(tpnlAdminUser, java.awt.BorderLayout.CENTER);
 
@@ -187,7 +187,7 @@ public class AdministracionUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel lblMaximizar;
     private javax.swing.JLabel lblMinimizar;
     private javax.swing.JLabel lblTitular;
-    private ventanas.PanelDesign panelDesign1;
+    private ventanas.PanelDesign panelDesign2;
     private javax.swing.JPanel pnlCabecera;
     private ventanas.PanelCompra pnlCompra;
     private ventanas.PanelCuenta pnlCuenta;
