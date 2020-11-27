@@ -38,10 +38,10 @@ public class AdministracionAdmin extends javax.swing.JFrame {
 
         tpnlAdminAdmin = new javax.swing.JTabbedPane();
         pnlClientes = new ventanas.PanelClientes();
-        pnlInfoVentas = new ventanas.PanelInfoVentas();
         pnlInventario = new ventanas.PanelInventario();
         pnlProductos = new ventanas.PanelProductos();
         pnlVenta = new ventanas.panelVenta();
+        pnlInfoVentas = new ventanas.PanelInfoVentas();
         pnlCabecera = new javax.swing.JPanel();
         pnlOpciones = new javax.swing.JPanel();
         lblMinimizar = new javax.swing.JLabel();
@@ -58,7 +58,7 @@ public class AdministracionAdmin extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1000, 700));
 
         tpnlAdminAdmin.setBackground(new java.awt.Color(0, 0, 0));
-        tpnlAdminAdmin.setForeground(new java.awt.Color(255, 255, 255));
+        tpnlAdminAdmin.setForeground(new java.awt.Color(200, 200, 200));
         tpnlAdminAdmin.setOpaque(true);
 
         javax.swing.GroupLayout pnlClientesLayout = new javax.swing.GroupLayout(pnlClientes);
@@ -73,12 +73,6 @@ public class AdministracionAdmin extends javax.swing.JFrame {
         );
 
         tpnlAdminAdmin.addTab("Clientes", pnlClientes);
-
-        pnlInfoVentas.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        pnlInfoVentas.setMinimumSize(new java.awt.Dimension(795, 600));
-        pnlInfoVentas.setPreferredSize(new java.awt.Dimension(795, 600));
-        tpnlAdminAdmin.addTab("InfoVentas", pnlInfoVentas);
-        pnlInfoVentas.getAccessibleContext().setAccessibleParent(this);
 
         javax.swing.GroupLayout pnlInventarioLayout = new javax.swing.GroupLayout(pnlInventario);
         pnlInventario.setLayout(pnlInventarioLayout);
@@ -114,6 +108,12 @@ public class AdministracionAdmin extends javax.swing.JFrame {
         pnlVenta.setPreferredSize(new java.awt.Dimension(795, 600));
         tpnlAdminAdmin.addTab("Ventas", pnlVenta);
         pnlVenta.getAccessibleContext().setAccessibleParent(this);
+
+        pnlInfoVentas.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        pnlInfoVentas.setMinimumSize(new java.awt.Dimension(795, 600));
+        pnlInfoVentas.setPreferredSize(new java.awt.Dimension(795, 600));
+        tpnlAdminAdmin.addTab("InfoVentas", pnlInfoVentas);
+        pnlInfoVentas.getAccessibleContext().setAccessibleParent(this);
 
         getContentPane().add(tpnlAdminAdmin, java.awt.BorderLayout.CENTER);
 
