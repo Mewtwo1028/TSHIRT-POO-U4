@@ -5,7 +5,6 @@
  */
 package ventanas;
 
-import java.awt.Frame;
 import java.awt.Point;
 
 /**
@@ -36,13 +35,17 @@ public class PanelDesign extends javax.swing.JPanel {
 
         jTextField1 = new javax.swing.JTextField();
         imgCamisa = new javax.swing.JLabel();
-        cmbTipo = new javax.swing.JComboBox<>();
-        cmbColor = new javax.swing.JComboBox<>();
-        cmbLogo = new javax.swing.JComboBox<>();
-        lblTipo = new javax.swing.JLabel();
-        lblColor = new javax.swing.JLabel();
-        lblLogo = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        pnlOpciones = new javax.swing.JPanel();
+        pnlLogo = new javax.swing.JPanel();
+        lblLogo = new javax.swing.JLabel();
+        cmbLogo = new javax.swing.JComboBox<>();
+        pnlColor = new javax.swing.JPanel();
+        lblColor = new javax.swing.JLabel();
+        cmbColor = new javax.swing.JComboBox<>();
+        pnlTipo = new javax.swing.JPanel();
+        lblTipo = new javax.swing.JLabel();
+        cmbTipo = new javax.swing.JComboBox<>();
 
         jTextField1.setText("jTextField1");
 
@@ -54,74 +57,77 @@ public class PanelDesign extends javax.swing.JPanel {
         gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.ipadx = 100;
-        gridBagConstraints.ipady = 100;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         add(imgCamisa, gridBagConstraints);
-
-        cmbTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona", "Camisa", "Playera", "Sueter" }));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 50;
-        gridBagConstraints.ipady = 20;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 0);
-        add(cmbTipo, gridBagConstraints);
-
-        cmbColor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona", "Azul", "Rojo", "Verde", "Amarillo" }));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 50;
-        gridBagConstraints.ipady = 20;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 0);
-        add(cmbColor, gridBagConstraints);
-
-        cmbLogo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona", "Power Rangers", "Pokemon", "BTS" }));
-        cmbLogo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbLogoActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 50;
-        gridBagConstraints.ipady = 20;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 0);
-        add(cmbLogo, gridBagConstraints);
-
-        lblTipo.setText("Tipo");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        add(lblTipo, gridBagConstraints);
-
-        lblColor.setText("Color");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        add(lblColor, gridBagConstraints);
-
-        lblLogo.setText("Logo");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        add(lblLogo, gridBagConstraints);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventanas/images/letras.png"))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.ipady = 100;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         add(jLabel1, gridBagConstraints);
+
+        pnlOpciones.setLayout(new javax.swing.BoxLayout(pnlOpciones, javax.swing.BoxLayout.Y_AXIS));
+
+        pnlLogo.setPreferredSize(new java.awt.Dimension(120, 30));
+
+        lblLogo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblLogo.setText("Logo");
+        lblLogo.setPreferredSize(new java.awt.Dimension(120, 20));
+        pnlLogo.add(lblLogo);
+
+        cmbLogo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        cmbLogo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona", "Power Rangers", "Pokemon", "BTS" }));
+        cmbLogo.setPreferredSize(new java.awt.Dimension(120, 30));
+        cmbLogo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbLogoActionPerformed(evt);
+            }
+        });
+        pnlLogo.add(cmbLogo);
+
+        pnlOpciones.add(pnlLogo);
+
+        pnlColor.setPreferredSize(new java.awt.Dimension(120, 30));
+
+        lblColor.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblColor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblColor.setText("Color");
+        lblColor.setPreferredSize(new java.awt.Dimension(120, 20));
+        pnlColor.add(lblColor);
+
+        cmbColor.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        cmbColor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona", "Azul", "Rojo", "Verde", "Amarillo" }));
+        cmbColor.setPreferredSize(new java.awt.Dimension(120, 30));
+        pnlColor.add(cmbColor);
+
+        pnlOpciones.add(pnlColor);
+
+        pnlTipo.setPreferredSize(new java.awt.Dimension(120, 30));
+
+        lblTipo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblTipo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTipo.setText("Tipo");
+        lblTipo.setPreferredSize(new java.awt.Dimension(120, 20));
+        pnlTipo.add(lblTipo);
+
+        cmbTipo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        cmbTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona", "Camisa", "Playera", "Sueter" }));
+        cmbTipo.setPreferredSize(new java.awt.Dimension(120, 30));
+        pnlTipo.add(cmbTipo);
+
+        pnlOpciones.add(pnlTipo);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        add(pnlOpciones, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmbLogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbLogoActionPerformed
@@ -139,6 +145,10 @@ public class PanelDesign extends javax.swing.JPanel {
     private javax.swing.JLabel lblColor;
     private javax.swing.JLabel lblLogo;
     private javax.swing.JLabel lblTipo;
+    private javax.swing.JPanel pnlColor;
+    private javax.swing.JPanel pnlLogo;
+    private javax.swing.JPanel pnlOpciones;
+    private javax.swing.JPanel pnlTipo;
     // End of variables declaration//GEN-END:variables
 
     private void setState(int ICONIFIED) {

@@ -5,8 +5,6 @@
  */
 package ventanas;
 
-import java.awt.Frame;
-
 /**
  *
  * @author Hydra
@@ -30,13 +28,6 @@ public class PanelCompra extends javax.swing.JPanel {
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
-        pnlCabecera = new javax.swing.JPanel();
-        pnlOpciones = new javax.swing.JPanel();
-        lblMinimizar = new javax.swing.JLabel();
-        lblMaximizar = new javax.swing.JLabel();
-        lblCerrar = new javax.swing.JLabel();
-        icono = new javax.swing.JLabel();
-        lblTitulo = new javax.swing.JLabel();
         PanelContenido = new javax.swing.JPanel();
         Foto = new javax.swing.JLabel();
         Name = new javax.swing.JLabel();
@@ -48,60 +39,6 @@ public class PanelCompra extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(122, 108, 105));
         setLayout(new java.awt.BorderLayout());
-
-        pnlCabecera.setBackground(new java.awt.Color(0, 148, 2));
-        pnlCabecera.setLayout(new java.awt.BorderLayout());
-
-        pnlOpciones.setLayout(new java.awt.GridLayout(1, 3));
-
-        lblMinimizar.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        lblMinimizar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblMinimizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventanas/images/-.png"))); // NOI18N
-        lblMinimizar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        lblMinimizar.setOpaque(true);
-        lblMinimizar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblMinimizarMouseClicked(evt);
-            }
-        });
-        pnlOpciones.add(lblMinimizar);
-
-        lblMaximizar.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        lblMaximizar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblMaximizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventanas/images/O.png"))); // NOI18N
-        lblMaximizar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        lblMaximizar.setOpaque(true);
-        lblMaximizar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblMaximizarMouseClicked(evt);
-            }
-        });
-        pnlOpciones.add(lblMaximizar);
-
-        lblCerrar.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        lblCerrar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventanas/images/X.png"))); // NOI18N
-        lblCerrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        lblCerrar.setOpaque(true);
-        lblCerrar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblCerrarMouseClicked(evt);
-            }
-        });
-        pnlOpciones.add(lblCerrar);
-
-        pnlCabecera.add(pnlOpciones, java.awt.BorderLayout.EAST);
-
-        icono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventanas/images/T.png"))); // NOI18N
-        pnlCabecera.add(icono, java.awt.BorderLayout.LINE_START);
-
-        lblTitulo.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        lblTitulo.setForeground(new java.awt.Color(255, 255, 255));
-        lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitulo.setText("Compras");
-        pnlCabecera.add(lblTitulo, java.awt.BorderLayout.CENTER);
-
-        add(pnlCabecera, java.awt.BorderLayout.NORTH);
 
         PanelContenido.setBackground(new java.awt.Color(122, 108, 105));
         PanelContenido.setLayout(new java.awt.GridBagLayout());
@@ -196,19 +133,7 @@ public class PanelCompra extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
    
     
-    
-    private void lblMinimizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMinimizarMouseClicked
-        this.setState(Frame.ICONIFIED);
-    }//GEN-LAST:event_lblMinimizarMouseClicked
-
-    private void lblMaximizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMaximizarMouseClicked
-        this.setState(Frame.MAXIMIZED_BOTH);
-    }//GEN-LAST:event_lblMaximizarMouseClicked
-
-    private void lblCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCerrarMouseClicked
-        System.exit(0);
-    }//GEN-LAST:event_lblCerrarMouseClicked
-   
+       
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Foto;
@@ -216,14 +141,7 @@ public class PanelCompra extends javax.swing.JPanel {
     private javax.swing.JLabel Nombre1;
     private javax.swing.JPanel PanelContenido;
     private javax.swing.JLabel dire;
-    private javax.swing.JLabel icono;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JLabel lblCerrar;
-    private javax.swing.JLabel lblMaximizar;
-    private javax.swing.JLabel lblMinimizar;
-    private javax.swing.JLabel lblTitulo;
-    private javax.swing.JPanel pnlCabecera;
-    private javax.swing.JPanel pnlOpciones;
     private javax.swing.JTable tablacompras;
     private javax.swing.JLabel tip;
     // End of variables declaration//GEN-END:variables
