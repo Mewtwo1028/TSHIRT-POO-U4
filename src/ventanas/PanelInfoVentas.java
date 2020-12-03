@@ -269,7 +269,7 @@ public class PanelInfoVentas extends javax.swing.JPanel {
         lblBuscarArchivo.setText("Crear Archivo");
         pnlCobertura.add(lblBuscarArchivo, java.awt.BorderLayout.PAGE_END);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setText("...");
         pnlCobertura.add(jLabel1, java.awt.BorderLayout.LINE_END);
 

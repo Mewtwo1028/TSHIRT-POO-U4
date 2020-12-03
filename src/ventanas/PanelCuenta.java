@@ -50,6 +50,7 @@ public class PanelCuenta extends javax.swing.JPanel {
         PanelContenido.setBackground(new java.awt.Color(122, 108, 105));
         PanelContenido.setLayout(new java.awt.GridBagLayout());
 
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventanas/images/iconousuario.png"))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
@@ -61,69 +62,70 @@ public class PanelCuenta extends javax.swing.JPanel {
 
         Nick.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         Nick.setForeground(new java.awt.Color(255, 255, 255));
+        Nick.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Nick.setText("Nickname:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 50;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 40;
         gridBagConstraints.ipady = 20;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 195, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         PanelContenido.add(Nick, gridBagConstraints);
 
         Nombre.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         Nombre.setForeground(new java.awt.Color(255, 255, 255));
+        Nombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Nombre.setText("Nombre:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 62;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 40;
         gridBagConstraints.ipady = 20;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 195, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         PanelContenido.add(Nombre, gridBagConstraints);
 
         Direccion.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         Direccion.setForeground(new java.awt.Color(255, 255, 255));
+        Direccion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Direccion.setText("Direccion:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 55;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 40;
         gridBagConstraints.ipady = 20;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 195, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         PanelContenido.add(Direccion, gridBagConstraints);
 
         Telefono.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         Telefono.setForeground(new java.awt.Color(255, 255, 255));
+        Telefono.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Telefono.setText("Telefono:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 8;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 60;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 40;
         gridBagConstraints.ipady = 20;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 195, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         PanelContenido.add(Telefono, gridBagConstraints);
 
         Correo.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         Correo.setForeground(new java.awt.Color(255, 255, 255));
+        Correo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Correo.setText("Correo:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 10;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 72;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 40;
         gridBagConstraints.ipady = 20;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 195, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         PanelContenido.add(Correo, gridBagConstraints);
 
+        cmbNick.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         cmbNick.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbNickActionPerformed(evt);
@@ -132,12 +134,14 @@ public class PanelCuenta extends javax.swing.JPanel {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.ipadx = 97;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 26, 0, 0);
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.ipady = 5;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         PanelContenido.add(cmbNick, gridBagConstraints);
 
+        cmbNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         cmbNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbNombreActionPerformed(evt);
@@ -146,12 +150,14 @@ public class PanelCuenta extends javax.swing.JPanel {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.ipadx = 97;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 26, 0, 0);
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.ipady = 5;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         PanelContenido.add(cmbNombre, gridBagConstraints);
 
+        cmbDireccion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         cmbDireccion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbDireccionActionPerformed(evt);
@@ -160,12 +166,14 @@ public class PanelCuenta extends javax.swing.JPanel {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.ipadx = 97;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 26, 0, 0);
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.ipady = 5;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         PanelContenido.add(cmbDireccion, gridBagConstraints);
 
+        cmbTelefono.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         cmbTelefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbTelefonoActionPerformed(evt);
@@ -174,12 +182,14 @@ public class PanelCuenta extends javax.swing.JPanel {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 8;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.ipadx = 97;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 26, 0, 0);
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.ipady = 5;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         PanelContenido.add(cmbTelefono, gridBagConstraints);
 
+        cmbCorreo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         cmbCorreo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbCorreoActionPerformed(evt);
@@ -188,10 +198,11 @@ public class PanelCuenta extends javax.swing.JPanel {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 10;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.ipadx = 97;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(10, 26, 0, 0);
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.ipady = 5;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         PanelContenido.add(cmbCorreo, gridBagConstraints);
 
         btnCambiar.setText("Cambiar foto");
@@ -201,6 +212,7 @@ public class PanelCuenta extends javax.swing.JPanel {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.ipadx = 45;
         gridBagConstraints.ipady = 10;
         gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
@@ -208,21 +220,20 @@ public class PanelCuenta extends javax.swing.JPanel {
 
         btnGuardar.setText("Guardar");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 12;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 288, 92, 0);
+        gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
+        gridBagConstraints.ipadx = 35;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         PanelContenido.add(btnGuardar, gridBagConstraints);
 
         btnSalir.setText("Salir");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 12;
-        gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.ipadx = 14;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 53, 92, 0);
+        gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
+        gridBagConstraints.ipadx = 35;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         PanelContenido.add(btnSalir, gridBagConstraints);
 
         add(PanelContenido, java.awt.BorderLayout.CENTER);

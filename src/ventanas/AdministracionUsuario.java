@@ -45,34 +45,12 @@ public class AdministracionUsuario extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(122, 108, 105));
+        setMinimumSize(new java.awt.Dimension(800, 650));
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(800, 500));
 
         tpnlAdminUser.setOpaque(true);
-
-        javax.swing.GroupLayout pnlCompraLayout = new javax.swing.GroupLayout(pnlCompra);
-        pnlCompra.setLayout(pnlCompraLayout);
-        pnlCompraLayout.setHorizontalGroup(
-            pnlCompraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 795, Short.MAX_VALUE)
-        );
-        pnlCompraLayout.setVerticalGroup(
-            pnlCompraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 537, Short.MAX_VALUE)
-        );
-
         tpnlAdminUser.addTab("Compra", pnlCompra);
-
-        javax.swing.GroupLayout pnlCuentaLayout = new javax.swing.GroupLayout(pnlCuenta);
-        pnlCuenta.setLayout(pnlCuentaLayout);
-        pnlCuentaLayout.setHorizontalGroup(
-            pnlCuentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 795, Short.MAX_VALUE)
-        );
-        pnlCuentaLayout.setVerticalGroup(
-            pnlCuentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 537, Short.MAX_VALUE)
-        );
-
         tpnlAdminUser.addTab("Cuenta", pnlCuenta);
         tpnlAdminUser.addTab("Design", panelDesign2);
 
