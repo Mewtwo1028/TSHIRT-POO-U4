@@ -145,7 +145,7 @@ public class PanelInventario extends javax.swing.JPanel {
 
             },
             new String [] {
-                "ID", "Producto", "Title 3", "Title 4"
+                "ID", "Producto", "Descripcion", "Cantidad"
             }
         ));
         jScrollPane2.setViewportView(tblInventario);
