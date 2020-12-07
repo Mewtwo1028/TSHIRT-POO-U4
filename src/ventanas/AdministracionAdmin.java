@@ -38,10 +38,10 @@ public class AdministracionAdmin extends javax.swing.JFrame {
 
         tpnlAdminAdmin = new javax.swing.JTabbedPane();
         pnlClientes = new ventanas.PanelClientes();
-        pnlInventario = new ventanas.PanelInventario();
         pnlProductos = new ventanas.PanelProductos();
         pnlVenta = new ventanas.panelVenta();
         pnlInfoVentas = new ventanas.PanelInfoVentas();
+        pnlInventario = new ventanas.PanelInventario();
         pnlCabecera = new javax.swing.JPanel();
         pnlOpciones = new javax.swing.JPanel();
         lblMinimizar = new javax.swing.JLabel();
@@ -65,27 +65,14 @@ public class AdministracionAdmin extends javax.swing.JFrame {
         pnlClientes.setLayout(pnlClientesLayout);
         pnlClientesLayout.setHorizontalGroup(
             pnlClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 995, Short.MAX_VALUE)
+            .addGap(0, 994, Short.MAX_VALUE)
         );
         pnlClientesLayout.setVerticalGroup(
             pnlClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 637, Short.MAX_VALUE)
+            .addGap(0, 636, Short.MAX_VALUE)
         );
 
         tpnlAdminAdmin.addTab("Clientes", pnlClientes);
-
-        javax.swing.GroupLayout pnlInventarioLayout = new javax.swing.GroupLayout(pnlInventario);
-        pnlInventario.setLayout(pnlInventarioLayout);
-        pnlInventarioLayout.setHorizontalGroup(
-            pnlInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 995, Short.MAX_VALUE)
-        );
-        pnlInventarioLayout.setVerticalGroup(
-            pnlInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 637, Short.MAX_VALUE)
-        );
-
-        tpnlAdminAdmin.addTab("Inventario", pnlInventario);
 
         pnlProductos.setMinimumSize(new java.awt.Dimension(700, 500));
         pnlProductos.setPreferredSize(new java.awt.Dimension(795, 595));
@@ -94,11 +81,11 @@ public class AdministracionAdmin extends javax.swing.JFrame {
         pnlProductos.setLayout(pnlProductosLayout);
         pnlProductosLayout.setHorizontalGroup(
             pnlProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 995, Short.MAX_VALUE)
+            .addGap(0, 994, Short.MAX_VALUE)
         );
         pnlProductosLayout.setVerticalGroup(
             pnlProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 637, Short.MAX_VALUE)
+            .addGap(0, 636, Short.MAX_VALUE)
         );
 
         tpnlAdminAdmin.addTab("Productos", pnlProductos);
@@ -114,6 +101,9 @@ public class AdministracionAdmin extends javax.swing.JFrame {
         pnlInfoVentas.setPreferredSize(new java.awt.Dimension(795, 600));
         tpnlAdminAdmin.addTab("InfoVentas", pnlInfoVentas);
         pnlInfoVentas.getAccessibleContext().setAccessibleParent(this);
+
+        pnlInventario.setLayout(new java.awt.GridBagLayout());
+        tpnlAdminAdmin.addTab("Inventario", pnlInventario);
 
         getContentPane().add(tpnlAdminAdmin, java.awt.BorderLayout.CENTER);
 
