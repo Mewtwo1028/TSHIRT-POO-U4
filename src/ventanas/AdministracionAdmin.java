@@ -73,18 +73,6 @@ public class AdministracionAdmin extends javax.swing.JFrame {
         );
 
         tpnlAdminAdmin.addTab("Clientes", pnlClientes);
-
-        javax.swing.GroupLayout pnlInventarioLayout = new javax.swing.GroupLayout(pnlInventario);
-        pnlInventario.setLayout(pnlInventarioLayout);
-        pnlInventarioLayout.setHorizontalGroup(
-            pnlInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 995, Short.MAX_VALUE)
-        );
-        pnlInventarioLayout.setVerticalGroup(
-            pnlInventarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 637, Short.MAX_VALUE)
-        );
-
         tpnlAdminAdmin.addTab("Inventario", pnlInventario);
 
         pnlProductos.setMinimumSize(new java.awt.Dimension(700, 500));
