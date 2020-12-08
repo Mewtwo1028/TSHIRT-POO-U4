@@ -42,6 +42,7 @@ public class AdministracionAdmin extends javax.swing.JFrame {
         pnlProductos = new ventanas.PanelProductos();
         pnlVenta = new ventanas.panelVenta();
         pnlInfoVentas = new ventanas.PanelInfoVentas();
+        pnlInventario = new ventanas.PanelInventario();
         pnlCabecera = new javax.swing.JPanel();
         pnlOpciones = new javax.swing.JPanel();
         lblMinimizar = new javax.swing.JLabel();
@@ -78,6 +79,9 @@ public class AdministracionAdmin extends javax.swing.JFrame {
         pnlInfoVentas.setPreferredSize(new java.awt.Dimension(795, 600));
         tpnlAdminAdmin.addTab("InfoVentas", pnlInfoVentas);
         pnlInfoVentas.getAccessibleContext().setAccessibleParent(this);
+
+        pnlInventario.setLayout(new java.awt.GridBagLayout());
+        tpnlAdminAdmin.addTab("Inventario", pnlInventario);
 
         getContentPane().add(tpnlAdminAdmin, java.awt.BorderLayout.CENTER);
 
