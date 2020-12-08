@@ -5,15 +5,17 @@ import static javax.swing.JOptionPane.*;
 public class Cliente extends Persona {
 
     private boolean mayorista;
+    private String codigo;
 
     public Cliente() {
         super();
         this.mayorista = false;
     }
 
-    public Cliente(String nombre, int edad, String correo, String direccion, boolean mayorista) {
+    public Cliente(String codigo, String nombre, int edad, String correo, String direccion, boolean mayorista) {
         super(nombre, edad, correo, direccion);
         this.mayorista = mayorista;
+        this.codigo = codigo;
     }
 
     @Override
@@ -39,5 +41,15 @@ public class Cliente extends Persona {
     public void setMayorista(boolean mayorista) {
         this.mayorista = mayorista;
     }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+    
+    
 
 }

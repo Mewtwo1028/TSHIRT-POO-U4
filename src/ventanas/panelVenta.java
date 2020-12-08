@@ -53,10 +53,12 @@ public class panelVenta extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 10), new java.awt.Dimension(0, 10));
 
+        setBackground(new java.awt.Color(122, 108, 105));
         setMinimumSize(new java.awt.Dimension(900, 400));
         setPreferredSize(new java.awt.Dimension(900, 400));
         setLayout(new java.awt.BorderLayout());
 
+        pnlVenta.setBackground(new java.awt.Color(122, 108, 105));
         pnlVenta.setMinimumSize(new java.awt.Dimension(900, 400));
         pnlVenta.setPreferredSize(new java.awt.Dimension(900, 400));
         pnlVenta.setLayout(new java.awt.GridBagLayout());

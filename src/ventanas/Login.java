@@ -31,8 +31,8 @@ public class Login extends javax.swing.JFrame implements ActionListener, KeyList
     }
 
     private void agregarCuentas() {
-        cuentas.add(new Cuenta("admin", "admin", new Cliente("Juan Jesus Mata", 21, "j@a.com", "mi casa", false), Cuenta.ADMINISTRADOR));
-        cuentas.add(new Cuenta("user", "user", new Cliente("Osmar", 21, "o@a.com", "mi casa", false), Cuenta.CLIENTE));
+        cuentas.add(new Cuenta("admin", "admin", new Cliente("", "Juan Jesus Mata", 21, "j@a.com", "mi casa", false), Cuenta.ADMINISTRADOR));
+        cuentas.add(new Cuenta("user", "user", new Cliente("","Osmar", 21, "o@a.com", "mi casa", false), Cuenta.CLIENTE));
     }
 
     /**
