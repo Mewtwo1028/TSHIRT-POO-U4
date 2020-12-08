@@ -62,6 +62,11 @@ public class PanelClientes extends javax.swing.JPanel {
         lblEdad = new javax.swing.JLabel();
 
         editarTblOpt.setText("Editar Cliente");
+        editarTblOpt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editarTblOptActionPerformed(evt);
+            }
+        });
         menTabla.add(editarTblOpt);
 
         borrarTblOpt.setText("Borrar Cliente");
@@ -146,6 +151,11 @@ public class PanelClientes extends javax.swing.JPanel {
 
         txtCodigo.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         txtCodigo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtCodigo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtCodigoKeyPressed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
@@ -157,6 +167,11 @@ public class PanelClientes extends javax.swing.JPanel {
 
         txtNombre.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         txtNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNombreKeyPressed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 1;
@@ -168,6 +183,11 @@ public class PanelClientes extends javax.swing.JPanel {
 
         txtCorreo.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         txtCorreo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtCorreo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtCorreoKeyPressed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 2;
@@ -179,6 +199,11 @@ public class PanelClientes extends javax.swing.JPanel {
 
         txtDireccion.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         txtDireccion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtDireccion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtDireccionKeyPressed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 3;
@@ -214,8 +239,10 @@ public class PanelClientes extends javax.swing.JPanel {
         tblClientes.setComponentPopupMenu(menTabla);
         jScrollPane1.setViewportView(tblClientes);
         if (tblClientes.getColumnModel().getColumnCount() > 0) {
+            tblClientes.getColumnModel().getColumn(0).setResizable(false);
             tblClientes.getColumnModel().getColumn(1).setResizable(false);
             tblClientes.getColumnModel().getColumn(2).setResizable(false);
+            tblClientes.getColumnModel().getColumn(3).setResizable(false);
             tblClientes.getColumnModel().getColumn(4).setResizable(false);
             tblClientes.getColumnModel().getColumn(5).setResizable(false);
             tblClientes.getColumnModel().getColumn(5).setPreferredWidth(40);
@@ -250,6 +277,11 @@ public class PanelClientes extends javax.swing.JPanel {
         chkMayorista.setBackground(new java.awt.Color(122, 108, 105));
         chkMayorista.setForeground(new java.awt.Color(255, 255, 255));
         chkMayorista.setText("Mayorista");
+        chkMayorista.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                chkMayoristaKeyPressed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;
@@ -257,6 +289,11 @@ public class PanelClientes extends javax.swing.JPanel {
 
         txtEdad.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         txtEdad.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtEdad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtEdadKeyPressed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 4;
@@ -281,7 +318,11 @@ public class PanelClientes extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-        obtenerDatos();
+        if (editando) {
+            guardarDatos();
+        } else {
+            obtenerDatos();
+        }
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void borrarTblOptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarTblOptActionPerformed
@@ -295,6 +336,63 @@ public class PanelClientes extends javax.swing.JPanel {
             llenarTabla();
         }
     }//GEN-LAST:event_borrarTblOptActionPerformed
+
+    private void editarTblOptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarTblOptActionPerformed
+        pos = tblClientes.getSelectedRow();
+        Cliente c = clientes[pos];
+        txtCodigo.setText(c.getCodigo());
+        txtNombre.setText(c.getNombre());
+        txtEdad.setText(String.valueOf(c.getEdad()));
+        txtCorreo.setText(c.getCorreo());
+        txtDireccion.setText(c.getDireccion());
+        chkMayorista.setSelected(c.isMayorista());
+        btnAgregar.setText("Guardar");
+        editando = true;
+    }//GEN-LAST:event_editarTblOptActionPerformed
+
+    private void txtCodigoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodigoKeyPressed
+        if (editando) {
+            guardarDatos();
+        } else {
+            obtenerDatos();
+        }
+    }//GEN-LAST:event_txtCodigoKeyPressed
+
+    private void txtNombreKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyPressed
+        if (editando) {
+            guardarDatos();
+        } else {
+            obtenerDatos();
+        }
+    }//GEN-LAST:event_txtNombreKeyPressed
+
+    private void txtCorreoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCorreoKeyPressed
+        if (editando) {
+            guardarDatos();
+        } else {
+            obtenerDatos();
+        }
+    }//GEN-LAST:event_txtCorreoKeyPressed
+
+    private void txtDireccionKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDireccionKeyPressed
+        if (editando) {
+            guardarDatos();
+        } else {
+            obtenerDatos();
+        }
+    }//GEN-LAST:event_txtDireccionKeyPressed
+
+    private void txtEdadKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEdadKeyPressed
+        if (editando) {
+            guardarDatos();
+        } else {
+            obtenerDatos();
+        }
+    }//GEN-LAST:event_txtEdadKeyPressed
+
+    private void chkMayoristaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_chkMayoristaKeyPressed
+        chkMayorista.setSelected(!chkMayorista.isSelected());
+    }//GEN-LAST:event_chkMayoristaKeyPressed
 
     private void obtenerDatos() {
         if (campoVacio(txtCodigo)) {
@@ -337,6 +435,20 @@ public class PanelClientes extends javax.swing.JPanel {
         agregarCliente(new Cliente(codigo, nombre, edad, correo, direccion, mayorista));
     }
 
+    private void guardarDatos() {
+        Cliente c = clientes[pos];
+        c.setCodigo(txtCodigo.getText().trim());
+        c.setNombre(txtNombre.getText().trim());
+        c.setEdad(Integer.parseInt(txtEdad.getText().trim()));
+        c.setCorreo(txtCorreo.getText().trim());
+        c.setDireccion(txtDireccion.getText().trim());
+        c.setMayorista(chkMayorista.isSelected());
+        clientes[pos] = c;
+        editando = false;
+        btnAgregar.setText("Agregar");
+        llenarTabla();
+    }
+
     private void agregarCliente(Cliente c) {
         clientes[totalClientes++] = new Cliente(c.getCodigo(), c.getNombre(), c.getEdad(), c.getCorreo(), c.getDireccion(), c.isMayorista());
         llenarTabla();
@@ -368,6 +480,8 @@ public class PanelClientes extends javax.swing.JPanel {
         }
     }
 
+    private int pos;
+    private boolean editando = false;
     public static Cliente[] clientes = new Cliente[100];
     public static int totalClientes = 0;
     private DefaultTableModel dtm;
