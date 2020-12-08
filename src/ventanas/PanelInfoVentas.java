@@ -51,6 +51,7 @@ public class PanelInfoVentas extends javax.swing.JPanel {
         lblBuscarArchivo = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(122, 108, 105));
         setMinimumSize(new java.awt.Dimension(900, 400));
         setPreferredSize(new java.awt.Dimension(900, 400));
         setLayout(new java.awt.GridBagLayout());

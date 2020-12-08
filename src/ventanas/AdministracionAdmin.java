@@ -37,7 +37,8 @@ public class AdministracionAdmin extends javax.swing.JFrame {
     private void initComponents() {
 
         tpnlAdminAdmin = new javax.swing.JTabbedPane();
-        pnlClientes = new ventanas.PanelClientes();
+        panelClientes1 = new ventanas.PanelClientes();
+        pnlInventario = new ventanas.PanelInventario();
         pnlProductos = new ventanas.PanelProductos();
         pnlVenta = new ventanas.panelVenta();
         pnlInfoVentas = new ventanas.PanelInfoVentas();
@@ -60,34 +61,11 @@ public class AdministracionAdmin extends javax.swing.JFrame {
         tpnlAdminAdmin.setBackground(new java.awt.Color(0, 0, 0));
         tpnlAdminAdmin.setForeground(new java.awt.Color(200, 200, 200));
         tpnlAdminAdmin.setOpaque(true);
-
-        javax.swing.GroupLayout pnlClientesLayout = new javax.swing.GroupLayout(pnlClientes);
-        pnlClientes.setLayout(pnlClientesLayout);
-        pnlClientesLayout.setHorizontalGroup(
-            pnlClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 994, Short.MAX_VALUE)
-        );
-        pnlClientesLayout.setVerticalGroup(
-            pnlClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 636, Short.MAX_VALUE)
-        );
-
-        tpnlAdminAdmin.addTab("Clientes", pnlClientes);
+        tpnlAdminAdmin.addTab("Clientes", panelClientes1);
+        tpnlAdminAdmin.addTab("Inventario", pnlInventario);
 
         pnlProductos.setMinimumSize(new java.awt.Dimension(700, 500));
         pnlProductos.setPreferredSize(new java.awt.Dimension(795, 595));
-
-        javax.swing.GroupLayout pnlProductosLayout = new javax.swing.GroupLayout(pnlProductos);
-        pnlProductos.setLayout(pnlProductosLayout);
-        pnlProductosLayout.setHorizontalGroup(
-            pnlProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 994, Short.MAX_VALUE)
-        );
-        pnlProductosLayout.setVerticalGroup(
-            pnlProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 636, Short.MAX_VALUE)
-        );
-
         tpnlAdminAdmin.addTab("Productos", pnlProductos);
 
         pnlVenta.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
@@ -219,8 +197,8 @@ public class AdministracionAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel lblMaximizar;
     private javax.swing.JLabel lblMinimizar;
     private javax.swing.JLabel lblTitular;
+    private ventanas.PanelClientes panelClientes1;
     private javax.swing.JPanel pnlCabecera;
-    private ventanas.PanelClientes pnlClientes;
     private ventanas.PanelInfoVentas pnlInfoVentas;
     private ventanas.PanelInventario pnlInventario;
     private javax.swing.JPanel pnlOpciones;

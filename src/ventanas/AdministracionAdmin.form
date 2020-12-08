@@ -51,7 +51,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
       <SubComponents>
-        <Container class="ventanas.PanelClientes" name="pnlClientes">
+        <Component class="ventanas.PanelClientes" name="panelClientes1">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="Clientes">
@@ -59,6 +59,19 @@
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
+<<<<<<< HEAD
+        </Component>
+        <Container class="ventanas.PanelInventario" name="pnlInventario">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Inventario">
+                <Property name="tabTitle" type="java.lang.String" value="Inventario"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout"/>
+=======
 
           <Layout>
             <DimensionLayout dim="0">
@@ -72,6 +85,7 @@
               </Group>
             </DimensionLayout>
           </Layout>
+>>>>>>> main
         </Container>
         <Container class="ventanas.PanelProductos" name="pnlProductos">
           <Properties>
@@ -90,6 +104,9 @@
             </Constraint>
           </Constraints>
 
+<<<<<<< HEAD
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout"/>
+=======
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
@@ -102,6 +119,7 @@
               </Group>
             </DimensionLayout>
           </Layout>
+>>>>>>> main
         </Container>
         <Container class="ventanas.panelVenta" name="pnlVenta">
           <Properties>

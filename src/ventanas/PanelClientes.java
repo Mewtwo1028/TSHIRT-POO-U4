@@ -5,6 +5,14 @@
  */
 package ventanas;
 
+import clases.Cliente;
+import excepciones.ExVacio;
+import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.showMessageDialog;
+import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
+
 /**
  *
  * @author Hydra
@@ -16,6 +24,9 @@ public class PanelClientes extends javax.swing.JPanel {
      */
     public PanelClientes() {
         initComponents();
+        dtm = (DefaultTableModel) tblClientes.getModel();
+        TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<>(dtm);
+        tblClientes.setRowSorter(sorter);
     }
 
     /**
@@ -26,20 +37,361 @@ public class PanelClientes extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 700, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
-        );
+        menTabla = new javax.swing.JPopupMenu();
+        editarTblOpt = new javax.swing.JMenuItem();
+        borrarTblOpt = new javax.swing.JMenuItem();
+        menImg = new javax.swing.JPopupMenu();
+        editarImgOpt = new javax.swing.JMenuItem();
+        borrarImgOpt = new javax.swing.JMenuItem();
+        lblCodigo = new javax.swing.JLabel();
+        lblNombre = new javax.swing.JLabel();
+        lblCorreo = new javax.swing.JLabel();
+        lblDireccion = new javax.swing.JLabel();
+        lblImagen = new javax.swing.JLabel();
+        txtCodigo = new javax.swing.JTextField();
+        txtNombre = new javax.swing.JTextField();
+        txtCorreo = new javax.swing.JTextField();
+        txtDireccion = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblClientes = new javax.swing.JTable();
+        btnAgregar = new javax.swing.JButton();
+        chkMayorista = new javax.swing.JCheckBox();
+        txtEdad = new javax.swing.JTextField();
+        lblEdad = new javax.swing.JLabel();
+
+        editarTblOpt.setText("Editar Cliente");
+        menTabla.add(editarTblOpt);
+
+        borrarTblOpt.setText("Borrar Cliente");
+        borrarTblOpt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                borrarTblOptActionPerformed(evt);
+            }
+        });
+        menTabla.add(borrarTblOpt);
+
+        editarImgOpt.setText("jMenuItem1");
+        menImg.add(editarImgOpt);
+
+        borrarImgOpt.setText("jMenuItem1");
+        menImg.add(borrarImgOpt);
+
+        setBackground(new java.awt.Color(122, 108, 105));
+        setForeground(new java.awt.Color(255, 255, 255));
+        setLayout(new java.awt.GridBagLayout());
+
+        lblCodigo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblCodigo.setForeground(new java.awt.Color(255, 255, 255));
+        lblCodigo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblCodigo.setText("Codigo");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 30;
+        gridBagConstraints.ipady = 10;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        add(lblCodigo, gridBagConstraints);
+
+        lblNombre.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblNombre.setForeground(new java.awt.Color(255, 255, 255));
+        lblNombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblNombre.setText("Nombre");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 30;
+        gridBagConstraints.ipady = 10;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        add(lblNombre, gridBagConstraints);
+
+        lblCorreo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblCorreo.setForeground(new java.awt.Color(255, 255, 255));
+        lblCorreo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblCorreo.setText("Correo");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 30;
+        gridBagConstraints.ipady = 10;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        add(lblCorreo, gridBagConstraints);
+
+        lblDireccion.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblDireccion.setForeground(new java.awt.Color(255, 255, 255));
+        lblDireccion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblDireccion.setText("Direccion");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 30;
+        gridBagConstraints.ipady = 10;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        add(lblDireccion, gridBagConstraints);
+
+        lblImagen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventanas/images/iconousuario.png"))); // NOI18N
+        lblImagen.setComponentPopupMenu(menImg);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridheight = 6;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        add(lblImagen, gridBagConstraints);
+
+        txtCodigo.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        txtCodigo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.ipady = 10;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        add(txtCodigo, gridBagConstraints);
+
+        txtNombre.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        txtNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.ipady = 10;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        add(txtNombre, gridBagConstraints);
+
+        txtCorreo.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        txtCorreo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.ipady = 10;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        add(txtCorreo, gridBagConstraints);
+
+        txtDireccion.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        txtDireccion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.ipady = 10;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        add(txtDireccion, gridBagConstraints);
+
+        tblClientes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "codigo", "nombre", "edad", "correo", "direccion", "mayorista"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Boolean.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tblClientes.setComponentPopupMenu(menTabla);
+        jScrollPane1.setViewportView(tblClientes);
+        if (tblClientes.getColumnModel().getColumnCount() > 0) {
+            tblClientes.getColumnModel().getColumn(1).setResizable(false);
+            tblClientes.getColumnModel().getColumn(2).setResizable(false);
+            tblClientes.getColumnModel().getColumn(4).setResizable(false);
+            tblClientes.getColumnModel().getColumn(5).setResizable(false);
+            tblClientes.getColumnModel().getColumn(5).setPreferredWidth(40);
+        }
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridwidth = 7;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.ipady = 100;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        add(jScrollPane1, gridBagConstraints);
+
+        btnAgregar.setText("Agregar");
+        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipady = 10;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        add(btnAgregar, gridBagConstraints);
+
+        chkMayorista.setBackground(new java.awt.Color(122, 108, 105));
+        chkMayorista.setForeground(new java.awt.Color(255, 255, 255));
+        chkMayorista.setText("Mayorista");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 5;
+        add(chkMayorista, gridBagConstraints);
+
+        txtEdad.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        txtEdad.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 100;
+        gridBagConstraints.ipady = 10;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        add(txtEdad, gridBagConstraints);
+
+        lblEdad.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblEdad.setForeground(new java.awt.Color(255, 255, 255));
+        lblEdad.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblEdad.setText("Edad");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 30;
+        gridBagConstraints.ipady = 10;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        add(lblEdad, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
+        obtenerDatos();
+    }//GEN-LAST:event_btnAgregarActionPerformed
 
+    private void borrarTblOptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarTblOptActionPerformed
+        if (tblClientes.getSelectedRow() >= 0) {
+            int pos = tblClientes.getSelectedRow();
+            dtm.removeRow(pos);
+            for (int i = pos; i < totalClientes - 1; i++) {
+                clientes[i] = clientes[i + 1];
+            }
+            totalClientes--;
+            llenarTabla();
+        }
+    }//GEN-LAST:event_borrarTblOptActionPerformed
+
+    private void obtenerDatos() {
+        if (campoVacio(txtCodigo)) {
+            return;
+        }
+        if (campoVacio(txtNombre)) {
+            return;
+        }
+        if (campoVacio(txtCorreo)) {
+            return;
+        }
+        if (campoVacio(txtDireccion)) {
+            return;
+        }
+        if (campoVacio(txtEdad)) {
+            return;
+        }
+        if (!txtNombre.getText().trim().matches("[a-zA-Z]+")) {
+            showMessageDialog(this, "Favor de introducir solo texto plano", "Error de entrada", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        int edad = -1;
+        String codigo, nombre, correo, direccion;
+        boolean mayorista;
+
+        nombre = txtNombre.getText().trim();
+        correo = txtCorreo.getText().trim();
+        direccion = txtDireccion.getText().trim();
+        mayorista = chkMayorista.isSelected();
+        codigo = txtCodigo.getText().trim();
+
+        try {
+            edad = Integer.parseInt(txtEdad.getText().trim());
+        } catch (NumberFormatException nfe) {
+            showMessageDialog(this, "Favor de introducir solo numeros", "Error de entrada", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        agregarCliente(new Cliente(codigo, nombre, edad, correo, direccion, mayorista));
+    }
+
+    private void agregarCliente(Cliente c) {
+        clientes[totalClientes++] = new Cliente(c.getCodigo(), c.getNombre(), c.getEdad(), c.getCorreo(), c.getDireccion(), c.isMayorista());
+        llenarTabla();
+    }
+
+    private void llenarTabla() {
+        dtm.setRowCount(0);
+        Cliente c;
+        for (int i = 0; i < totalClientes; i++) {
+            c = clientes[i];
+            dtm.addRow(new Object[]{c.getCodigo(), c.getNombre(), c.getEdad(), c.getCorreo(), c.getDireccion(), c.isMayorista()});
+        }
+    }
+
+    private boolean campoVacio(JTextField jtf) {
+        try {
+            contenido(jtf);
+            return false;
+        } catch (ExVacio ev) {
+            showMessageDialog(this, ev.getMessage(), "Error en entrada", JOptionPane.ERROR_MESSAGE);
+            jtf.requestFocus();
+            return true;
+        }
+    }
+
+    private void contenido(JTextField jtf) throws ExVacio {
+        if (jtf.getText().trim().equals("")) {
+            throw new ExVacio("Favor de revisar el campo");
+        }
+    }
+
+    public static Cliente[] clientes = new Cliente[100];
+    public static int totalClientes = 0;
+    private DefaultTableModel dtm;
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem borrarImgOpt;
+    private javax.swing.JMenuItem borrarTblOpt;
+    private javax.swing.JButton btnAgregar;
+    private javax.swing.JCheckBox chkMayorista;
+    private javax.swing.JMenuItem editarImgOpt;
+    private javax.swing.JMenuItem editarTblOpt;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblCodigo;
+    private javax.swing.JLabel lblCorreo;
+    private javax.swing.JLabel lblDireccion;
+    private javax.swing.JLabel lblEdad;
+    private javax.swing.JLabel lblImagen;
+    private javax.swing.JLabel lblNombre;
+    private javax.swing.JPopupMenu menImg;
+    private javax.swing.JPopupMenu menTabla;
+    private javax.swing.JTable tblClientes;
+    private javax.swing.JTextField txtCodigo;
+    private javax.swing.JTextField txtCorreo;
+    private javax.swing.JTextField txtDireccion;
+    private javax.swing.JTextField txtEdad;
+    private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 }
