@@ -7,6 +7,7 @@ package ventanas;
 
 import clases.Cliente;
 import excepciones.ExVacio;
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.showMessageDialog;
 import javax.swing.JTextField;
@@ -351,6 +352,9 @@ public class PanelClientes extends javax.swing.JPanel {
     }//GEN-LAST:event_editarTblOptActionPerformed
 
     private void txtCodigoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodigoKeyPressed
+        if (evt.getKeyCode() != KeyEvent.VK_ENTER) {
+            return;
+        }
         if (editando) {
             guardarDatos();
         } else {
@@ -359,6 +363,9 @@ public class PanelClientes extends javax.swing.JPanel {
     }//GEN-LAST:event_txtCodigoKeyPressed
 
     private void txtNombreKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyPressed
+        if (evt.getKeyCode() != KeyEvent.VK_ENTER) {
+            return;
+        }
         if (editando) {
             guardarDatos();
         } else {
@@ -367,6 +374,9 @@ public class PanelClientes extends javax.swing.JPanel {
     }//GEN-LAST:event_txtNombreKeyPressed
 
     private void txtCorreoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCorreoKeyPressed
+        if (evt.getKeyCode() != KeyEvent.VK_ENTER) {
+            return;
+        }
         if (editando) {
             guardarDatos();
         } else {
@@ -375,6 +385,9 @@ public class PanelClientes extends javax.swing.JPanel {
     }//GEN-LAST:event_txtCorreoKeyPressed
 
     private void txtDireccionKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDireccionKeyPressed
+        if (evt.getKeyCode() != KeyEvent.VK_ENTER) {
+            return;
+        }
         if (editando) {
             guardarDatos();
         } else {
@@ -383,6 +396,9 @@ public class PanelClientes extends javax.swing.JPanel {
     }//GEN-LAST:event_txtDireccionKeyPressed
 
     private void txtEdadKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEdadKeyPressed
+        if (evt.getKeyCode() != KeyEvent.VK_ENTER) {
+            return;
+        }
         if (editando) {
             guardarDatos();
         } else {
