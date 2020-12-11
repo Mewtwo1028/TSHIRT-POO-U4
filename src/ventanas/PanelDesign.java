@@ -49,6 +49,7 @@ public class PanelDesign extends javax.swing.JPanel {
 
         jTextField1.setText("jTextField1");
 
+        setBackground(new java.awt.Color(122, 108, 105));
         setLayout(new java.awt.GridBagLayout());
 
         imgCamisa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventanas/images/kamisama.png"))); // NOI18N
@@ -62,16 +63,12 @@ public class PanelDesign extends javax.swing.JPanel {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventanas/images/letras.png"))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 100;
-        gridBagConstraints.ipady = 100;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.FIRST_LINE_START;
         add(jLabel1, gridBagConstraints);
 
         pnlOpciones.setLayout(new javax.swing.BoxLayout(pnlOpciones, javax.swing.BoxLayout.Y_AXIS));
 
+        pnlLogo.setBackground(new java.awt.Color(153, 153, 153));
         pnlLogo.setPreferredSize(new java.awt.Dimension(120, 30));
 
         lblLogo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -81,6 +78,7 @@ public class PanelDesign extends javax.swing.JPanel {
         pnlLogo.add(lblLogo);
 
         cmbLogo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        cmbLogo.setForeground(new java.awt.Color(102, 102, 102));
         cmbLogo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona", "Power Rangers", "Pokemon", "BTS" }));
         cmbLogo.setPreferredSize(new java.awt.Dimension(120, 30));
         cmbLogo.addActionListener(new java.awt.event.ActionListener() {
@@ -92,6 +90,7 @@ public class PanelDesign extends javax.swing.JPanel {
 
         pnlOpciones.add(pnlLogo);
 
+        pnlColor.setBackground(new java.awt.Color(153, 153, 153));
         pnlColor.setPreferredSize(new java.awt.Dimension(120, 30));
 
         lblColor.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -101,12 +100,19 @@ public class PanelDesign extends javax.swing.JPanel {
         pnlColor.add(lblColor);
 
         cmbColor.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        cmbColor.setForeground(new java.awt.Color(102, 102, 102));
         cmbColor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona", "Azul", "Rojo", "Verde", "Amarillo" }));
         cmbColor.setPreferredSize(new java.awt.Dimension(120, 30));
+        cmbColor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbColorActionPerformed(evt);
+            }
+        });
         pnlColor.add(cmbColor);
 
         pnlOpciones.add(pnlColor);
 
+        pnlTipo.setBackground(new java.awt.Color(153, 153, 153));
         pnlTipo.setPreferredSize(new java.awt.Dimension(120, 30));
 
         lblTipo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -116,6 +122,7 @@ public class PanelDesign extends javax.swing.JPanel {
         pnlTipo.add(lblTipo);
 
         cmbTipo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        cmbTipo.setForeground(new java.awt.Color(102, 102, 102));
         cmbTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona", "Camisa", "Playera", "Sueter" }));
         cmbTipo.setPreferredSize(new java.awt.Dimension(120, 30));
         pnlTipo.add(cmbTipo);
@@ -133,6 +140,10 @@ public class PanelDesign extends javax.swing.JPanel {
     private void cmbLogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbLogoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbLogoActionPerformed
+
+    private void cmbColorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbColorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbColorActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
