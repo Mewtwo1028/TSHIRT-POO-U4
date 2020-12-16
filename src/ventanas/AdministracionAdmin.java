@@ -38,11 +38,10 @@ public class AdministracionAdmin extends javax.swing.JFrame {
 
         tpnlAdminAdmin = new javax.swing.JTabbedPane();
         panelClientes1 = new ventanas.PanelClientes();
-        pnlInventario = new ventanas.PanelInventario();
         pnlProductos = new ventanas.PanelProductos();
         pnlVenta = new ventanas.panelVenta();
         pnlInfoVentas = new ventanas.PanelInfoVentas();
-        pnlInventario = new ventanas.PanelInventario();
+        pnlInventario1 = new ventanas.PanelInventario();
         pnlCabecera = new javax.swing.JPanel();
         pnlOpciones = new javax.swing.JPanel();
         lblMinimizar = new javax.swing.JLabel();
@@ -62,7 +61,6 @@ public class AdministracionAdmin extends javax.swing.JFrame {
         tpnlAdminAdmin.setForeground(new java.awt.Color(200, 200, 200));
         tpnlAdminAdmin.setOpaque(true);
         tpnlAdminAdmin.addTab("Clientes", panelClientes1);
-        tpnlAdminAdmin.addTab("Inventario", pnlInventario);
 
         pnlProductos.setMinimumSize(new java.awt.Dimension(700, 500));
         pnlProductos.setPreferredSize(new java.awt.Dimension(795, 595));
@@ -80,8 +78,7 @@ public class AdministracionAdmin extends javax.swing.JFrame {
         tpnlAdminAdmin.addTab("InfoVentas", pnlInfoVentas);
         pnlInfoVentas.getAccessibleContext().setAccessibleParent(this);
 
-        pnlInventario.setLayout(new java.awt.GridBagLayout());
-        tpnlAdminAdmin.addTab("Inventario", pnlInventario);
+        tpnlAdminAdmin.addTab("Inventario", pnlInventario1);
 
         getContentPane().add(tpnlAdminAdmin, java.awt.BorderLayout.CENTER);
 
@@ -200,7 +197,7 @@ public class AdministracionAdmin extends javax.swing.JFrame {
     private ventanas.PanelClientes panelClientes1;
     private javax.swing.JPanel pnlCabecera;
     private ventanas.PanelInfoVentas pnlInfoVentas;
-    private ventanas.PanelInventario pnlInventario;
+    private ventanas.PanelInventario pnlInventario1;
     private javax.swing.JPanel pnlOpciones;
     private ventanas.PanelProductos pnlProductos;
     private javax.swing.JPanel pnlTitulos;
