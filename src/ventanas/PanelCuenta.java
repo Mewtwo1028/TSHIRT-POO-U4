@@ -5,6 +5,11 @@
  */
 package ventanas;
 
+import excepciones.ExVacio;
+import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.showMessageDialog;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Hydra
@@ -126,11 +131,6 @@ public class PanelCuenta extends javax.swing.JPanel {
         PanelContenido.add(Correo, gridBagConstraints);
 
         cmbNick.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        cmbNick.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbNickActionPerformed(evt);
-            }
-        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 2;
@@ -142,9 +142,9 @@ public class PanelCuenta extends javax.swing.JPanel {
         PanelContenido.add(cmbNick, gridBagConstraints);
 
         cmbNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        cmbNombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbNombreActionPerformed(evt);
+        cmbNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                cmbNombreKeyTyped(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -158,11 +158,6 @@ public class PanelCuenta extends javax.swing.JPanel {
         PanelContenido.add(cmbNombre, gridBagConstraints);
 
         cmbDireccion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        cmbDireccion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbDireccionActionPerformed(evt);
-            }
-        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 6;
@@ -174,9 +169,9 @@ public class PanelCuenta extends javax.swing.JPanel {
         PanelContenido.add(cmbDireccion, gridBagConstraints);
 
         cmbTelefono.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        cmbTelefono.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbTelefonoActionPerformed(evt);
+        cmbTelefono.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                cmbTelefonoKeyTyped(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -190,11 +185,6 @@ public class PanelCuenta extends javax.swing.JPanel {
         PanelContenido.add(cmbTelefono, gridBagConstraints);
 
         cmbCorreo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        cmbCorreo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbCorreoActionPerformed(evt);
-            }
-        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 10;
@@ -219,6 +209,11 @@ public class PanelCuenta extends javax.swing.JPanel {
         PanelContenido.add(btnCambiar, gridBagConstraints);
 
         btnGuardar.setText("Guardar");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 12;
@@ -228,6 +223,11 @@ public class PanelCuenta extends javax.swing.JPanel {
         PanelContenido.add(btnGuardar, gridBagConstraints);
 
         btnSalir.setText("Salir");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 12;
@@ -239,30 +239,71 @@ public class PanelCuenta extends javax.swing.JPanel {
         add(PanelContenido, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cmbNickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbNickActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmbNickActionPerformed
-
-    private void cmbNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbNombreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmbNombreActionPerformed
-
-    private void cmbDireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbDireccionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmbDireccionActionPerformed
-
-    private void cmbTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbTelefonoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmbTelefonoActionPerformed
-
-    private void cmbCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbCorreoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmbCorreoActionPerformed
-
     private void btnCambiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambiarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCambiarActionPerformed
 
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        if (campoVacio(cmbNick)) {
+            return;
+        }
+        if (campoVacio(cmbNombre)) {
+            return;
+        }
+        if (campoVacio(cmbDireccion)) {
+            return;
+        }
+        if (campoVacio(cmbTelefono)) {
+            return;
+        }
+        if (campoVacio(cmbCorreo)) {
+            return;
+        }
+        Limpiar();
+    }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void cmbNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cmbNombreKeyTyped
+      char c= evt.getKeyChar();
+      if((c<'a'||c>'z') && (c<'A'||c>'Z')){
+          evt.consume();
+      }
+        
+    }//GEN-LAST:event_cmbNombreKeyTyped
+
+    private void cmbTelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cmbTelefonoKeyTyped
+        char c= evt.getKeyChar();
+        if(c<'0'||c>'9'){
+            evt.consume();
+        }
+    }//GEN-LAST:event_cmbTelefonoKeyTyped
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_btnSalirActionPerformed
+    
+    private boolean campoVacio(JTextField jtf) {
+        try {
+            contenido(jtf);
+            return false;
+        } catch (ExVacio ev) {
+            showMessageDialog(this, ev.getMessage(), "Error en entrada", JOptionPane.ERROR_MESSAGE);
+            jtf.requestFocus();
+            return true;
+        }
+    }
+    private void contenido(JTextField jtf) throws ExVacio {
+        if (jtf.getText().trim().equals("")) {
+            throw new ExVacio("Por favor llene todos los campos correctamente");
+        }
+    }
+    
+    public void Limpiar(){
+        cmbNick.setText("");
+        cmbNombre.setText("");
+        cmbDireccion.setText("");
+        cmbTelefono.setText("");
+        cmbCorreo.setText("");
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Correo;
