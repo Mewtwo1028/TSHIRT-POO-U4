@@ -1,5 +1,6 @@
 package clases;
 
+import java.util.Calendar;
 import static javax.swing.JOptionPane.*;
 
 public class Venta {
@@ -7,14 +8,17 @@ public class Venta {
     protected int importe;
     private Producto productos;
     private Garantia garantia;
+    private Calendar fecha;
 
     public Venta() {
         importe = 0;
+        fecha = new java.util.GregorianCalendar();
     }
 
     public Venta(int importe) // Builder
     {
         this.importe = importe;
+        fecha = new java.util.GregorianCalendar();
     }
 
     @Override
@@ -49,5 +53,15 @@ public class Venta {
     public void setGarantia(Garantia garantia) {
         this.garantia = garantia;
     }
+
+    public Calendar getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Calendar fecha) {
+        this.fecha = fecha;
+    }
+    
+    
 
 }
