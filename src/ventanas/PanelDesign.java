@@ -4,8 +4,9 @@
  * and open the template in the editor.
  */
 package ventanas;
-
+import javax.swing.JOptionPane.*;
 import java.awt.Point;
+import static javax.swing.JOptionPane.showMessageDialog;
 
 /**
  *
@@ -46,6 +47,7 @@ public class PanelDesign extends javax.swing.JPanel {
         pnlTipo = new javax.swing.JPanel();
         lblTipo = new javax.swing.JLabel();
         cmbTipo = new javax.swing.JComboBox<>();
+        btnDiseñar = new javax.swing.JButton();
 
         jTextField1.setText("jTextField1");
 
@@ -127,6 +129,14 @@ public class PanelDesign extends javax.swing.JPanel {
         cmbTipo.setPreferredSize(new java.awt.Dimension(120, 30));
         pnlTipo.add(cmbTipo);
 
+        btnDiseñar.setText("¡Diseñalo!");
+        btnDiseñar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDiseñarActionPerformed(evt);
+            }
+        });
+        pnlTipo.add(btnDiseñar);
+
         pnlOpciones.add(pnlTipo);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -138,15 +148,32 @@ public class PanelDesign extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmbLogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbLogoActionPerformed
-        // TODO add your handling code here:
+        
+       
     }//GEN-LAST:event_cmbLogoActionPerformed
 
     private void cmbColorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbColorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbColorActionPerformed
 
+    private void btnDiseñarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDiseñarActionPerformed
+         if (cmbLogo.getSelectedIndex()<1)
+       {
+           showMessageDialog(this,"Por favor, seleccione un logo");
+       }
+         if (cmbColor.getSelectedIndex()<1)
+       {
+           showMessageDialog(this,"Por favor, seleccione un color");
+       }
+         if (cmbTipo.getSelectedIndex()<1)
+       {
+           showMessageDialog(this,"Por favor, seleccione un tipo");
+       }
+    }//GEN-LAST:event_btnDiseñarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnDiseñar;
     private javax.swing.JComboBox<String> cmbColor;
     private javax.swing.JComboBox<String> cmbLogo;
     private javax.swing.JComboBox<String> cmbTipo;
