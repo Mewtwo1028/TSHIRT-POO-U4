@@ -5,11 +5,18 @@
  */
 package ventanas;
 
+import excepciones.ExVacio;
+import java.awt.HeadlessException;
+import java.io.IOException;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.showInputDialog;
 import static javax.swing.JOptionPane.showMessageDialog;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -55,7 +62,7 @@ public class PanelInventario extends javax.swing.JPanel {
         btnLimpiar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblInventario = new javax.swing.JTable();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cmbOrdenar = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(122, 108, 105));
         setToolTipText("");
@@ -132,17 +139,34 @@ public class PanelInventario extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(16, 10, 20, 0);
         add(jScrollPane1, gridBagConstraints);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ordenar", "A-Z", "Z-A", "Fecha" }));
+        cmbOrdenar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ordenar", "A-Z", "Z-A", "Fecha" }));
+        cmbOrdenar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbOrdenarActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 3;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(6, 10, 0, 0);
-        add(jComboBox1, gridBagConstraints);
+        add(cmbOrdenar, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
+        try {
+            contenido();
+        } catch (Exception ex) {
+            Logger.getLogger(PanelInventario.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+       
+        
+        
+    }//GEN-LAST:event_btnAgregarActionPerformed
+
+    private void contenido() throws IOException, Exception{
         String info[] = new String [5];
         Calendar fecha = new GregorianCalendar();
         int dia = fecha.get(Calendar.DATE); 
@@ -154,13 +178,23 @@ public class PanelInventario extends javax.swing.JPanel {
         info[2]=showInputDialog(this, "Descripcion");
         info[3]=showInputDialog(this, "Cantidad");
         info[4]=dia+"/"+mes+"/"+ano;
-        m.addRow(info);
         
-           
+        if(info.equals("")){
+            throw new IllegalArgumentException("entrada nula"); 
+        }
+        for(int i=0; i<4; i++){
+            if(info[i].equals("")){
+                showMessageDialog(this,"Entrada vacia, vuelve a rellenar los datos");
+                m.removeRow(1);
+            }
+        }   
         
+         
+        m.addRow(info); 
+ 
         
-    }//GEN-LAST:event_btnAgregarActionPerformed
-
+    }
+    
     private void btnAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarMouseClicked
         
     }//GEN-LAST:event_btnAgregarMouseClicked
@@ -186,13 +220,27 @@ public class PanelInventario extends javax.swing.JPanel {
            showMessageDialog(this,"La tabla esta vacia o no se encuentran datos seleccionados");
        }
     }//GEN-LAST:event_btnLimpiarActionPerformed
+
+    private void cmbOrdenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbOrdenarActionPerformed
+        String ob=cmbOrdenar.getSelectedItem().toString();
+        if(ob.equals("A-Z")){
+            
+        }
+        if(ob.equals("Z-A")){
+            
+        }
+        if(ob.equals("Fecha")){
+            
+        }
+    }//GEN-LAST:event_cmbOrdenarActionPerformed
    
+    
     private DefaultTableModel m;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnBorrar;
     private javax.swing.JButton btnLimpiar;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> cmbOrdenar;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable tblInventario;
