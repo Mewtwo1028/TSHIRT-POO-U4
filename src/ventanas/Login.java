@@ -32,7 +32,7 @@ public class Login extends javax.swing.JFrame implements ActionListener, KeyList
 
     private void agregarCuentas() {
         cuentas.add(new Cuenta("admin", "admin", new Cliente("", "Juan Jesus Mata", 21, "j@a.com", "mi casa", false), Cuenta.ADMINISTRADOR));
-        cuentas.add(new Cuenta("user", "user", new Cliente("","Osmar", 21, "o@a.com", "mi casa", false), Cuenta.CLIENTE));
+        cuentas.add(new Cuenta("user", "user", new Cliente("", "Osmar", 21, "o@a.com", "mi casa", false), Cuenta.CLIENTE));
     }
 
     /**
@@ -297,8 +297,12 @@ public class Login extends javax.swing.JFrame implements ActionListener, KeyList
         this.setLocation(x, y);
     }//GEN-LAST:event_lblTitularMouseDragged
 
-    public void ingresar()
-    {
+    public void ingresar() {
+        datos.EscrituraTxt es = new datos.EscrituraTxt();
+        es.agregarCliente(new Cliente("", "Juan Jesus Mata", 21, "j@a.com", "mi casa", false), new Cuenta("admin", "admin", null, Cuenta.ADMINISTRADOR));
+        java.util.ArrayList<clases.Cliente> clientes = new datos.LecturaTxt().obtenerClientes();
+        System.out.println(clientes.get(0));
+
         String user, pass;
         user = txtUsuario.getText().trim();
         pass = String.valueOf(txtPassword.getPassword());
@@ -334,28 +338,26 @@ public class Login extends javax.swing.JFrame implements ActionListener, KeyList
             JOptionPane.showMessageDialog(this, "No existe el usuario ingresado", "Usuario no encontrado", JOptionPane.ERROR_MESSAGE);
         }
     }
-    
+
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         ingresar();
-        
+
     }//GEN-LAST:event_btnLoginActionPerformed
 
-    private void validar (int a)
-    {
-        if ((a == KeyEvent.VK_ENTER)&&
-                (!String.valueOf(txtPassword.getPassword()).trim().equals(""))&&
-                (!txtUsuario.getText().trim().equals("")))
-        {
-            
+    private void validar(int a) {
+        if ((a == KeyEvent.VK_ENTER)
+                && (!String.valueOf(txtPassword.getPassword()).trim().equals(""))
+                && (!txtUsuario.getText().trim().equals(""))) {
+
             ingresar();
-        } 
+        }
     }
-    
-    
+
+
     private void btnLoginKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnLoginKeyPressed
-        
+
         validar(evt.getKeyCode());
-       
+
 
     }//GEN-LAST:event_btnLoginKeyPressed
 

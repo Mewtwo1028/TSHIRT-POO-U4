@@ -9,7 +9,6 @@ package datos;
  *
  * @author ING-JUANMATA
  */
-public interface DbLectura {
-    
-    public void getDatos();
+public interface Escritura {
+    public boolean agregarCliente(clases.Cliente Cliente, clases.Cuenta cuenta);
 }
