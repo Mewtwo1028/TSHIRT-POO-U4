@@ -9,7 +9,8 @@ package datos;
  *
  * @author ING-JUANMATA
  */
-public interface DbEscritura {
+public interface Lectura {
+    public boolean inicioSesion(String nick, String pass);
     
-    public void setDatos();
+    public java.util.ArrayList<clases.Cliente> obtenerClientes();
 }

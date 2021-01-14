@@ -32,7 +32,7 @@ public class Login extends javax.swing.JFrame implements ActionListener, KeyList
 
     private void agregarCuentas() {
         cuentas.add(new Cuenta("admin", "admin", new Cliente("", "Juan Jesus Mata", 21, "j@a.com", "mi casa", false), Cuenta.ADMINISTRADOR));
-        cuentas.add(new Cuenta("user", "user", new Cliente("","Osmar", 21, "o@a.com", "mi casa", false), Cuenta.CLIENTE));
+        cuentas.add(new Cuenta("user", "user", new Cliente("", "Osmar", 21, "o@a.com", "mi casa", false), Cuenta.CLIENTE));
     }
 
     /**
@@ -169,6 +169,11 @@ public class Login extends javax.swing.JFrame implements ActionListener, KeyList
         btnRegistrar.setBackground(new java.awt.Color(122, 108, 105));
         btnRegistrar.setForeground(new java.awt.Color(255, 255, 255));
         btnRegistrar.setText("Registrar");
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 5;
@@ -297,8 +302,7 @@ public class Login extends javax.swing.JFrame implements ActionListener, KeyList
         this.setLocation(x, y);
     }//GEN-LAST:event_lblTitularMouseDragged
 
-    public void ingresar()
-    {
+    public void ingresar() {
         String user, pass;
         user = txtUsuario.getText().trim();
         pass = String.valueOf(txtPassword.getPassword());
@@ -309,19 +313,19 @@ public class Login extends javax.swing.JFrame implements ActionListener, KeyList
                 existe = true;
                 if (c.getContrasena().equals(pass)) {
                     switch (c.getTipo()) {
-                        case Cuenta.ADMINISTRADOR:
+                        case Cuenta.ADMINISTRADOR -> {
                             AdministracionAdmin aa = new AdministracionAdmin();
                             aa.setLocationRelativeTo(null);
                             aa.setVisible(true);
                             Login.this.dispose();
-                            break;
-                        case Cuenta.CLIENTE:
+                        }
+                        case Cuenta.CLIENTE -> {
                             AdministracionUsuario au = new AdministracionUsuario();
                             au.setLocationRelativeTo(null);
                             au.setDefaultCloseOperation(EXIT_ON_CLOSE);
                             au.setVisible(true);
                             Login.this.dispose();
-                            break;
+                        }
                     }
                 } else {
                     JOptionPane.showMessageDialog(this, "Introduzca la password correcta", "Password incorrecta", JOptionPane.ERROR_MESSAGE);
@@ -334,28 +338,26 @@ public class Login extends javax.swing.JFrame implements ActionListener, KeyList
             JOptionPane.showMessageDialog(this, "No existe el usuario ingresado", "Usuario no encontrado", JOptionPane.ERROR_MESSAGE);
         }
     }
-    
+
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         ingresar();
-        
+
     }//GEN-LAST:event_btnLoginActionPerformed
 
-    private void validar (int a)
-    {
-        if ((a == KeyEvent.VK_ENTER)&&
-                (!String.valueOf(txtPassword.getPassword()).trim().equals(""))&&
-                (!txtUsuario.getText().trim().equals("")))
-        {
-            
+    private void validar(int a) {
+        if ((a == KeyEvent.VK_ENTER)
+                && (!String.valueOf(txtPassword.getPassword()).trim().equals(""))
+                && (!txtUsuario.getText().trim().equals(""))) {
+
             ingresar();
-        } 
+        }
     }
-    
-    
+
+
     private void btnLoginKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnLoginKeyPressed
-        
+
         validar(evt.getKeyCode());
-       
+
 
     }//GEN-LAST:event_btnLoginKeyPressed
 
@@ -366,6 +368,13 @@ public class Login extends javax.swing.JFrame implements ActionListener, KeyList
     private void txtPasswordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPasswordKeyPressed
         validar(evt.getKeyCode());
     }//GEN-LAST:event_txtPasswordKeyPressed
+
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+        SignUp su = new SignUp();
+        su.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        su.setVisible(true);
+        su.setSize(su.getPreferredSize());
+    }//GEN-LAST:event_btnRegistrarActionPerformed
 
     /**
      * @param args the command line arguments
