@@ -5,17 +5,21 @@
  */
 package ventanas;
 
+import java.awt.Frame;
+import java.awt.Point;
+
 /**
  *
  * @author codeboy1028
  */
-public class SignUp extends javax.swing.JPanel {
+public class SignUp extends javax.swing.JFrame {
 
     /**
      * Creates new form SignUp
      */
     public SignUp() {
         initComponents();
+        this.setUndecorated(true);
     }
 
     /**
@@ -28,6 +32,7 @@ public class SignUp extends javax.swing.JPanel {
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
+        pnlRegistro = new javax.swing.JPanel();
         txtCorreo = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
@@ -40,9 +45,20 @@ public class SignUp extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         txtContraseña = new javax.swing.JTextField();
         btnRegistrar = new javax.swing.JButton();
+        pnlCabecera = new javax.swing.JPanel();
+        pnlOpciones = new javax.swing.JPanel();
+        lblMinimizar = new javax.swing.JLabel();
+        lblMaximizar = new javax.swing.JLabel();
+        lblCerrar = new javax.swing.JLabel();
+        pnlTitulos = new javax.swing.JPanel();
+        lblIcono = new javax.swing.JLabel();
+        lblTitular = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(122, 108, 105));
-        setLayout(new java.awt.GridBagLayout());
+        setLayout(new java.awt.BorderLayout());
+
+        pnlRegistro.setBackground(new java.awt.Color(122, 108, 105));
+        pnlRegistro.setLayout(new java.awt.GridBagLayout());
 
         txtCorreo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -57,7 +73,7 @@ public class SignUp extends javax.swing.JPanel {
         gridBagConstraints.ipadx = 77;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(23, 25, 0, 0);
-        add(txtCorreo, gridBagConstraints);
+        pnlRegistro.add(txtCorreo, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 7;
         gridBagConstraints.gridy = 4;
@@ -66,7 +82,7 @@ public class SignUp extends javax.swing.JPanel {
         gridBagConstraints.ipadx = 77;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(18, 25, 0, 0);
-        add(jTextField2, gridBagConstraints);
+        pnlRegistro.add(jTextField2, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 7;
         gridBagConstraints.gridy = 3;
@@ -74,20 +90,21 @@ public class SignUp extends javax.swing.JPanel {
         gridBagConstraints.ipadx = 77;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(18, 25, 0, 0);
-        add(jTextField3, gridBagConstraints);
+        pnlRegistro.add(jTextField3, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 8;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(28, 200, 0, 38);
-        add(jSeparator1, gridBagConstraints);
+        pnlRegistro.add(jSeparator1, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 7;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(14, 28, 0, 0);
-        add(jSeparator2, gridBagConstraints);
+        pnlRegistro.add(jSeparator2, gridBagConstraints);
 
+        lblNombre.setForeground(new java.awt.Color(255, 255, 255));
         lblNombre.setText("Nombre (s)");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
@@ -97,16 +114,18 @@ public class SignUp extends javax.swing.JPanel {
         gridBagConstraints.ipady = 12;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(18, 143, 0, 0);
-        add(lblNombre, gridBagConstraints);
+        pnlRegistro.add(lblNombre, gridBagConstraints);
 
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("E-mail");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(29, 143, 0, 0);
-        add(jLabel2, gridBagConstraints);
+        pnlRegistro.add(jLabel2, gridBagConstraints);
 
+        lblApellido.setForeground(new java.awt.Color(255, 255, 255));
         lblApellido.setText("Apellido (s)");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
@@ -114,9 +133,10 @@ public class SignUp extends javax.swing.JPanel {
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(24, 143, 0, 0);
-        add(lblApellido, gridBagConstraints);
+        pnlRegistro.add(lblApellido, gridBagConstraints);
 
         lblRegistro.setFont(new java.awt.Font("Rachana", 1, 36)); // NOI18N
+        lblRegistro.setForeground(new java.awt.Color(255, 255, 255));
         lblRegistro.setText("Registro");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
@@ -124,8 +144,9 @@ public class SignUp extends javax.swing.JPanel {
         gridBagConstraints.gridwidth = 4;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(27, 24, 0, 0);
-        add(lblRegistro, gridBagConstraints);
+        pnlRegistro.add(lblRegistro, gridBagConstraints);
 
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Contraseña");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
@@ -133,7 +154,7 @@ public class SignUp extends javax.swing.JPanel {
         gridBagConstraints.gridwidth = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(24, 143, 0, 0);
-        add(jLabel1, gridBagConstraints);
+        pnlRegistro.add(jLabel1, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 7;
         gridBagConstraints.gridy = 8;
@@ -142,7 +163,7 @@ public class SignUp extends javax.swing.JPanel {
         gridBagConstraints.ipadx = 77;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(18, 25, 0, 0);
-        add(txtContraseña, gridBagConstraints);
+        pnlRegistro.add(txtContraseña, gridBagConstraints);
 
         btnRegistrar.setText("Registrar");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -151,14 +172,119 @@ public class SignUp extends javax.swing.JPanel {
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(46, 26, 40, 0);
-        add(btnRegistrar, gridBagConstraints);
+        pnlRegistro.add(btnRegistrar, gridBagConstraints);
+
+        add(pnlRegistro, java.awt.BorderLayout.CENTER);
+
+        pnlCabecera.setBackground(new java.awt.Color(0, 148, 2));
+        pnlCabecera.setLayout(new java.awt.BorderLayout());
+
+        pnlOpciones.setLayout(new java.awt.GridLayout(1, 3));
+
+        lblMinimizar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMinimizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventanas/images/-.png"))); // NOI18N
+        lblMinimizar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblMinimizar.setOpaque(true);
+        lblMinimizar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblMinimizarMouseClicked(evt);
+            }
+        });
+        pnlOpciones.add(lblMinimizar);
+
+        lblMaximizar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblMaximizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventanas/images/O.png"))); // NOI18N
+        lblMaximizar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblMaximizar.setOpaque(true);
+        lblMaximizar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblMaximizarMouseClicked(evt);
+            }
+        });
+        pnlOpciones.add(lblMaximizar);
+
+        lblCerrar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventanas/images/X.png"))); // NOI18N
+        lblCerrar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lblCerrar.setOpaque(true);
+        lblCerrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblCerrarMouseClicked(evt);
+            }
+        });
+        pnlOpciones.add(lblCerrar);
+
+        pnlCabecera.add(pnlOpciones, java.awt.BorderLayout.EAST);
+
+        pnlTitulos.setOpaque(false);
+        pnlTitulos.setLayout(new java.awt.BorderLayout());
+
+        lblIcono.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblIcono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventanas/images/T.png"))); // NOI18N
+        pnlTitulos.add(lblIcono, java.awt.BorderLayout.WEST);
+
+        lblTitular.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        lblTitular.setForeground(new java.awt.Color(255, 255, 255));
+        lblTitular.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitular.setText("Registro");
+        lblTitular.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                lblTitularMouseDragged(evt);
+            }
+        });
+        lblTitular.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lblTitularMousePressed(evt);
+            }
+        });
+        pnlTitulos.add(lblTitular, java.awt.BorderLayout.CENTER);
+
+        pnlCabecera.add(pnlTitulos, java.awt.BorderLayout.CENTER);
+
+        add(pnlCabecera, java.awt.BorderLayout.NORTH);
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCorreoActionPerformed
 
+    private void lblMinimizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMinimizarMouseClicked
+        this.setState(Frame.ICONIFIED);
+    }//GEN-LAST:event_lblMinimizarMouseClicked
 
+    private void lblMaximizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblMaximizarMouseClicked
+        if (this.getExtendedState() == Frame.MAXIMIZED_BOTH) {
+            this.setExtendedState(Frame.NORMAL);
+        } else {
+            this.setExtendedState(Frame.MAXIMIZED_BOTH);
+        }
+    }//GEN-LAST:event_lblMaximizarMouseClicked
+
+    private void lblCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCerrarMouseClicked
+        this.dispose();
+    }//GEN-LAST:event_lblCerrarMouseClicked
+
+    private void lblTitularMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTitularMouseDragged
+        //Puntos iniciales
+        int thisX = this.getLocation().x;
+        int thisY = this.getLocation().y;
+
+        //Movimiento de arrastre
+        int xMov = evt.getX() - this.puntoInicial.x;
+        int yMov = evt.getY() - this.puntoInicial.y;
+
+        //Nuevas posiciones
+        int x = thisX + xMov;
+        int y = thisY + yMov;
+
+        this.setLocation(x, y);
+    }//GEN-LAST:event_lblTitularMouseDragged
+
+    private void lblTitularMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTitularMousePressed
+        this.puntoInicial = evt.getPoint();
+    }//GEN-LAST:event_lblTitularMousePressed
+
+    private Point puntoInicial;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRegistrar;
     private javax.swing.JLabel jLabel1;
@@ -168,8 +294,17 @@ public class SignUp extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JLabel lblApellido;
+    private javax.swing.JLabel lblCerrar;
+    private javax.swing.JLabel lblIcono;
+    private javax.swing.JLabel lblMaximizar;
+    private javax.swing.JLabel lblMinimizar;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblRegistro;
+    private javax.swing.JLabel lblTitular;
+    private javax.swing.JPanel pnlCabecera;
+    private javax.swing.JPanel pnlOpciones;
+    private javax.swing.JPanel pnlRegistro;
+    private javax.swing.JPanel pnlTitulos;
     private javax.swing.JTextField txtContraseña;
     private javax.swing.JTextField txtCorreo;
     // End of variables declaration//GEN-END:variables

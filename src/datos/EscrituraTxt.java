@@ -7,10 +7,6 @@ package datos;
 
 import clases.Cliente;
 import clases.Cuenta;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -31,35 +27,6 @@ public class EscrituraTxt implements Escritura {
      */
     @Override
     public boolean agregarCliente(Cliente cliente, Cuenta cuenta) {
-        java.io.File archivo = new java.io.File("clientes.tsp");
-        if (!archivo.exists()) {
-            java.io.FileOutputStream fos = null;
-            try {
-                fos = new java.io.FileOutputStream(archivo);
-                java.io.DataOutputStream out = new java.io.DataOutputStream(fos);
-                out.writeUTF(cliente.getCodigo());
-                out.writeUTF(cliente.getNombre());
-                out.writeInt(cliente.getEdad());
-                out.writeUTF(cliente.getCorreo());
-                out.writeUTF(cliente.getDireccion());
-                out.writeBoolean(cliente.isMayorista());
-                out.writeUTF(cuenta.getNickName());
-                out.writeUTF(cuenta.getContrasena());
-                out.writeInt(cuenta.getTipo());
-            } catch (FileNotFoundException ex) {
-                Logger.getLogger(EscrituraTxt.class.getName()).log(Level.SEVERE, null, ex);
-                return false;
-            } catch (IOException ex) {
-                Logger.getLogger(EscrituraTxt.class.getName()).log(Level.SEVERE, null, ex);
-                return false;
-            } finally {
-                try {
-                    fos.close();
-                } catch (IOException ex) {
-                    Logger.getLogger(EscrituraTxt.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        }
         return true;
     }
 
