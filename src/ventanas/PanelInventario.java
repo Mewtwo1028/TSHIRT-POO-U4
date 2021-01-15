@@ -7,6 +7,8 @@ package ventanas;
 
 import excepciones.ExVacio;
 import java.awt.HeadlessException;
+import java.io.EOFException;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.Date;
@@ -63,6 +65,8 @@ public class PanelInventario extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblInventario = new javax.swing.JTable();
         cmbOrdenar = new javax.swing.JComboBox<>();
+        btnGuardar = new javax.swing.JButton();
+        btnLeer = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(122, 108, 105));
         setToolTipText("");
@@ -83,7 +87,7 @@ public class PanelInventario extends javax.swing.JPanel {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridwidth = 4;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(16, 10, 0, 22);
         add(btnAgregar, gridBagConstraints);
@@ -97,7 +101,7 @@ public class PanelInventario extends javax.swing.JPanel {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.gridwidth = 3;
         gridBagConstraints.ipadx = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(6, 10, 0, 0);
@@ -112,6 +116,7 @@ public class PanelInventario extends javax.swing.JPanel {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(6, 10, 0, 0);
         add(btnLimpiar, gridBagConstraints);
@@ -129,10 +134,10 @@ public class PanelInventario extends javax.swing.JPanel {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridheight = 5;
+        gridBagConstraints.gridheight = 7;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 762;
-        gridBagConstraints.ipady = 337;
+        gridBagConstraints.ipadx = 264;
+        gridBagConstraints.ipady = 237;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
@@ -148,10 +153,37 @@ public class PanelInventario extends javax.swing.JPanel {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.gridwidth = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(6, 10, 0, 0);
         add(cmbOrdenar, gridBagConstraints);
+
+        btnGuardar.setText("Guardar");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 10, 0, 22);
+        add(btnGuardar, gridBagConstraints);
+
+        btnLeer.setText("Leer");
+        btnLeer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLeerActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 10, 0, 0);
+        add(btnLeer, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
@@ -167,7 +199,7 @@ public class PanelInventario extends javax.swing.JPanel {
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void contenido() throws IOException, Exception{
-        String info[] = new String [5];
+        
         Calendar fecha = new GregorianCalendar();
         int dia = fecha.get(Calendar.DATE); 
         int mes = fecha.get(Calendar.MONTH);
@@ -189,9 +221,11 @@ public class PanelInventario extends javax.swing.JPanel {
             }
         }   
         
-         
+        
+        
         m.addRow(info); 
  
+        
         
     }
     
@@ -233,12 +267,65 @@ public class PanelInventario extends javax.swing.JPanel {
             
         }
     }//GEN-LAST:event_cmbOrdenarActionPerformed
-   
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+          java.io.FileOutputStream fbs;
+        try {
+            fbs = new java.io.FileOutputStream("inventario.txt");
+             java.io.DataOutputStream fds=new java.io.DataOutputStream(fbs);
+             
+             for (int i = 0 ; i < tblInventario.getRowCount(); i++) //realiza un barrido por filas.
+            {
+                for(int j = 0 ; j < tblInventario.getColumnCount();j++) //realiza un barrido por columnas.
+                {
+                fds.writeBytes((String) tblInventario.getValueAt(i, j));   
+                    if (j < tblInventario.getColumnCount() -1) { //agrega separador "," si no es el ultimo elemento de la fila.
+                        fds.writeBytes(",");
+                    }
+                   
+               }
+                 fds.writeBytes("\n");
+              }
+             
+             
+             
+             
+             fds.close();
+             showMessageDialog(this,"Archivo Guardado");
+             
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(PanelInventario.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(PanelInventario.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
+    }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void btnLeerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLeerActionPerformed
+        
+        try {
+            java.io.FileInputStream fbe=new java.io.FileInputStream("inventario.txt");
+            java.io.DataInputStream fde=new java.io.DataInputStream(fbe);
+            
+            A[0]=fde.readUTF();
+            
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(PanelInventario.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(PanelInventario.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
+    }//GEN-LAST:event_btnLeerActionPerformed
     
+    
+   String A[]; 
+   String info[] = new String [5];
     private DefaultTableModel m;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnBorrar;
+    private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnLeer;
     private javax.swing.JButton btnLimpiar;
     private javax.swing.JComboBox<String> cmbOrdenar;
     private javax.swing.JScrollPane jScrollPane1;
