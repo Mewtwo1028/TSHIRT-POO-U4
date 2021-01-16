@@ -7,6 +7,7 @@ package datos;
 
 import clases.Cliente;
 import clases.Cuenta;
+import java.io.*;
 
 /**
  *
@@ -25,8 +26,17 @@ public class EscrituraTxt implements Escritura {
      * @return Verdadero en caso de que el registro se haya llevado
      * correctamente o un Falso en caso contrario
      */
+    
+        
+        /*File  registro = new File ("clientes.tsp");
+        if (registro.)
+        {
+            
+        }*/
+    
+    
     @Override
-    public boolean agregarCliente(Cliente cliente, Cuenta cuenta) {
+    public boolean agregarCliente(Cuenta cuenta) {
         return true;
     }
 

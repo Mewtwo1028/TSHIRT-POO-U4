@@ -5,19 +5,19 @@
  */
 package ventanas;
 
+import clases.*;
 import java.awt.Frame;
 import java.awt.Point;
-
+import java.util.ArrayList;
 /**
  *
  * @author codeboy1028
  */
 public class SignUp extends javax.swing.JFrame {
 
-    /**
-     * Creates new form SignUp
-     */
+    ArrayList<Cuenta> cuenta;
     public SignUp() {
+        this.cuenta = new ArrayList<>();
         initComponents();
         this.setUndecorated(true);
     }
@@ -34,8 +34,8 @@ public class SignUp extends javax.swing.JFrame {
 
         pnlRegistro = new javax.swing.JPanel();
         txtCorreo = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        txtApellido = new javax.swing.JTextField();
+        txtNombre = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         lblNombre = new javax.swing.JLabel();
@@ -43,8 +43,16 @@ public class SignUp extends javax.swing.JFrame {
         lblApellido = new javax.swing.JLabel();
         lblRegistro = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        txtContraseña = new javax.swing.JTextField();
+        txtContrasena = new javax.swing.JTextField();
         btnRegistrar = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        txtNickname = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        txtEdad = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        txtDireccion = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        cbxMayorista = new javax.swing.JCheckBox();
         pnlCabecera = new javax.swing.JPanel();
         pnlOpciones = new javax.swing.JPanel();
         lblMinimizar = new javax.swing.JLabel();
@@ -55,7 +63,6 @@ public class SignUp extends javax.swing.JFrame {
         lblTitular = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(122, 108, 105));
-        setLayout(new java.awt.BorderLayout());
 
         pnlRegistro.setBackground(new java.awt.Color(122, 108, 105));
         pnlRegistro.setLayout(new java.awt.GridBagLayout());
@@ -82,7 +89,7 @@ public class SignUp extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 77;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(18, 25, 0, 0);
-        pnlRegistro.add(jTextField2, gridBagConstraints);
+        pnlRegistro.add(txtApellido, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 7;
         gridBagConstraints.gridy = 3;
@@ -90,7 +97,7 @@ public class SignUp extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 77;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(18, 25, 0, 0);
-        pnlRegistro.add(jTextField3, gridBagConstraints);
+        pnlRegistro.add(txtNombre, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 8;
         gridBagConstraints.gridy = 1;
@@ -149,7 +156,7 @@ public class SignUp extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Contraseña");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 8;
         gridBagConstraints.gridwidth = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
@@ -163,18 +170,58 @@ public class SignUp extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 77;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(18, 25, 0, 0);
-        pnlRegistro.add(txtContraseña, gridBagConstraints);
+        pnlRegistro.add(txtContrasena, gridBagConstraints);
 
         btnRegistrar.setText("Registrar");
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 7;
-        gridBagConstraints.gridy = 10;
+        gridBagConstraints.gridy = 12;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(46, 26, 40, 0);
         pnlRegistro.add(btnRegistrar, gridBagConstraints);
 
-        add(pnlRegistro, java.awt.BorderLayout.CENTER);
+        jLabel3.setText("Nickname");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHEAST;
+        pnlRegistro.add(jLabel3, gridBagConstraints);
+
+        txtNickname.setText("jTextField1");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 7;
+        gridBagConstraints.gridy = 10;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 77;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        pnlRegistro.add(txtNickname, gridBagConstraints);
+
+        jLabel4.setText("jLabel4");
+        pnlRegistro.add(jLabel4, new java.awt.GridBagConstraints());
+
+        txtEdad.setText("jTextField1");
+        pnlRegistro.add(txtEdad, new java.awt.GridBagConstraints());
+
+        jLabel5.setText("jLabel5");
+        pnlRegistro.add(jLabel5, new java.awt.GridBagConstraints());
+
+        txtDireccion.setText("jTextField1");
+        pnlRegistro.add(txtDireccion, new java.awt.GridBagConstraints());
+
+        jLabel6.setText("jLabel6");
+        pnlRegistro.add(jLabel6, new java.awt.GridBagConstraints());
+
+        cbxMayorista.setText("Mayorista?");
+        pnlRegistro.add(cbxMayorista, new java.awt.GridBagConstraints());
+
+        getContentPane().add(pnlRegistro, java.awt.BorderLayout.CENTER);
 
         pnlCabecera.setBackground(new java.awt.Color(0, 148, 2));
         pnlCabecera.setLayout(new java.awt.BorderLayout());
@@ -241,7 +288,7 @@ public class SignUp extends javax.swing.JFrame {
 
         pnlCabecera.add(pnlTitulos, java.awt.BorderLayout.CENTER);
 
-        add(pnlCabecera, java.awt.BorderLayout.NORTH);
+        getContentPane().add(pnlCabecera, java.awt.BorderLayout.NORTH);
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoActionPerformed
@@ -284,15 +331,24 @@ public class SignUp extends javax.swing.JFrame {
         this.puntoInicial = evt.getPoint();
     }//GEN-LAST:event_lblTitularMousePressed
 
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+        Cliente cliente = new Cliente("",txtNombre.getText(),Integer.parseInt(txtEdad.getText()),txtCorreo.getText(),txtDireccion.getText(),cbxMayorista.isSelected());
+        Cuenta usuario = new Cuenta(txtNombre.getText(),txtApellido.getText(), cliente);
+        
+    }//GEN-LAST:event_btnRegistrarActionPerformed
+
     private Point puntoInicial;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRegistrar;
+    private javax.swing.JCheckBox cbxMayorista;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JLabel lblApellido;
     private javax.swing.JLabel lblCerrar;
     private javax.swing.JLabel lblIcono;
@@ -305,7 +361,12 @@ public class SignUp extends javax.swing.JFrame {
     private javax.swing.JPanel pnlOpciones;
     private javax.swing.JPanel pnlRegistro;
     private javax.swing.JPanel pnlTitulos;
-    private javax.swing.JTextField txtContraseña;
+    private javax.swing.JTextField txtApellido;
+    private javax.swing.JTextField txtContrasena;
     private javax.swing.JTextField txtCorreo;
+    private javax.swing.JTextField txtDireccion;
+    private javax.swing.JTextField txtEdad;
+    private javax.swing.JTextField txtNickname;
+    private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 }
