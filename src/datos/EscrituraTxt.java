@@ -27,12 +27,10 @@ public class EscrituraTxt implements Escritura {
      * correctamente o un Falso en caso contrario
      */
     
-        
-        /*File  registro = new File ("clientes.tsp");
-        if (registro.)
-        {
-            
-        }*/
+       
+            File  registro = new File ("clientes.tsp");
+            FileInputStream escribir;
+            //De qué manera puedo acceder a
     
     
     @Override

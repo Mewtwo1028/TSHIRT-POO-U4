@@ -337,6 +337,8 @@ public class SignUp extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
+    
+
     private Point puntoInicial;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRegistrar;
