@@ -1,9 +1,13 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
-
+        <group>
+            <file>file:/E:/SEMESTRE_4/CLASES/POO/U4/TSHIRT-POO-U4/src/ventanas/SignUp.java</file>
+            <file>file:/E:/SEMESTRE_4/CLASES/POO/U4/TSHIRT-POO-U4/src/datos/LecturaTxt.java</file>
+            <file>file:/E:/SEMESTRE_4/CLASES/POO/U4/TSHIRT-POO-U4/src/datos/EscrituraTxt.java</file>
+            <file>file:/E:/SEMESTRE_4/CLASES/POO/U4/TSHIRT-POO-U4/src/datos/Escritura.java</file>
+            <file>file:/E:/SEMESTRE_4/CLASES/POO/U4/TSHIRT-POO-U4/src/datos/Lectura.java</file>
+        </group>
     </open-files>
 </project-private>

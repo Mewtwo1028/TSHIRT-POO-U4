@@ -11,9 +11,16 @@ package datos;
  */
 public interface Escritura {
 
-    public boolean agregarCliente(clases.Cuenta cuenta);
+    public boolean agregarCuenta(clases.Cuenta cuenta);
 
     public boolean agregarProducto(clases.Producto producto);
 
     public boolean agregarVenta(clases.Venta venta);
+
+    public clases.Cuenta[] modificarCuenta(clases.Cuenta cuenta, int index);
+
+    public clases.Producto[] modificarProducto(clases.Producto producto, int index);
+
+    public clases.Venta[] modificarVenta(clases.Venta venta, int index);
+
 }
