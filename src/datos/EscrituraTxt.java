@@ -6,6 +6,8 @@
 package datos;
 
 import clases.Cuenta;
+import clases.Producto;
+import clases.Venta;
 import java.io.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -16,6 +18,12 @@ import ventanas.*;
  * @author ING-JUANMATA
  */
 public class EscrituraTxt extends SignUp implements Escritura, Serializable {
+
+    LecturaTxt lt;
+
+    public EscrituraTxt() {
+        lt = new LecturaTxt();
+    }
 
     /**
      * Funcion encargada de agregar clientes al archivo general para los
@@ -29,10 +37,9 @@ public class EscrituraTxt extends SignUp implements Escritura, Serializable {
     @Override
     public boolean agregarCliente(Cuenta cuenta) {
         String nArchivo = "clientes.tsp";
-        LecturaTxt lt = new LecturaTxt();
         Cuenta[] cuentas = lt.obtenerCuentas();
-        for(int i = 0; i < cuentas.length; i++){
-            if(cuentas[i] == null){
+        for (int i = 0; i < cuentas.length; i++) {
+            if (cuentas[i] == null) {
                 cuentas[i] = cuenta;
                 break;
             }
@@ -44,8 +51,8 @@ public class EscrituraTxt extends SignUp implements Escritura, Serializable {
             java.io.ObjectOutputStream write = new java.io.ObjectOutputStream(out);
             write.writeObject(cuentas);
             write.flush();
-            for(Cuenta c: cuentas){
-                if(c != null){
+            for (Cuenta c : cuentas) {
+                if (c != null) {
                     System.out.println(c);
                 }
             }
@@ -57,5 +64,67 @@ public class EscrituraTxt extends SignUp implements Escritura, Serializable {
         }
         return false;
 
+    }
+
+    @Override
+    public boolean agregarProducto(Producto producto) {
+        String nArchivo = "clientes.tsp";
+        Producto[] productos = lt.obtenerProductos();
+        for (int i = 0; i < productos.length; i++) {
+            if (productos[i] == null) {
+                productos[i] = producto;
+                break;
+            }
+        }
+        java.io.File aux = new java.io.File(nArchivo);
+        java.io.FileOutputStream out;
+        try {
+            out = new java.io.FileOutputStream(aux);
+            java.io.ObjectOutputStream write = new java.io.ObjectOutputStream(out);
+            write.writeObject(productos);
+            write.flush();
+            for (Producto c : productos) {
+                if (c != null) {
+                    System.out.println(c);
+                }
+            }
+            return true;
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(EscrituraTxt.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(EscrituraTxt.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
+    }
+
+    @Override
+    public boolean agregarVenta(Venta venta) {
+        String nArchivo = "clientes.tsp";
+        Venta[] ventas = lt.obtenerVenta();
+        for (int i = 0; i < ventas.length; i++) {
+            if (ventas[i] == null) {
+                ventas[i] = venta;
+                break;
+            }
+        }
+        java.io.File aux = new java.io.File(nArchivo);
+        java.io.FileOutputStream out;
+        try {
+            out = new java.io.FileOutputStream(aux);
+            java.io.ObjectOutputStream write = new java.io.ObjectOutputStream(out);
+            write.writeObject(ventas);
+            write.flush();
+            for (Venta c : ventas) {
+                if (c != null) {
+                    System.out.println(c);
+                }
+            }
+            return true;
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(EscrituraTxt.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(EscrituraTxt.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
     }
 }

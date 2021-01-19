@@ -6,6 +6,8 @@
 package datos;
 
 import clases.Cuenta;
+import clases.Producto;
+import clases.Venta;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -18,16 +20,11 @@ import java.util.logging.Logger;
 public class LecturaTxt implements Lectura {
 
     @Override
-    public boolean inicioSesion(String nick, String pass) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
     public Cuenta[] obtenerCuentas() {
         java.io.FileInputStream in = null;
         Cuenta[] clientes = new Cuenta[100];
         java.io.File archivo = new java.io.File("clientes.tsp");
-        if(!archivo.exists()){
+        if (!archivo.exists()) {
             return clientes;
         }
         try {
@@ -47,5 +44,57 @@ public class LecturaTxt implements Lectura {
         }
         return clientes;
 
+    }
+
+    @Override
+    public Producto[] obtenerProductos() {
+        java.io.FileInputStream in = null;
+        Producto[] productos = new Producto[100];
+        java.io.File archivo = new java.io.File("productos.tsp");
+        if (!archivo.exists()) {
+            return productos;
+        }
+        try {
+            in = new java.io.FileInputStream(archivo);
+            java.io.ObjectInputStream reader = new java.io.ObjectInputStream(in);
+            productos = (Producto[]) reader.readObject();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(LecturaTxt.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException | ClassNotFoundException ex) {
+            Logger.getLogger(LecturaTxt.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                in.close();
+            } catch (IOException ex) {
+                Logger.getLogger(LecturaTxt.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return productos;
+    }
+
+    @Override
+    public Venta[] obtenerVenta() {
+        java.io.FileInputStream in = null;
+        Venta[] ventas = new Venta[100];
+        java.io.File archivo = new java.io.File("clientes.tsp");
+        if (!archivo.exists()) {
+            return ventas;
+        }
+        try {
+            in = new java.io.FileInputStream(archivo);
+            java.io.ObjectInputStream reader = new java.io.ObjectInputStream(in);
+            ventas = (Venta[]) reader.readObject();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(LecturaTxt.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException | ClassNotFoundException ex) {
+            Logger.getLogger(LecturaTxt.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try {
+                in.close();
+            } catch (IOException ex) {
+                Logger.getLogger(LecturaTxt.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return ventas;
     }
 }

@@ -4,9 +4,6 @@
  * and open the template in the editor.
  */
 package ventanas;
-import javax.swing.JOptionPane.*;
-import java.awt.*;
-import java.io.File;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
@@ -19,11 +16,6 @@ import javax.swing.UnsupportedLookAndFeelException;
  * @author Hydra
  */
 public class PanelDesign extends javax.swing.JPanel {
-
-    private Point puntoInicial;
-    private Object RSScaleLabel;
-    private Object fileChooser;
-
     /**
      * Creates new form PanelDesign
      */
@@ -220,21 +212,4 @@ public class PanelDesign extends javax.swing.JPanel {
     private javax.swing.JPanel pnlOpciones;
     private javax.swing.JPanel pnlTipo;
     // End of variables declaration//GEN-END:variables
-
-    private void setState(int ICONIFIED) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void setLocationRelativeTo(PanelDesign aThis) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-   
-
-
-    private class puntoInicial {
-
-        public puntoInicial() {
-        }
-    }
 }
