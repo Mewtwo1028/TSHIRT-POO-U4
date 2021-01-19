@@ -1,7 +1,6 @@
 package clases;
 
 import static javax.swing.JOptionPane.*;
-
 public class Cuenta {
 
     private String nickName, contrasena;
@@ -28,6 +27,10 @@ public class Cuenta {
         this.contrasena = contrasena;
         this.usuario = usuario;
         this.tipo = tipo;
+    }
+
+    public Cuenta(String text) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public void leer() {
