@@ -9,11 +9,12 @@ import clases.*;
 import java.awt.Frame;
 import java.awt.Point;
 import java.util.ArrayList;
+import java.io.*;
 /**
  *
  * @author codeboy1028
  */
-public class SignUp extends javax.swing.JFrame {
+public class SignUp extends javax.swing.JFrame implements Serializable {
 
     ArrayList<Cuenta> cuenta;
     public SignUp() {
@@ -334,6 +335,7 @@ public class SignUp extends javax.swing.JFrame {
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         Cliente cliente = new Cliente("",txtNombre.getText(),Integer.parseInt(txtEdad.getText()),txtCorreo.getText(),txtDireccion.getText(),cbxMayorista.isSelected());
         Cuenta usuario = new Cuenta(txtNombre.getText(),txtApellido.getText(), cliente);
+        
         
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
