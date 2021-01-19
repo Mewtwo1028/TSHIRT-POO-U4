@@ -7,6 +7,7 @@ package ventanas;
 
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
+import datos.EscrituraTxt;
 
 /**
  *
@@ -215,6 +216,11 @@ public class PanelProductos extends javax.swing.JPanel {
 
         btnAgregar.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         btnAgregar.setText("Agregar Producto");
+        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAgregarActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 3;
@@ -269,6 +275,10 @@ public class PanelProductos extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         add(jComboBox3, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
+        
+    }//GEN-LAST:event_btnAgregarActionPerformed
 
     private DefaultTableModel dtm;
     // Variables declaration - do not modify//GEN-BEGIN:variables
