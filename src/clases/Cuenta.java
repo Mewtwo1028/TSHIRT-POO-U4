@@ -1,7 +1,7 @@
 package clases;
 
 import static javax.swing.JOptionPane.*;
-public class Cuenta {
+public class Cuenta implements java.io.Serializable {
 
     private String nickName, contrasena;
     private Cliente usuario;

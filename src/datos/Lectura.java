@@ -10,7 +10,10 @@ package datos;
  * @author ING-JUANMATA
  */
 public interface Lectura {
-    public boolean inicioSesion(String nick, String pass);
-    
-    public java.util.ArrayList<clases.Cliente> obtenerClientes();
+
+    public clases.Cuenta[] obtenerCuentas();
+
+    public clases.Producto[] obtenerProductos();
+
+    public clases.Venta[] obtenerVenta();
 }

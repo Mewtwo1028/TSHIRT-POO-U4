@@ -1,6 +1,6 @@
 package clases;
 
-public class App {
+public class App implements java.io.Serializable {
 
     String url;
 

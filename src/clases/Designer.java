@@ -2,7 +2,7 @@ package clases;
 
 import static javax.swing.JOptionPane.*;
 
-public class Designer extends Persona {
+public class Designer extends Persona implements java.io.Serializable {
 
     protected int salario;
 

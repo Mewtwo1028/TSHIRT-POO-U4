@@ -2,7 +2,7 @@ package clases;
 
 import static javax.swing.JOptionPane.*;
 
-public class Design {
+public class Design implements java.io.Serializable {
 
     private String color, m;
     private boolean logo;

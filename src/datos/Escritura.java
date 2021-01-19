@@ -10,6 +10,10 @@ package datos;
  * @author ING-JUANMATA
  */
 public interface Escritura {
+
     public boolean agregarCliente(clases.Cuenta cuenta);
-    
+
+    public boolean agregarProducto(clases.Producto producto);
+
+    public boolean agregarVenta(clases.Venta venta);
 }

@@ -2,7 +2,7 @@ package clases;
 
 import static javax.swing.JOptionPane.*;
 
-public abstract class Persona {
+public abstract class Persona implements java.io.Serializable{
 
     protected String nombre;
     protected int edad;

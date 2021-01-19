@@ -2,7 +2,7 @@ package clases;
 
 import static javax.swing.JOptionPane.*;
 
-public class Cliente extends Persona {
+public class Cliente extends Persona implements java.io.Serializable {
 
     private boolean mayorista;
     private String codigo;

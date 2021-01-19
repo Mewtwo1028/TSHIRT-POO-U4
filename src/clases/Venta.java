@@ -3,7 +3,7 @@ package clases;
 import java.util.Calendar;
 import static javax.swing.JOptionPane.*;
 
-public class Venta {
+public class Venta implements java.io.Serializable{
 
     protected int importe;
     private Producto productos;
