@@ -1,6 +1,6 @@
 package clases;
 
-public class ShirtPOO {
+public class ShirtPOO implements java.io.Serializable{
 
     private String nombre, direccion;
 

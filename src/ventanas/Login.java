@@ -5,7 +5,6 @@
  */
 package ventanas;
 
-import clases.Cliente;
 import clases.Cuenta;
 import java.awt.Frame;
 import java.awt.Point;
@@ -13,7 +12,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -27,12 +25,7 @@ public class Login extends javax.swing.JFrame implements ActionListener, KeyList
      */
     public Login() {
         initComponents();
-        agregarCuentas();
-    }
 
-    private void agregarCuentas() {
-        cuentas.add(new Cuenta("admin", "admin", new Cliente("", "Juan Jesus Mata", 21, "j@a.com", "mi casa", false), Cuenta.ADMINISTRADOR));
-        cuentas.add(new Cuenta("user", "user", new Cliente("", "Osmar", 21, "o@a.com", "mi casa", false), Cuenta.CLIENTE));
     }
 
     /**
@@ -306,13 +299,18 @@ public class Login extends javax.swing.JFrame implements ActionListener, KeyList
         String user, pass;
         user = txtUsuario.getText().trim();
         pass = String.valueOf(txtPassword.getPassword());
+        datos.LecturaTxt lec = new datos.LecturaTxt();
+        Cuenta[] cuentas = lec.obtenerCuentas();
+        int i = 0;
 
         boolean existe = false;
-        for (Cuenta c : cuentas) {
-            if (c.getNickName().equals(user)) {
+        while (cuentas[i] != null) {
+            System.out.println(cuentas[i].getNickName());
+            System.out.println(cuentas[i].getContrasena());
+            if (cuentas[i].getNickName().equals(user)) {
                 existe = true;
-                if (c.getContrasena().equals(pass)) {
-                    switch (c.getTipo()) {
+                if (cuentas[i].getContrasena().equals(pass)) {
+                    switch (cuentas[i].getTipo()) {
                         case Cuenta.ADMINISTRADOR -> {
                             AdministracionAdmin aa = new AdministracionAdmin();
                             aa.setLocationRelativeTo(null);
@@ -332,6 +330,7 @@ public class Login extends javax.swing.JFrame implements ActionListener, KeyList
                     break;
                 }
             }
+            i++;
         }
 
         if (!existe) {
@@ -410,7 +409,6 @@ public class Login extends javax.swing.JFrame implements ActionListener, KeyList
     }
 
     private Point puntoInicial;
-    private final ArrayList<Cuenta> cuentas = new ArrayList<>();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnRegistrar;

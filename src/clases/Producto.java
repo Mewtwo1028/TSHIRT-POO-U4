@@ -2,7 +2,7 @@ package clases;
 
 import static javax.swing.JOptionPane.*;
 
-public class Producto {
+public class Producto implements java.io.Serializable{
 
     private String talla, marca, id, tipo;
     private int precio;

@@ -4,7 +4,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import static javax.swing.JOptionPane.*;
 
-public class Recibo {
+public class Recibo implements java.io.Serializable{
 
     private Calendar fecha;
     private String folio;

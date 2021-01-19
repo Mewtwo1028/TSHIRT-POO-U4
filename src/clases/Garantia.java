@@ -4,7 +4,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import static javax.swing.JOptionPane.*;
 
-public class Garantia {
+public class Garantia implements java.io.Serializable{
 
     private String poliza, cobertura;
     private Calendar fechaExpidicion, fechaExpiracion;

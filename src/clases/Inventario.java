@@ -2,7 +2,7 @@ package clases;
 
 import static javax.swing.JOptionPane.*;
 
-public class Inventario {
+public class Inventario implements java.io.Serializable {
 
     private String idCajon, producto;
     private int cantidad;

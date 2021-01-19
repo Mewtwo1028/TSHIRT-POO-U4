@@ -2,7 +2,7 @@ package clases;
 
 import static javax.swing.JOptionPane.*;
 
-public class MedioPago {
+public class MedioPago implements java.io.Serializable{
 
     private String tipoPago;
 
