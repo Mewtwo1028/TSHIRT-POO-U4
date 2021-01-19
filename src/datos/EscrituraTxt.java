@@ -35,8 +35,8 @@ public class EscrituraTxt extends SignUp implements Escritura, Serializable {
      * correctamente o un Falso en caso contrario
      */
     @Override
-    public boolean agregarCliente(Cuenta cuenta) {
-        String nArchivo = "clientes.tsp";
+    public boolean agregarCuenta(Cuenta cuenta) {
+        String nArchivo = "cuentas.tsp";
         Cuenta[] cuentas = lt.obtenerCuentas();
         for (int i = 0; i < cuentas.length; i++) {
             if (cuentas[i] == null) {
@@ -68,7 +68,7 @@ public class EscrituraTxt extends SignUp implements Escritura, Serializable {
 
     @Override
     public boolean agregarProducto(Producto producto) {
-        String nArchivo = "clientes.tsp";
+        String nArchivo = "productos.tsp";
         Producto[] productos = lt.obtenerProductos();
         for (int i = 0; i < productos.length; i++) {
             if (productos[i] == null) {
@@ -99,7 +99,7 @@ public class EscrituraTxt extends SignUp implements Escritura, Serializable {
 
     @Override
     public boolean agregarVenta(Venta venta) {
-        String nArchivo = "clientes.tsp";
+        String nArchivo = "ventas.tsp";
         Venta[] ventas = lt.obtenerVenta();
         for (int i = 0; i < ventas.length; i++) {
             if (ventas[i] == null) {
@@ -127,4 +127,66 @@ public class EscrituraTxt extends SignUp implements Escritura, Serializable {
         }
         return false;
     }
+
+    @Override
+    public Cuenta[] modificarCuenta(Cuenta cuenta, int index) {
+        String nArchivo = "cuentas.tsp";
+        Cuenta[] cuentas = lt.obtenerCuentas();
+        cuentas[index] = cuenta;
+        java.io.File aux = new java.io.File(nArchivo);
+        java.io.FileOutputStream out;
+        try {
+            out = new java.io.FileOutputStream(aux);
+            java.io.ObjectOutputStream write = new java.io.ObjectOutputStream(out);
+            write.writeObject(cuentas);
+            write.flush();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(EscrituraTxt.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(EscrituraTxt.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return cuentas;
+    }
+
+    @Override
+    public Producto[] modificarProducto(Producto producto, int index) {
+        String nArchivo = "productos.tsp";
+        Producto[] productos = lt.obtenerProductos();
+        productos[index] = producto;
+        java.io.File aux = new java.io.File(nArchivo);
+        java.io.FileOutputStream out;
+        try {
+            out = new java.io.FileOutputStream(aux);
+            java.io.ObjectOutputStream write = new java.io.ObjectOutputStream(out);
+            write.writeObject(productos);
+            write.flush();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(EscrituraTxt.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(EscrituraTxt.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return productos;
+    }
+
+    @Override
+    public Venta[] modificarVenta(Venta venta, int index) {
+        String nArchivo = "ventas.tsp";
+        Venta[] ventas = lt.obtenerVenta();
+        ventas[index] = venta;
+        java.io.File aux = new java.io.File(nArchivo);
+        java.io.FileOutputStream out;
+        try {
+            out = new java.io.FileOutputStream(aux);
+            java.io.ObjectOutputStream write = new java.io.ObjectOutputStream(out);
+            write.writeObject(ventas);
+            write.flush();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(EscrituraTxt.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(EscrituraTxt.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return ventas;
+    }
+
+    
 }

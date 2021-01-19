@@ -23,7 +23,7 @@ public class LecturaTxt implements Lectura {
     public Cuenta[] obtenerCuentas() {
         java.io.FileInputStream in = null;
         Cuenta[] clientes = new Cuenta[100];
-        java.io.File archivo = new java.io.File("clientes.tsp");
+        java.io.File archivo = new java.io.File("cuentas.tsp");
         if (!archivo.exists()) {
             return clientes;
         }
@@ -76,7 +76,7 @@ public class LecturaTxt implements Lectura {
     public Venta[] obtenerVenta() {
         java.io.FileInputStream in = null;
         Venta[] ventas = new Venta[100];
-        java.io.File archivo = new java.io.File("clientes.tsp");
+        java.io.File archivo = new java.io.File("ventas.tsp");
         if (!archivo.exists()) {
             return ventas;
         }
