@@ -5,8 +5,14 @@
  */
 package ventanas;
 import javax.swing.JOptionPane.*;
-import java.awt.Point;
+import java.awt.*;
+import java.io.File;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFileChooser;
 import static javax.swing.JOptionPane.showMessageDialog;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  *
@@ -15,15 +21,30 @@ import static javax.swing.JOptionPane.showMessageDialog;
 public class PanelDesign extends javax.swing.JPanel {
 
     private Point puntoInicial;
+    private Object RSScaleLabel;
+    private Object fileChooser;
 
     /**
      * Creates new form PanelDesign
      */
     public PanelDesign() {
-        initComponents();
+      
+            initComponents();
+           
+            
         
     }
-
+        public void run(){
+        try {
+            new PanelDesign().setVisible(true);
+            
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
+            Logger.getLogger(PanelDesign.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        }
+        
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -32,7 +53,6 @@ public class PanelDesign extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         jTextField1 = new javax.swing.JTextField();
         imgCamisa = new javax.swing.JLabel();
@@ -41,6 +61,7 @@ public class PanelDesign extends javax.swing.JPanel {
         pnlLogo = new javax.swing.JPanel();
         lblLogo = new javax.swing.JLabel();
         cmbLogo = new javax.swing.JComboBox<>();
+        btnCargar = new javax.swing.JButton();
         pnlColor = new javax.swing.JPanel();
         lblColor = new javax.swing.JLabel();
         cmbColor = new javax.swing.JComboBox<>();
@@ -48,25 +69,18 @@ public class PanelDesign extends javax.swing.JPanel {
         lblTipo = new javax.swing.JLabel();
         cmbTipo = new javax.swing.JComboBox<>();
         btnDiseñar = new javax.swing.JButton();
+        fotocargada = new javax.swing.JLabel();
 
         jTextField1.setText("jTextField1");
 
         setBackground(new java.awt.Color(122, 108, 105));
-        setLayout(new java.awt.GridBagLayout());
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         imgCamisa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventanas/images/kamisama.png"))); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 100;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        add(imgCamisa, gridBagConstraints);
+        add(imgCamisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(117, 189, 356, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventanas/images/letras.png"))); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.FIRST_LINE_START;
-        add(jLabel1, gridBagConstraints);
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(143, 59, -1, -1));
 
         pnlOpciones.setLayout(new javax.swing.BoxLayout(pnlOpciones, javax.swing.BoxLayout.Y_AXIS));
 
@@ -89,6 +103,14 @@ public class PanelDesign extends javax.swing.JPanel {
             }
         });
         pnlLogo.add(cmbLogo);
+
+        btnCargar.setText("Subir imagen");
+        btnCargar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCargarActionPerformed(evt);
+            }
+        });
+        pnlLogo.add(btnCargar);
 
         pnlOpciones.add(pnlLogo);
 
@@ -139,12 +161,8 @@ public class PanelDesign extends javax.swing.JPanel {
 
         pnlOpciones.add(pnlTipo);
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        add(pnlOpciones, gridBagConstraints);
+        add(pnlOpciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(477, 189, -1, 256));
+        add(fotocargada, new org.netbeans.lib.awtextra.AbsoluteConstraints(188, 254, 110, 160));
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmbLogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbLogoActionPerformed
@@ -171,12 +189,26 @@ public class PanelDesign extends javax.swing.JPanel {
        }
     }//GEN-LAST:event_btnDiseñarActionPerformed
 
+    private void btnCargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarActionPerformed
+        JFileChooser fc= new JFileChooser();
+        fc.setDialogTitle("Buscar Imagen");
+        
+        if(fc.showOpenDialog(this) == JFileChooser.APPROVE_OPTION){
+    //   File archivo = new File(fc.getSelectedFile().toString());
+        
+        rsscalelabel.RSScaleLabel.setScaleLabel(fotocargada,fc.getSelectedFile().toString());
+
+        }
+    }//GEN-LAST:event_btnCargarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCargar;
     private javax.swing.JButton btnDiseñar;
     private javax.swing.JComboBox<String> cmbColor;
     private javax.swing.JComboBox<String> cmbLogo;
     private javax.swing.JComboBox<String> cmbTipo;
+    private javax.swing.JLabel fotocargada;
     private javax.swing.JLabel imgCamisa;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField jTextField1;
@@ -192,6 +224,13 @@ public class PanelDesign extends javax.swing.JPanel {
     private void setState(int ICONIFIED) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    private void setLocationRelativeTo(PanelDesign aThis) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+   
+
 
     private class puntoInicial {
 
