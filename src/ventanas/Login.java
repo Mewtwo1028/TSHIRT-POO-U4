@@ -25,7 +25,10 @@ public class Login extends javax.swing.JFrame implements ActionListener, KeyList
      */
     public Login() {
         initComponents();
-
+        datos.EscrituraTxt es = new datos.EscrituraTxt();
+        es.agregarCuenta(new Cuenta("admin", "admin", new clases.Cliente("", "", 20, "", "", false), Cuenta.ADMINISTRADOR));
+        es.agregarCuenta(new Cuenta("user", "user", new clases.Cliente("", "", 20, "", "", false), Cuenta.CLIENTE));
+        System.out.println("creadas");
     }
 
     /**
@@ -302,7 +305,7 @@ public class Login extends javax.swing.JFrame implements ActionListener, KeyList
         datos.LecturaTxt lec = new datos.LecturaTxt();
         Cuenta[] cuentas = lec.obtenerCuentas();
         int i = 0;
-
+        
         boolean existe = false;
         while (cuentas[i] != null) {
             System.out.println(cuentas[i].getNickName());
