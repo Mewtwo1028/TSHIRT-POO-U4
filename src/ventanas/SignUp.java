@@ -359,7 +359,7 @@ public class SignUp extends javax.swing.JFrame implements Serializable {
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         Cliente cliente = new Cliente("",txtNombre.getText(),Integer.parseInt(txtEdad.getText()),txtCorreo.getText(),txtDireccion.getText(),cbxMayorista.isSelected());
-        Cuenta usuario = new Cuenta(txtNombre.getText(),txtApellido.getText(), cliente);
+        Cuenta usuario = new Cuenta(txtNombre.getText(),txtApellido.getText(), cliente, Cuenta.CLIENTE);
         
         
     }//GEN-LAST:event_btnRegistrarActionPerformed

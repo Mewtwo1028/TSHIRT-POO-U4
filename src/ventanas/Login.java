@@ -26,9 +26,8 @@ public class Login extends javax.swing.JFrame implements ActionListener, KeyList
     public Login() {
         initComponents();
         datos.EscrituraTxt es = new datos.EscrituraTxt();
-        es.agregarCuenta(new Cuenta("admin", "admin", new clases.Cliente("", "", 20, "", "", false), Cuenta.ADMINISTRADOR));
-        es.agregarCuenta(new Cuenta("user", "user", new clases.Cliente("", "", 20, "", "", false), Cuenta.CLIENTE));
-
+        es.agregarCuenta(new Cuenta("admin", "admin", new clases.Cliente("A", "Juan", 21, "j@a", "una D", false), Cuenta.ADMINISTRADOR));
+        es.agregarCuenta(new Cuenta("user", "user", new clases.Cliente("A", "jesus", 21, "j@a", "una D", false), Cuenta.CLIENTE));
     }
 
     /**
@@ -317,24 +316,29 @@ public class Login extends javax.swing.JFrame implements ActionListener, KeyList
                     switch (cuentas[i].getTipo()) {
                         case Cuenta.ADMINISTRADOR -> {
                             a = 1;
+                            PanelCuenta.cuenta = cuentas[i];
+                            PanelCuenta.index = i;
                             AdministracionAdmin aa = new AdministracionAdmin();
                             aa.setLocationRelativeTo(null);
                             aa.setVisible(true);
+
                             this.dispose();
                             break;
                         }
                         case Cuenta.CLIENTE -> {
                             a = 1;
+                            PanelCuenta.cuenta = cuentas[i];
+                            PanelCuenta.index = i;
                             AdministracionUsuario au = new AdministracionUsuario();
                             au.setLocationRelativeTo(null);
                             au.setDefaultCloseOperation(EXIT_ON_CLOSE);
                             au.setVisible(true);
+
                             this.dispose();
                             break;
                         }
                     }
-                    if (a == 1)
-                    {
+                    if (a == 1) {
                         break;
                     }
                 } else {
