@@ -38,7 +38,7 @@ public class PanelInventario extends javax.swing.JPanel {
         m=(DefaultTableModel) tblInventario.getModel();
         m.addColumn("ID");
         m.addColumn("Nombre");
-        m.addColumn("Descripcion");
+        
         m.addColumn("Cantidad");
         m.addColumn("Fecha");
         
@@ -189,14 +189,15 @@ public class PanelInventario extends javax.swing.JPanel {
         
         Calendar fecha = new GregorianCalendar();
         int dia = fecha.get(Calendar.DATE); 
-        int mes = fecha.get(Calendar.MONTH);
+        int mes = fecha.get(Calendar.MONTH)+1;
         int ano = fecha.get(Calendar.YEAR);
+        int x = (int)(Math.random()*9999)+1;
         
-        info[0]=showInputDialog(this, "ID");
+        info[0]=x+"";
         info[1]=showInputDialog(this, "Producto");
-        info[2]=showInputDialog(this, "Descripcion");
-        info[3]=showInputDialog(this, "Cantidad");
-        info[4]=dia+"/"+mes+"/"+ano;
+        
+        info[2]=showInputDialog(this, "Cantidad");
+        info[3]=dia+"/"+mes+"/"+ano;
         
         if(info.equals("")){
             throw new IllegalArgumentException("entrada nula"); 
@@ -288,7 +289,7 @@ public class PanelInventario extends javax.swing.JPanel {
             in[i]=A;
             
             i++;
-                if(i==5){
+                if(i==4){
                     m.addRow(in);
                    i=0;
                 }
@@ -310,7 +311,7 @@ public class PanelInventario extends javax.swing.JPanel {
    int x=1;
    String A=""; 
    String in[] = new String [100000];
-   String info[] = new String [5];
+   String info[] = new String [4];
     private DefaultTableModel m;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
