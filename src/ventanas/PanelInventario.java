@@ -280,7 +280,7 @@ public class PanelInventario extends javax.swing.JPanel {
                 {
                 fds.writeBytes((String) tblInventario.getValueAt(i, j));   
                     if (j < tblInventario.getColumnCount() -1) { //agrega separador "," si no es el ultimo elemento de la fila.
-                        fds.writeBytes(",");
+                        fds.writeBytes("\n");
                     }
                    
                }
@@ -307,8 +307,24 @@ public class PanelInventario extends javax.swing.JPanel {
             java.io.FileInputStream fbe=new java.io.FileInputStream("inventario.txt");
             java.io.DataInputStream fde=new java.io.DataInputStream(fbe);
             
-            A[0]=fde.readUTF();
+            int i=0;
+            //do{
+            while((A=fde.readLine())!=null){
+                
+            in[i]=A;
             
+            i++;
+                if(i==5){
+                    m.addRow(in);
+                   i=0;
+                }
+                
+            }
+            
+            
+            
+            //i=0;
+            //}while(x==0);
         } catch (FileNotFoundException ex) {
             Logger.getLogger(PanelInventario.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
@@ -317,8 +333,9 @@ public class PanelInventario extends javax.swing.JPanel {
             
     }//GEN-LAST:event_btnLeerActionPerformed
     
-    
-   String A[]; 
+   int x=1;
+   String A=""; 
+   String in[] = new String [100000];
    String info[] = new String [5];
     private DefaultTableModel m;
     // Variables declaration - do not modify//GEN-BEGIN:variables
