@@ -105,7 +105,7 @@ public class PanelDesign extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnDiseñarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDiseñarActionPerformed
-      
+        
     }//GEN-LAST:event_btnDiseñarActionPerformed
 
     private void btnCargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarActionPerformed

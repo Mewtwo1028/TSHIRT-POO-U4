@@ -369,16 +369,18 @@ public class SignUp extends javax.swing.JFrame implements Serializable {
             showMessageDialog(this, "Ingresa un numero entero, onegaaaiii >.<","ಥ_ಥ",HEIGHT);
             txtEdad.setText("");
             txtEdad.requestFocus();
-           
+            
+           return;
         }
         if (Integer.parseInt(txtEdad.getText()) < 18){
             showMessageDialog(this, "Tienes que ser mayor de edad, oniichan","(╥︣﹏᷅╥) (╥︣﹏᷅╥᷅)", HEIGHT);
             txtEdad.setText("");
             txtEdad.requestFocus();
+            return;
         }
         
         Cliente cliente = new Cliente("",txtNombre.getText(),Integer.parseInt(txtEdad.getText()),txtCorreo.getText(),txtDireccion.getText(),cbxMayorista.isSelected());
-        Cuenta usuario = new Cuenta(txtNombre.getText(),txtApellido.getText(), cliente);
+        Cuenta usuario = new Cuenta(txtNickname.getText(),txtContrasena.getText(), cliente, Cuenta.CLIENTE);
         EscrituraTxt add = new EscrituraTxt ();
         add.agregarCuenta(usuario);
         showMessageDialog (this,"TODO BIEN, TODO CORRECTO... Y YO QUE ME ALEGRO!! (👍≖‿‿≖)👍 👍(≖‿‿≖👍)");

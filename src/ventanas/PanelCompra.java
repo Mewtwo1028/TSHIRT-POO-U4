@@ -121,7 +121,7 @@ public class PanelCompra extends javax.swing.JPanel {
         add(PanelContenido, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
    
-    
+
        
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
