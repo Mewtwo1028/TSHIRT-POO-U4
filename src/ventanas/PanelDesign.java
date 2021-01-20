@@ -10,6 +10,7 @@ import javax.swing.JFileChooser;
 import static javax.swing.JOptionPane.showMessageDialog;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 
 /**
  *
@@ -54,7 +55,7 @@ public class PanelDesign extends javax.swing.JPanel {
         btnCargar = new javax.swing.JButton();
         pnlColor = new javax.swing.JPanel();
         pnlTipo = new javax.swing.JPanel();
-        btnDiseñar = new javax.swing.JButton();
+        btnComprar = new javax.swing.JButton();
         fotocargada = new javax.swing.JLabel();
 
         jTextField1.setText("jTextField1");
@@ -90,13 +91,13 @@ public class PanelDesign extends javax.swing.JPanel {
         pnlTipo.setBackground(new java.awt.Color(153, 153, 153));
         pnlTipo.setPreferredSize(new java.awt.Dimension(120, 30));
 
-        btnDiseñar.setText("Comprar");
-        btnDiseñar.addActionListener(new java.awt.event.ActionListener() {
+        btnComprar.setText("Comprar");
+        btnComprar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDiseñarActionPerformed(evt);
+                btnComprarActionPerformed(evt);
             }
         });
-        pnlTipo.add(btnDiseñar);
+        pnlTipo.add(btnComprar);
 
         pnlOpciones.add(pnlTipo);
 
@@ -104,9 +105,12 @@ public class PanelDesign extends javax.swing.JPanel {
         add(fotocargada, new org.netbeans.lib.awtextra.AbsoluteConstraints(188, 254, 110, 160));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnDiseñarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDiseñarActionPerformed
+    private void btnComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarActionPerformed
+        PaneldePago objPanelPagoT = new PaneldePago();
         
-    }//GEN-LAST:event_btnDiseñarActionPerformed
+        objPanelPagoT.setVisible(true);
+        
+    }//GEN-LAST:event_btnComprarActionPerformed
 
     private void btnCargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarActionPerformed
         JFileChooser fc= new JFileChooser();
@@ -123,7 +127,7 @@ public class PanelDesign extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCargar;
-    private javax.swing.JButton btnDiseñar;
+    private javax.swing.JButton btnComprar;
     private javax.swing.JLabel fotocargada;
     private javax.swing.JLabel imgCamisa;
     private javax.swing.JLabel jLabel1;
