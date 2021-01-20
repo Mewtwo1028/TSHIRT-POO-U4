@@ -6,10 +6,13 @@
 package ventanas;
 
 import clases.*;
+import datos.EscrituraTxt;
 import java.awt.Frame;
 import java.awt.Point;
+import static java.awt.image.ImageObserver.HEIGHT;
 import java.io.*;
 import java.util.ArrayList;
+import static javax.swing.JOptionPane.showMessageDialog;
 /**
  *
  * @author codeboy1028
@@ -358,10 +361,28 @@ public class SignUp extends javax.swing.JFrame implements Serializable {
     }//GEN-LAST:event_lblTitularMousePressed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+         try{  
+            Integer.parseInt(txtEdad.getText());
+           
+        }catch (NumberFormatException e)
+        {
+            showMessageDialog(this, "Ingresa un numero entero, onegaaaiii >.<","ಥ_ಥ",HEIGHT);
+            txtEdad.setText("");
+            txtEdad.requestFocus();
+           
+        }
+        if (Integer.parseInt(txtEdad.getText()) < 18){
+            showMessageDialog(this, "Tienes que ser mayor de edad, oniichan","(╥︣﹏᷅╥) (╥︣﹏᷅╥᷅)", HEIGHT);
+            txtEdad.setText("");
+            txtEdad.requestFocus();
+        }
+        
         Cliente cliente = new Cliente("",txtNombre.getText(),Integer.parseInt(txtEdad.getText()),txtCorreo.getText(),txtDireccion.getText(),cbxMayorista.isSelected());
-        Cuenta usuario = new Cuenta(txtNombre.getText(),txtApellido.getText(), cliente, Cuenta.CLIENTE);
-        
-        
+        Cuenta usuario = new Cuenta(txtNombre.getText(),txtApellido.getText(), cliente);
+        EscrituraTxt add = new EscrituraTxt ();
+        add.agregarCuenta(usuario);
+        showMessageDialog (this,"TODO BIEN, TODO CORRECTO... Y YO QUE ME ALEGRO!! (👍≖‿‿≖)👍 👍(≖‿‿≖👍)");
+
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
 
