@@ -197,6 +197,15 @@ public class PanelInventario extends javax.swing.JPanel {
         info[1]=showInputDialog(this, "Producto");
         
         info[2]=showInputDialog(this, "Cantidad");
+        try {
+            int numero = new Integer(info[2]);
+            
+        } catch (NumberFormatException e) {
+            
+            showMessageDialog(this,"Error 525 la cantidad debe ser un numero");
+            m.removeRow(1);
+        }
+        
         info[3]=dia+"/"+mes+"/"+ano;
         
         if(info.equals("")){
@@ -216,7 +225,15 @@ public class PanelInventario extends javax.swing.JPanel {
         
         
     }
-    
+     public static boolean metodoN(String cadenaLeida) {
+        
+         try {
+            int numero = new Integer(cadenaLeida);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
     private void btnAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarMouseClicked
         
     }//GEN-LAST:event_btnAgregarMouseClicked
