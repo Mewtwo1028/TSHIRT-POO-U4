@@ -25,10 +25,6 @@ public class Login extends javax.swing.JFrame implements ActionListener, KeyList
      */
     public Login() {
         initComponents();
-        datos.EscrituraTxt es = new datos.EscrituraTxt();
-        es.agregarCuenta(new Cuenta("admin", "admin", new clases.Cliente("", "", 20, "", "", false), Cuenta.ADMINISTRADOR));
-        es.agregarCuenta(new Cuenta("user", "user", new clases.Cliente("", "", 20, "", "", false), Cuenta.CLIENTE));
-        System.out.println("creadas");
     }
 
     /**
@@ -307,6 +303,7 @@ public class Login extends javax.swing.JFrame implements ActionListener, KeyList
         int i = 0;
         
         boolean existe = false;
+        int a = 0;
         while (cuentas[i] != null) {
             System.out.println(cuentas[i].getNickName());
             System.out.println(cuentas[i].getContrasena());
@@ -315,18 +312,26 @@ public class Login extends javax.swing.JFrame implements ActionListener, KeyList
                 if (cuentas[i].getContrasena().equals(pass)) {
                     switch (cuentas[i].getTipo()) {
                         case Cuenta.ADMINISTRADOR -> {
+                            a = 1;
                             AdministracionAdmin aa = new AdministracionAdmin();
                             aa.setLocationRelativeTo(null);
                             aa.setVisible(true);
-                            Login.this.dispose();
+                            this.dispose();
+                            break;
                         }
                         case Cuenta.CLIENTE -> {
+                            a = 1;
                             AdministracionUsuario au = new AdministracionUsuario();
                             au.setLocationRelativeTo(null);
                             au.setDefaultCloseOperation(EXIT_ON_CLOSE);
                             au.setVisible(true);
-                            Login.this.dispose();
+                            this.dispose();
+                            break;
                         }
+                    }
+                    if (a == 1)
+                    {
+                        break;
                     }
                 } else {
                     JOptionPane.showMessageDialog(this, "Introduzca la password correcta", "Password incorrecta", JOptionPane.ERROR_MESSAGE);

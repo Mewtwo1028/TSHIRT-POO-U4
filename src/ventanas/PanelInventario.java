@@ -19,6 +19,7 @@ import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.showInputDialog;
 import static javax.swing.JOptionPane.showMessageDialog;
 import javax.swing.JTextField;
+import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -33,10 +34,11 @@ public class PanelInventario extends javax.swing.JPanel {
     public PanelInventario() {
         
         initComponents();
+        tblInventario.setAutoCreateRowSorter(true);
         m=(DefaultTableModel) tblInventario.getModel();
         m.addColumn("ID");
         m.addColumn("Nombre");
-        m.addColumn("Descripcion");
+        
         m.addColumn("Cantidad");
         m.addColumn("Fecha");
         
@@ -64,7 +66,6 @@ public class PanelInventario extends javax.swing.JPanel {
         btnLimpiar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblInventario = new javax.swing.JTable();
-        cmbOrdenar = new javax.swing.JComboBox<>();
         btnGuardar = new javax.swing.JButton();
         btnLeer = new javax.swing.JButton();
 
@@ -144,20 +145,6 @@ public class PanelInventario extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(16, 10, 20, 0);
         add(jScrollPane1, gridBagConstraints);
 
-        cmbOrdenar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ordenar", "A-Z", "Z-A", "Fecha" }));
-        cmbOrdenar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbOrdenarActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 10, 0, 0);
-        add(cmbOrdenar, gridBagConstraints);
-
         btnGuardar.setText("Guardar");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -202,14 +189,24 @@ public class PanelInventario extends javax.swing.JPanel {
         
         Calendar fecha = new GregorianCalendar();
         int dia = fecha.get(Calendar.DATE); 
-        int mes = fecha.get(Calendar.MONTH);
+        int mes = fecha.get(Calendar.MONTH)+1;
         int ano = fecha.get(Calendar.YEAR);
+        int x = (int)(Math.random()*9999)+1;
         
-        info[0]=showInputDialog(this, "ID");
+        info[0]=x+"";
         info[1]=showInputDialog(this, "Producto");
-        info[2]=showInputDialog(this, "Descripcion");
-        info[3]=showInputDialog(this, "Cantidad");
-        info[4]=dia+"/"+mes+"/"+ano;
+        
+        info[2]=showInputDialog(this, "Cantidad");
+        try {
+            int numero = new Integer(info[2]);
+            
+        } catch (NumberFormatException e) {
+            
+            showMessageDialog(this,"Error 525 la cantidad debe ser un numero");
+            m.removeRow(1);
+        }
+        
+        info[3]=dia+"/"+mes+"/"+ano;
         
         if(info.equals("")){
             throw new IllegalArgumentException("entrada nula"); 
@@ -228,7 +225,15 @@ public class PanelInventario extends javax.swing.JPanel {
         
         
     }
-    
+     public static boolean metodoN(String cadenaLeida) {
+        
+         try {
+            int numero = new Integer(cadenaLeida);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
     private void btnAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarMouseClicked
         
     }//GEN-LAST:event_btnAgregarMouseClicked
@@ -255,23 +260,10 @@ public class PanelInventario extends javax.swing.JPanel {
        }
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
-    private void cmbOrdenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbOrdenarActionPerformed
-        String ob=cmbOrdenar.getSelectedItem().toString();
-        if(ob.equals("A-Z")){
-            
-        }
-        if(ob.equals("Z-A")){
-            
-        }
-        if(ob.equals("Fecha")){
-            
-        }
-    }//GEN-LAST:event_cmbOrdenarActionPerformed
-
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
           java.io.FileOutputStream fbs;
         try {
-            fbs = new java.io.FileOutputStream("inventario.txt");
+            fbs = new java.io.FileOutputStream("ListaInventarios.tsp");
              java.io.DataOutputStream fds=new java.io.DataOutputStream(fbs);
              
              for (int i = 0 ; i < tblInventario.getRowCount(); i++) //realiza un barrido por filas.
@@ -280,7 +272,7 @@ public class PanelInventario extends javax.swing.JPanel {
                 {
                 fds.writeBytes((String) tblInventario.getValueAt(i, j));   
                     if (j < tblInventario.getColumnCount() -1) { //agrega separador "," si no es el ultimo elemento de la fila.
-                        fds.writeBytes(",");
+                        fds.writeBytes("\n");
                     }
                    
                }
@@ -304,11 +296,27 @@ public class PanelInventario extends javax.swing.JPanel {
     private void btnLeerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLeerActionPerformed
         
         try {
-            java.io.FileInputStream fbe=new java.io.FileInputStream("inventario.txt");
+            java.io.FileInputStream fbe=new java.io.FileInputStream("ListaInventarios.tsp");
             java.io.DataInputStream fde=new java.io.DataInputStream(fbe);
             
-            A[0]=fde.readUTF();
+            int i=0;
+            //do{
+            while((A=fde.readLine())!=null){
+                
+            in[i]=A;
             
+            i++;
+                if(i==4){
+                    m.addRow(in);
+                   i=0;
+                }
+                
+            }
+            
+            
+            
+            //i=0;
+            //}while(x==0);
         } catch (FileNotFoundException ex) {
             Logger.getLogger(PanelInventario.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
@@ -317,9 +325,10 @@ public class PanelInventario extends javax.swing.JPanel {
             
     }//GEN-LAST:event_btnLeerActionPerformed
     
-    
-   String A[]; 
-   String info[] = new String [5];
+   int x=1;
+   String A=""; 
+   String in[] = new String [100000];
+   String info[] = new String [4];
     private DefaultTableModel m;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
@@ -327,7 +336,6 @@ public class PanelInventario extends javax.swing.JPanel {
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnLeer;
     private javax.swing.JButton btnLimpiar;
-    private javax.swing.JComboBox<String> cmbOrdenar;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable tblInventario;

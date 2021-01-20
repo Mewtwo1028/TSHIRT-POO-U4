@@ -37,9 +37,6 @@ public class AdministracionAdmin extends javax.swing.JFrame {
     private void initComponents() {
 
         tpnlAdminAdmin = new javax.swing.JTabbedPane();
-        panelClientes1 = new ventanas.PanelClientes();
-        pnlProductos = new ventanas.PanelProductos();
-        pnlVenta = new ventanas.panelVenta();
         pnlInfoVentas = new ventanas.PanelInfoVentas();
         pnlInventario1 = new ventanas.PanelInventario();
         pnlCabecera = new javax.swing.JPanel();
@@ -60,17 +57,6 @@ public class AdministracionAdmin extends javax.swing.JFrame {
         tpnlAdminAdmin.setBackground(new java.awt.Color(0, 0, 0));
         tpnlAdminAdmin.setForeground(new java.awt.Color(200, 200, 200));
         tpnlAdminAdmin.setOpaque(true);
-        tpnlAdminAdmin.addTab("Clientes", panelClientes1);
-
-        pnlProductos.setMinimumSize(new java.awt.Dimension(700, 500));
-        pnlProductos.setPreferredSize(new java.awt.Dimension(795, 595));
-        tpnlAdminAdmin.addTab("Productos", pnlProductos);
-
-        pnlVenta.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        pnlVenta.setMinimumSize(new java.awt.Dimension(795, 600));
-        pnlVenta.setPreferredSize(new java.awt.Dimension(795, 600));
-        tpnlAdminAdmin.addTab("Ventas", pnlVenta);
-        pnlVenta.getAccessibleContext().setAccessibleParent(this);
 
         pnlInfoVentas.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         pnlInfoVentas.setMinimumSize(new java.awt.Dimension(795, 600));
@@ -194,14 +180,11 @@ public class AdministracionAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel lblMaximizar;
     private javax.swing.JLabel lblMinimizar;
     private javax.swing.JLabel lblTitular;
-    private ventanas.PanelClientes panelClientes1;
     private javax.swing.JPanel pnlCabecera;
     private ventanas.PanelInfoVentas pnlInfoVentas;
     private ventanas.PanelInventario pnlInventario1;
     private javax.swing.JPanel pnlOpciones;
-    private ventanas.PanelProductos pnlProductos;
     private javax.swing.JPanel pnlTitulos;
-    private ventanas.panelVenta pnlVenta;
     private javax.swing.JTabbedPane tpnlAdminAdmin;
     // End of variables declaration//GEN-END:variables
 }

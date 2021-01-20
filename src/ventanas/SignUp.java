@@ -364,7 +364,6 @@ public class SignUp extends javax.swing.JFrame implements Serializable {
         
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
-    
 
     private Point puntoInicial;
     // Variables declaration - do not modify//GEN-BEGIN:variables

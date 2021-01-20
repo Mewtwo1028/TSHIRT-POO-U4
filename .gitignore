@@ -10,3 +10,4 @@ nb-configuration.xml
 *.war
 *.ear
 /nbproject/
+*.tsp

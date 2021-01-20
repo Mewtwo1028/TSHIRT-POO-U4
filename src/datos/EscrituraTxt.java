@@ -25,6 +25,10 @@ public class EscrituraTxt extends SignUp implements Escritura, Serializable {
         lt = new LecturaTxt();
     }
 
+    public EscrituraTxt(Cuenta usuario) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     /**
      * Funcion encargada de agregar clientes al archivo general para los
      * clientes llamado 'clientes.tsp'
