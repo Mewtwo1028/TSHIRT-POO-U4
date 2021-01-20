@@ -51,15 +51,9 @@ public class PanelDesign extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         pnlOpciones = new javax.swing.JPanel();
         pnlLogo = new javax.swing.JPanel();
-        lblLogo = new javax.swing.JLabel();
-        cmbLogo = new javax.swing.JComboBox<>();
         btnCargar = new javax.swing.JButton();
         pnlColor = new javax.swing.JPanel();
-        lblColor = new javax.swing.JLabel();
-        cmbColor = new javax.swing.JComboBox<>();
         pnlTipo = new javax.swing.JPanel();
-        lblTipo = new javax.swing.JLabel();
-        cmbTipo = new javax.swing.JComboBox<>();
         btnDiseñar = new javax.swing.JButton();
         fotocargada = new javax.swing.JLabel();
 
@@ -79,23 +73,6 @@ public class PanelDesign extends javax.swing.JPanel {
         pnlLogo.setBackground(new java.awt.Color(153, 153, 153));
         pnlLogo.setPreferredSize(new java.awt.Dimension(120, 30));
 
-        lblLogo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblLogo.setText("Logo");
-        lblLogo.setPreferredSize(new java.awt.Dimension(120, 20));
-        pnlLogo.add(lblLogo);
-
-        cmbLogo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        cmbLogo.setForeground(new java.awt.Color(102, 102, 102));
-        cmbLogo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona", "Power Rangers", "Pokemon", "BTS" }));
-        cmbLogo.setPreferredSize(new java.awt.Dimension(120, 30));
-        cmbLogo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbLogoActionPerformed(evt);
-            }
-        });
-        pnlLogo.add(cmbLogo);
-
         btnCargar.setText("Subir imagen");
         btnCargar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,42 +85,12 @@ public class PanelDesign extends javax.swing.JPanel {
 
         pnlColor.setBackground(new java.awt.Color(153, 153, 153));
         pnlColor.setPreferredSize(new java.awt.Dimension(120, 30));
-
-        lblColor.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblColor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblColor.setText("Color");
-        lblColor.setPreferredSize(new java.awt.Dimension(120, 20));
-        pnlColor.add(lblColor);
-
-        cmbColor.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        cmbColor.setForeground(new java.awt.Color(102, 102, 102));
-        cmbColor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona", "Azul", "Rojo", "Verde", "Amarillo" }));
-        cmbColor.setPreferredSize(new java.awt.Dimension(120, 30));
-        cmbColor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cmbColorActionPerformed(evt);
-            }
-        });
-        pnlColor.add(cmbColor);
-
         pnlOpciones.add(pnlColor);
 
         pnlTipo.setBackground(new java.awt.Color(153, 153, 153));
         pnlTipo.setPreferredSize(new java.awt.Dimension(120, 30));
 
-        lblTipo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblTipo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTipo.setText("Tipo");
-        lblTipo.setPreferredSize(new java.awt.Dimension(120, 20));
-        pnlTipo.add(lblTipo);
-
-        cmbTipo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        cmbTipo.setForeground(new java.awt.Color(102, 102, 102));
-        cmbTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona", "Camisa", "Playera", "Sueter" }));
-        cmbTipo.setPreferredSize(new java.awt.Dimension(120, 30));
-        pnlTipo.add(cmbTipo);
-
-        btnDiseñar.setText("¡Diseñalo!");
+        btnDiseñar.setText("Comprar");
         btnDiseñar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDiseñarActionPerformed(evt);
@@ -157,28 +104,8 @@ public class PanelDesign extends javax.swing.JPanel {
         add(fotocargada, new org.netbeans.lib.awtextra.AbsoluteConstraints(188, 254, 110, 160));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cmbLogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbLogoActionPerformed
-        
-       
-    }//GEN-LAST:event_cmbLogoActionPerformed
-
-    private void cmbColorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbColorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cmbColorActionPerformed
-
     private void btnDiseñarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDiseñarActionPerformed
-         if (cmbLogo.getSelectedIndex()<1)
-       {
-           showMessageDialog(this,"Por favor, seleccione un logo");
-       }
-         if (cmbColor.getSelectedIndex()<1)
-       {
-           showMessageDialog(this,"Por favor, seleccione un color");
-       }
-         if (cmbTipo.getSelectedIndex()<1)
-       {
-           showMessageDialog(this,"Por favor, seleccione un tipo");
-       }
+      
     }//GEN-LAST:event_btnDiseñarActionPerformed
 
     private void btnCargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarActionPerformed
@@ -197,16 +124,10 @@ public class PanelDesign extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCargar;
     private javax.swing.JButton btnDiseñar;
-    private javax.swing.JComboBox<String> cmbColor;
-    private javax.swing.JComboBox<String> cmbLogo;
-    private javax.swing.JComboBox<String> cmbTipo;
     private javax.swing.JLabel fotocargada;
     private javax.swing.JLabel imgCamisa;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JLabel lblColor;
-    private javax.swing.JLabel lblLogo;
-    private javax.swing.JLabel lblTipo;
     private javax.swing.JPanel pnlColor;
     private javax.swing.JPanel pnlLogo;
     private javax.swing.JPanel pnlOpciones;
