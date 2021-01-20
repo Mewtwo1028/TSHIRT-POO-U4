@@ -15,12 +15,19 @@ import javax.swing.JTextField;
  * @author Hydra
  */
 public class PanelCuenta extends javax.swing.JPanel {
+    
+    public static clases.Cuenta cuenta;
+    public static int index;
 
     /**
      * Creates new form PanelCuenta
      */
     public PanelCuenta() {
         initComponents();
+        txtNick.setText(cuenta.getNickName());
+        txtNombre.setText(cuenta.getUsuario().getNombre());
+        txtDireccion.setText(cuenta.getUsuario().getDireccion());
+        txtCorreo.setText(cuenta.getUsuario().getCodigo());
     }
 
     /**
@@ -38,13 +45,11 @@ public class PanelCuenta extends javax.swing.JPanel {
         Nick = new javax.swing.JLabel();
         Nombre = new javax.swing.JLabel();
         Direccion = new javax.swing.JLabel();
-        Telefono = new javax.swing.JLabel();
         Correo = new javax.swing.JLabel();
-        cmbNick = new javax.swing.JTextField();
-        cmbNombre = new javax.swing.JTextField();
-        cmbDireccion = new javax.swing.JTextField();
-        cmbTelefono = new javax.swing.JTextField();
-        cmbCorreo = new javax.swing.JTextField();
+        txtNick = new javax.swing.JTextField();
+        txtNombre = new javax.swing.JTextField();
+        txtDireccion = new javax.swing.JTextField();
+        txtCorreo = new javax.swing.JTextField();
         btnCambiar = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
@@ -104,19 +109,6 @@ public class PanelCuenta extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         PanelContenido.add(Direccion, gridBagConstraints);
 
-        Telefono.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        Telefono.setForeground(new java.awt.Color(255, 255, 255));
-        Telefono.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Telefono.setText("Telefono:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 40;
-        gridBagConstraints.ipady = 20;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        PanelContenido.add(Telefono, gridBagConstraints);
-
         Correo.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         Correo.setForeground(new java.awt.Color(255, 255, 255));
         Correo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -130,7 +122,7 @@ public class PanelCuenta extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         PanelContenido.add(Correo, gridBagConstraints);
 
-        cmbNick.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtNick.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 2;
@@ -139,12 +131,12 @@ public class PanelCuenta extends javax.swing.JPanel {
         gridBagConstraints.ipadx = 100;
         gridBagConstraints.ipady = 5;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        PanelContenido.add(cmbNick, gridBagConstraints);
+        PanelContenido.add(txtNick, gridBagConstraints);
 
-        cmbNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        cmbNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                cmbNombreKeyTyped(evt);
+                txtNombreKeyTyped(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -155,9 +147,9 @@ public class PanelCuenta extends javax.swing.JPanel {
         gridBagConstraints.ipadx = 100;
         gridBagConstraints.ipady = 5;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        PanelContenido.add(cmbNombre, gridBagConstraints);
+        PanelContenido.add(txtNombre, gridBagConstraints);
 
-        cmbDireccion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtDireccion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 6;
@@ -166,25 +158,9 @@ public class PanelCuenta extends javax.swing.JPanel {
         gridBagConstraints.ipadx = 100;
         gridBagConstraints.ipady = 5;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        PanelContenido.add(cmbDireccion, gridBagConstraints);
+        PanelContenido.add(txtDireccion, gridBagConstraints);
 
-        cmbTelefono.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        cmbTelefono.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                cmbTelefonoKeyTyped(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.ipadx = 100;
-        gridBagConstraints.ipady = 5;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        PanelContenido.add(cmbTelefono, gridBagConstraints);
-
-        cmbCorreo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtCorreo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 10;
@@ -193,7 +169,7 @@ public class PanelCuenta extends javax.swing.JPanel {
         gridBagConstraints.ipadx = 100;
         gridBagConstraints.ipady = 5;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        PanelContenido.add(cmbCorreo, gridBagConstraints);
+        PanelContenido.add(txtCorreo, gridBagConstraints);
 
         btnCambiar.setText("Cambiar foto");
         btnCambiar.addActionListener(new java.awt.event.ActionListener() {
@@ -244,38 +220,30 @@ public class PanelCuenta extends javax.swing.JPanel {
     }//GEN-LAST:event_btnCambiarActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        if (campoVacio(cmbNick)) {
+        if (campoVacio(txtNick)) {
             return;
         }
-        if (campoVacio(cmbNombre)) {
+        if (campoVacio(txtNombre)) {
             return;
         }
-        if (campoVacio(cmbDireccion)) {
+        if (campoVacio(txtDireccion)) {
             return;
         }
-        if (campoVacio(cmbTelefono)) {
+        if (campoVacio(txtCorreo)) {
             return;
         }
-        if (campoVacio(cmbCorreo)) {
-            return;
-        }
+        datos.EscrituraTxt es = new datos.EscrituraTxt();
+        es.modificarCuenta(cuenta, index);
         Limpiar();
     }//GEN-LAST:event_btnGuardarActionPerformed
 
-    private void cmbNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cmbNombreKeyTyped
+    private void txtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyTyped
       char c= evt.getKeyChar();
       if((c<'a'||c>'z') && (c<'A'||c>'Z')){
           evt.consume();
       }
         
-    }//GEN-LAST:event_cmbNombreKeyTyped
-
-    private void cmbTelefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cmbTelefonoKeyTyped
-        char c= evt.getKeyChar();
-        if(c<'0'||c>'9'){
-            evt.consume();
-        }
-    }//GEN-LAST:event_cmbTelefonoKeyTyped
+    }//GEN-LAST:event_txtNombreKeyTyped
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         System.exit(0);
@@ -298,11 +266,10 @@ public class PanelCuenta extends javax.swing.JPanel {
     }
     
     public void Limpiar(){
-        cmbNick.setText("");
-        cmbNombre.setText("");
-        cmbDireccion.setText("");
-        cmbTelefono.setText("");
-        cmbCorreo.setText("");
+        txtNick.setText("");
+        txtNombre.setText("");
+        txtDireccion.setText("");
+        txtCorreo.setText("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -311,15 +278,13 @@ public class PanelCuenta extends javax.swing.JPanel {
     private javax.swing.JLabel Nick;
     private javax.swing.JLabel Nombre;
     private javax.swing.JPanel PanelContenido;
-    private javax.swing.JLabel Telefono;
     private javax.swing.JButton btnCambiar;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnSalir;
-    private javax.swing.JTextField cmbCorreo;
-    private javax.swing.JTextField cmbDireccion;
-    private javax.swing.JTextField cmbNick;
-    private javax.swing.JTextField cmbNombre;
-    private javax.swing.JTextField cmbTelefono;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField txtCorreo;
+    private javax.swing.JTextField txtDireccion;
+    private javax.swing.JTextField txtNick;
+    private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
 }
