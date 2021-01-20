@@ -16,6 +16,9 @@ public class PanelCompra extends javax.swing.JPanel {
      */
     public PanelCompra() {
         initComponents();
+        lblNick.setText(PanelCuenta.cuenta.getNickName());
+        lblNombre.setText(PanelCuenta.cuenta.getUsuario().getNombre());
+        lblDireccion.setText(PanelCuenta.cuenta.getUsuario().getDireccion());
     }
 
     /**
@@ -30,10 +33,9 @@ public class PanelCompra extends javax.swing.JPanel {
 
         PanelContenido = new javax.swing.JPanel();
         Foto = new javax.swing.JLabel();
-        Name = new javax.swing.JLabel();
-        tip = new javax.swing.JLabel();
-        Nombre1 = new javax.swing.JLabel();
-        dire = new javax.swing.JLabel();
+        lblNick = new javax.swing.JLabel();
+        lblNombre = new javax.swing.JLabel();
+        lblDireccion = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tablacompras = new javax.swing.JTable();
 
@@ -55,10 +57,10 @@ public class PanelCompra extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         PanelContenido.add(Foto, gridBagConstraints);
 
-        Name.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        Name.setForeground(new java.awt.Color(255, 255, 255));
-        Name.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Name.setText("Nick");
+        lblNick.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        lblNick.setForeground(new java.awt.Color(255, 255, 255));
+        lblNick.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblNick.setText("Nick");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 1;
@@ -66,25 +68,12 @@ public class PanelCompra extends javax.swing.JPanel {
         gridBagConstraints.ipadx = 50;
         gridBagConstraints.ipady = 20;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        PanelContenido.add(Name, gridBagConstraints);
+        PanelContenido.add(lblNick, gridBagConstraints);
 
-        tip.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        tip.setForeground(new java.awt.Color(255, 255, 255));
-        tip.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        tip.setText("Tipo");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 50;
-        gridBagConstraints.ipady = 20;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        PanelContenido.add(tip, gridBagConstraints);
-
-        Nombre1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        Nombre1.setForeground(new java.awt.Color(255, 255, 255));
-        Nombre1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Nombre1.setText("Nombre");
+        lblNombre.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        lblNombre.setForeground(new java.awt.Color(255, 255, 255));
+        lblNombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblNombre.setText("Nombre");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 2;
@@ -92,12 +81,12 @@ public class PanelCompra extends javax.swing.JPanel {
         gridBagConstraints.ipadx = 50;
         gridBagConstraints.ipady = 20;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        PanelContenido.add(Nombre1, gridBagConstraints);
+        PanelContenido.add(lblNombre, gridBagConstraints);
 
-        dire.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        dire.setForeground(new java.awt.Color(255, 255, 255));
-        dire.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        dire.setText("Direccion");
+        lblDireccion.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        lblDireccion.setForeground(new java.awt.Color(255, 255, 255));
+        lblDireccion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblDireccion.setText("Direccion");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 4;
@@ -105,7 +94,7 @@ public class PanelCompra extends javax.swing.JPanel {
         gridBagConstraints.ipadx = 50;
         gridBagConstraints.ipady = 20;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        PanelContenido.add(dire, gridBagConstraints);
+        PanelContenido.add(lblDireccion, gridBagConstraints);
 
         tablacompras.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -137,13 +126,12 @@ public class PanelCompra extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Foto;
-    private javax.swing.JLabel Name;
-    private javax.swing.JLabel Nombre1;
     private javax.swing.JPanel PanelContenido;
-    private javax.swing.JLabel dire;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel lblDireccion;
+    private javax.swing.JLabel lblNick;
+    private javax.swing.JLabel lblNombre;
     private javax.swing.JTable tablacompras;
-    private javax.swing.JLabel tip;
     // End of variables declaration//GEN-END:variables
 
     private void setState(int ICONIFIED) {

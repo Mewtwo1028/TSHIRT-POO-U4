@@ -27,7 +27,7 @@ public class PanelCuenta extends javax.swing.JPanel {
         txtNick.setText(cuenta.getNickName());
         txtNombre.setText(cuenta.getUsuario().getNombre());
         txtDireccion.setText(cuenta.getUsuario().getDireccion());
-        txtCorreo.setText(cuenta.getUsuario().getCodigo());
+        txtCorreo.setText(cuenta.getUsuario().getCorreo());
     }
 
     /**
