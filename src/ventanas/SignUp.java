@@ -12,6 +12,8 @@ import java.awt.Point;
 import static java.awt.image.ImageObserver.HEIGHT;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import static javax.swing.JOptionPane.showMessageDialog;
 /**
  *
@@ -366,28 +368,49 @@ public class SignUp extends javax.swing.JFrame implements Serializable {
            
         }catch (NumberFormatException e)
         {
-            showMessageDialog(this, "Ingresa un numero entero, onegaaaiii >.<","ಥ_ಥ",HEIGHT);
+            
+            showMessageDialog(this, "Ingresa un numero entero, Intenta de nuevo","Error",HEIGHT);
             txtEdad.setText("");
             txtEdad.requestFocus();
             
            return;
         }
+         
+        if(txtContrasena.getText().length()<=8){
+            showMessageDialog(this,"La contraseña tiene que ser mayor a 8 caracteres, Intenta de nuevo","Error",HEIGHT);
+            txtContrasena.setText("");
+            txtContrasena.requestFocus();
+            return;
+        }
+        
         if (Integer.parseInt(txtEdad.getText()) < 18){
-            showMessageDialog(this, "Tienes que ser mayor de edad, oniichan","(╥︣﹏᷅╥) (╥︣﹏᷅╥᷅)", HEIGHT);
+            showMessageDialog(this, "Tienes que ser mayor de edad, Intenta de nuevo","Error", HEIGHT);
             txtEdad.setText("");
             txtEdad.requestFocus();
             return;
         }
         
+                
+         dato=txtCorreo.getText();
+         Pattern pattern = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"+ "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+         Matcher mather = pattern.matcher(dato);
+         if (mather.find() == false) {
+             showMessageDialog(this,"Correo incorrecto, Intenta de nuevo", "Error",HEIGHT);
+             txtCorreo.setText("");
+             txtCorreo.requestFocus();
+             return;
+         }
+         
+         
         Cliente cliente = new Cliente("",txtNombre.getText(),Integer.parseInt(txtEdad.getText()),txtCorreo.getText(),txtDireccion.getText(),cbxMayorista.isSelected());
         Cuenta usuario = new Cuenta(txtNickname.getText(),txtContrasena.getText(), cliente, Cuenta.CLIENTE);
         EscrituraTxt add = new EscrituraTxt ();
         add.agregarCuenta(usuario);
-        showMessageDialog (this,"TODO BIEN, TODO CORRECTO... Y YO QUE ME ALEGRO!! (👍≖‿‿≖)👍 👍(≖‿‿≖👍)");
-
+        showMessageDialog (this,"Registro completado con exíto");
+        
     }//GEN-LAST:event_btnRegistrarActionPerformed
-
-
+    String dato="";
+    boolean c;
     private Point puntoInicial;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnRegistrar;
