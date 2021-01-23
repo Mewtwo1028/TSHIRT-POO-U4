@@ -54,6 +54,7 @@ public class PanelDesign extends javax.swing.JPanel {
         pnlLogo = new javax.swing.JPanel();
         btnCargar = new javax.swing.JButton();
         pnlColor = new javax.swing.JPanel();
+        jComboBox1 = new javax.swing.JComboBox<>();
         pnlTipo = new javax.swing.JPanel();
         btnComprar = new javax.swing.JButton();
         fotocargada = new javax.swing.JLabel();
@@ -86,6 +87,11 @@ public class PanelDesign extends javax.swing.JPanel {
 
         pnlColor.setBackground(new java.awt.Color(153, 153, 153));
         pnlColor.setPreferredSize(new java.awt.Dimension(120, 30));
+
+        jComboBox1.setFont(new java.awt.Font("Ubuntu", 0, 11)); // NOI18N
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TALLA", "$115 Chica", "$140 Mediana", "$170 Grande", "$190 Extra Grande", "$210 Jumbo", " " }));
+        pnlColor.add(jComboBox1);
+
         pnlOpciones.add(pnlColor);
 
         pnlTipo.setBackground(new java.awt.Color(153, 153, 153));
@@ -130,6 +136,7 @@ public class PanelDesign extends javax.swing.JPanel {
     private javax.swing.JButton btnComprar;
     private javax.swing.JLabel fotocargada;
     private javax.swing.JLabel imgCamisa;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JPanel pnlColor;
