@@ -43,8 +43,8 @@ public class PaneldePago extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
+        jPanel1 = new javax.swing.JPanel();
         pnlPago = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         txtNombreT = new javax.swing.JTextField();
@@ -59,24 +59,31 @@ public class PaneldePago extends javax.swing.JFrame {
         txtMes = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         txtAno = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(122, 108, 105));
 
-        pnlPago.setLayout(new java.awt.GridBagLayout());
+        jPanel1.setBackground(new java.awt.Color(122, 108, 105));
+        jPanel1.setForeground(new java.awt.Color(122, 108, 105));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        pnlPago.setBackground(new java.awt.Color(122, 108, 105));
+        pnlPago.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel5.setText("Codigo de Seguridad");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 40;
-        gridBagConstraints.ipady = 10;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        pnlPago.add(jLabel5, gridBagConstraints);
+        pnlPago.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 203, 139, 24));
 
         txtNombreT.setText("NOMBRE");
+        txtNombreT.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtNombreTMouseClicked(evt);
+            }
+        });
         txtNombreT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNombreTActionPerformed(evt);
@@ -87,65 +94,42 @@ public class PaneldePago extends javax.swing.JFrame {
                 txtNombreTKeyTyped(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 40;
-        gridBagConstraints.ipady = 10;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        pnlPago.add(txtNombreT, gridBagConstraints);
+        pnlPago.add(txtNombreT, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 79, 139, 30));
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Nombre del Titular");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 40;
-        gridBagConstraints.ipady = 10;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        pnlPago.add(jLabel1, gridBagConstraints);
+        pnlPago.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 45, 139, 24));
 
         txtNumeroT.setText("NUMER");
+        txtNumeroT.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtNumeroTMouseClicked(evt);
+            }
+        });
+        txtNumeroT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNumeroTActionPerformed(evt);
+            }
+        });
         txtNumeroT.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtNumeroTKeyTyped(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 40;
-        gridBagConstraints.ipady = 10;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        pnlPago.add(txtNumeroT, gridBagConstraints);
+        pnlPago.add(txtNumeroT, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 153, 139, 40));
 
         jLabel2.setText("Número de Tarjeta");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 40;
-        gridBagConstraints.ipady = 10;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        pnlPago.add(jLabel2, gridBagConstraints);
+        pnlPago.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 119, 139, 24));
 
         jLabel4.setText("Fecha de Expiración");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 40;
-        gridBagConstraints.ipady = 10;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        pnlPago.add(jLabel4, gridBagConstraints);
+        pnlPago.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 119, 136, 24));
 
         txtCS.setText("COD");
+        txtCS.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtCSMouseClicked(evt);
+            }
+        });
         txtCS.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCSActionPerformed(evt);
@@ -156,15 +140,7 @@ public class PaneldePago extends javax.swing.JFrame {
                 txtCSKeyTyped(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 40;
-        gridBagConstraints.ipady = 10;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        pnlPago.add(txtCS, gridBagConstraints);
+        pnlPago.add(txtCS, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 237, 139, 30));
 
         cmbTtarjeta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tarjeta", "Visa", "MasterCard", "AMERICAN " }));
         cmbTtarjeta.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -172,15 +148,7 @@ public class PaneldePago extends javax.swing.JFrame {
                 cmbTtarjetaMouseClicked(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 40;
-        gridBagConstraints.ipady = 10;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        pnlPago.add(cmbTtarjeta, gridBagConstraints);
+        pnlPago.add(cmbTtarjeta, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 5, 139, 30));
 
         btnPagar.setText("Pagar");
         btnPagar.addActionListener(new java.awt.event.ActionListener() {
@@ -188,14 +156,14 @@ public class PaneldePago extends javax.swing.JFrame {
                 btnPagarActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 7;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(38, 2, 11, 0);
-        pnlPago.add(btnPagar, gridBagConstraints);
+        pnlPago.add(btnPagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 310, -1, -1));
 
         txtMes.setText("MES");
+        txtMes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtMesMouseClicked(evt);
+            }
+        });
         txtMes.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtMesKeyTyped(evt);
@@ -207,6 +175,11 @@ public class PaneldePago extends javax.swing.JFrame {
         pnlExpi.add(jLabel3);
 
         txtAno.setText("ANO");
+        txtAno.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtAnoMouseClicked(evt);
+            }
+        });
         txtAno.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtAnoKeyTyped(evt);
@@ -214,37 +187,61 @@ public class PaneldePago extends javax.swing.JFrame {
         });
         pnlExpi.add(txtAno);
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 40;
-        gridBagConstraints.ipady = 10;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        pnlPago.add(pnlExpi, gridBagConstraints);
+        pnlPago.add(pnlExpi, new org.netbeans.lib.awtextra.AbsoluteConstraints(154, 153, 136, 40));
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventanas/images/mastercard.jpeg"))); // NOI18N
+        pnlPago.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, -1, -1));
+
+        jPanel1.add(pnlPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, -1, -1));
+
+        jPanel2.setBackground(new java.awt.Color(0, 153, 0));
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("Panel de pago");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(278, 278, 278)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(289, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventanas/images/americanexpress.gif"))); // NOI18N
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 80, -1, -1));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventanas/images/visa.png"))); // NOI18N
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 90, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(pnlPago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(377, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(133, Short.MAX_VALUE)
-                .addComponent(pnlPago, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtNombreTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreTActionPerformed
-
+        txtNombreT.setText("");
     }//GEN-LAST:event_txtNombreTActionPerformed
 
     private void txtNombreTKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreTKeyTyped
@@ -255,7 +252,7 @@ public class PaneldePago extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNombreTKeyTyped
 
     private void txtCSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCSActionPerformed
-        // TODO add your handling code here:
+        txtCS.setText("");
     }//GEN-LAST:event_txtCSActionPerformed
 
     private void txtNumeroTKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumeroTKeyTyped
@@ -300,6 +297,22 @@ public class PaneldePago extends javax.swing.JFrame {
         ano=Integer.parseInt(vali[1]);
         datos[2]=fecha+"/"+ano;
         
+        String nTarj = txtNumeroT.getText();
+        
+        //Validación de numero de tarjeta según empresa
+        
+        if (t == 1 && (nTarj.startsWith("4") == false))
+        {
+            showMessageDialog(this,"Error 29: La tarjeta Visa debe empezar con el dígito 4");
+        }
+        else if(t == 2 && (nTarj.startsWith("5") == false))
+        {
+            showMessageDialog(this,"Error 27: La tarjeta Master Card debe empezar con el dígito 5");
+        }
+        else if(t == 3 && (nTarj.startsWith("3") == false))
+        {
+            showMessageDialog(this,"Error 28: La tarjeta American Express debe empezar con el dígito 3");
+        }
         if( t==0 ||datos[0].length()<5 || datos[1].length()<16 || datos[2].length()<4 || datos[3].length()<3 || fecha<0 && fecha>12 || ano<21){
             
             showMessageDialog(this,"Error verifica que todos los campos esten llenos correctamente");
@@ -321,12 +334,39 @@ public class PaneldePago extends javax.swing.JFrame {
             } catch (IOException ex) {
                Logger.getLogger(PaneldePago.class.getName()).log(Level.SEVERE, null, ex);
             }
-       }   
+       }
+        
+        showMessageDialog(this,"Datos ingresados correctamente \n Ya puede cerrar esta ventana");
+
     }//GEN-LAST:event_btnPagarActionPerformed
 
     private void cmbTtarjetaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmbTtarjetaMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbTtarjetaMouseClicked
+
+    private void txtNumeroTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumeroTActionPerformed
+        txtNumeroT.setText("");
+    }//GEN-LAST:event_txtNumeroTActionPerformed
+
+    private void txtNombreTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNombreTMouseClicked
+        txtNombreT.setText("");
+    }//GEN-LAST:event_txtNombreTMouseClicked
+
+    private void txtNumeroTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNumeroTMouseClicked
+        txtNumeroT.setText("");
+    }//GEN-LAST:event_txtNumeroTMouseClicked
+
+    private void txtCSMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtCSMouseClicked
+        txtCS.setText("");
+    }//GEN-LAST:event_txtCSMouseClicked
+
+    private void txtMesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtMesMouseClicked
+        txtMes.setText("");
+    }//GEN-LAST:event_txtMesMouseClicked
+
+    private void txtAnoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtAnoMouseClicked
+        txtAno.setText("");
+    }//GEN-LAST:event_txtAnoMouseClicked
     
     private void datosg(){
         
@@ -385,6 +425,12 @@ public class PaneldePago extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel pnlExpi;
     private javax.swing.JPanel pnlPago;
     private javax.swing.JTextField txtAno;

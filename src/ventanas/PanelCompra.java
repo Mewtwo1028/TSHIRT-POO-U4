@@ -29,7 +29,6 @@ public class PanelCompra extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         PanelContenido = new javax.swing.JPanel();
         Foto = new javax.swing.JLabel();
@@ -38,63 +37,40 @@ public class PanelCompra extends javax.swing.JPanel {
         lblDireccion = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tablacompras = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(122, 108, 105));
         setLayout(new java.awt.BorderLayout());
 
         PanelContenido.setBackground(new java.awt.Color(122, 108, 105));
-        PanelContenido.setLayout(new java.awt.GridBagLayout());
+        PanelContenido.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Foto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Foto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventanas/images/iconousuario.png"))); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridheight = 5;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 100;
-        gridBagConstraints.ipady = 100;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        PanelContenido.add(Foto, gridBagConstraints);
+        Foto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                FotoMouseClicked(evt);
+            }
+        });
+        PanelContenido.add(Foto, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 5, 220, 220));
 
         lblNick.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         lblNick.setForeground(new java.awt.Color(255, 255, 255));
         lblNick.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblNick.setText("Nick");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 50;
-        gridBagConstraints.ipady = 20;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        PanelContenido.add(lblNick, gridBagConstraints);
+        PanelContenido.add(lblNick, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 5, 122, 39));
 
         lblNombre.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         lblNombre.setForeground(new java.awt.Color(255, 255, 255));
         lblNombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblNombre.setText("Nombre");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 50;
-        gridBagConstraints.ipady = 20;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        PanelContenido.add(lblNombre, gridBagConstraints);
+        PanelContenido.add(lblNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 54, 122, 39));
 
         lblDireccion.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         lblDireccion.setForeground(new java.awt.Color(255, 255, 255));
         lblDireccion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblDireccion.setText("Direccion");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 50;
-        gridBagConstraints.ipady = 20;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        PanelContenido.add(lblDireccion, gridBagConstraints);
+        PanelContenido.add(lblDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(235, 103, 122, 39));
 
         tablacompras.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -106,20 +82,16 @@ public class PanelCompra extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(tablacompras);
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 600;
-        gridBagConstraints.ipady = 200;
-        gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        PanelContenido.add(jScrollPane2, gridBagConstraints);
+        PanelContenido.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 235, 613, 154));
+        PanelContenido.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 130, 130));
 
         add(PanelContenido, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void FotoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FotoMouseClicked
+        /*jlabe
+        rsscalelabel.RSScaleLabel.setScaleLabel(fotoperfil,fc.getSelectedFile().toString()); */
+    }//GEN-LAST:event_FotoMouseClicked
    
 
        
@@ -127,6 +99,7 @@ public class PanelCompra extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Foto;
     private javax.swing.JPanel PanelContenido;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblDireccion;
     private javax.swing.JLabel lblNick;

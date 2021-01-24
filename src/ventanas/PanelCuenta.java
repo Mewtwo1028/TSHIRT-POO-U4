@@ -6,7 +6,9 @@
 package ventanas;
 
 import excepciones.ExVacio;
-import javax.swing.JOptionPane;
+import javax.swing.JFileChooser;
+import javax.swing.*;
+import javax.swing.JOptionPane.*;
 import static javax.swing.JOptionPane.showMessageDialog;
 import javax.swing.JTextField;
 
@@ -38,10 +40,9 @@ public class PanelCuenta extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         PanelContenido = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        fotoperfil = new javax.swing.JLabel();
         Nick = new javax.swing.JLabel();
         Nombre = new javax.swing.JLabel();
         Direccion = new javax.swing.JLabel();
@@ -53,85 +54,44 @@ public class PanelCuenta extends javax.swing.JPanel {
         btnCambiar = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(122, 108, 105));
         setLayout(new java.awt.BorderLayout());
 
         PanelContenido.setBackground(new java.awt.Color(122, 108, 105));
-        PanelContenido.setLayout(new java.awt.GridBagLayout());
+        PanelContenido.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventanas/images/iconousuario.png"))); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        PanelContenido.add(jLabel1, gridBagConstraints);
+        fotoperfil.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        fotoperfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventanas/images/iconousuario.png"))); // NOI18N
+        PanelContenido.add(fotoperfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 90, 182, -1));
 
         Nick.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         Nick.setForeground(new java.awt.Color(255, 255, 255));
         Nick.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Nick.setText("Nickname:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 40;
-        gridBagConstraints.ipady = 20;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        PanelContenido.add(Nick, gridBagConstraints);
+        PanelContenido.add(Nick, new org.netbeans.lib.awtextra.AbsoluteConstraints(139, 238, 121, 39));
 
         Nombre.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         Nombre.setForeground(new java.awt.Color(255, 255, 255));
         Nombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Nombre.setText("Nombre:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 40;
-        gridBagConstraints.ipady = 20;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        PanelContenido.add(Nombre, gridBagConstraints);
+        PanelContenido.add(Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(139, 287, 121, 39));
 
         Direccion.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         Direccion.setForeground(new java.awt.Color(255, 255, 255));
         Direccion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Direccion.setText("Direccion:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 40;
-        gridBagConstraints.ipady = 20;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        PanelContenido.add(Direccion, gridBagConstraints);
+        PanelContenido.add(Direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(139, 336, 121, 39));
 
         Correo.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         Correo.setForeground(new java.awt.Color(255, 255, 255));
         Correo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Correo.setText("Correo:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 10;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 40;
-        gridBagConstraints.ipady = 20;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        PanelContenido.add(Correo, gridBagConstraints);
+        PanelContenido.add(Correo, new org.netbeans.lib.awtextra.AbsoluteConstraints(139, 385, 121, 39));
 
         txtNick.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.ipadx = 100;
-        gridBagConstraints.ipady = 5;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        PanelContenido.add(txtNick, gridBagConstraints);
+        PanelContenido.add(txtNick, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 241, 182, 33));
 
         txtNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -139,37 +99,13 @@ public class PanelCuenta extends javax.swing.JPanel {
                 txtNombreKeyTyped(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.ipadx = 100;
-        gridBagConstraints.ipady = 5;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        PanelContenido.add(txtNombre, gridBagConstraints);
+        PanelContenido.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 290, 182, 33));
 
         txtDireccion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.ipadx = 100;
-        gridBagConstraints.ipady = 5;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        PanelContenido.add(txtDireccion, gridBagConstraints);
+        PanelContenido.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 339, 182, 33));
 
         txtCorreo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 10;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.ipadx = 100;
-        gridBagConstraints.ipady = 5;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        PanelContenido.add(txtCorreo, gridBagConstraints);
+        PanelContenido.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 388, 182, 33));
 
         btnCambiar.setText("Cambiar foto");
         btnCambiar.addActionListener(new java.awt.event.ActionListener() {
@@ -177,12 +113,7 @@ public class PanelCuenta extends javax.swing.JPanel {
                 btnCambiarActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.ipadx = 45;
-        gridBagConstraints.ipady = 10;
-        gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
-        PanelContenido.add(btnCambiar, gridBagConstraints);
+        PanelContenido.add(btnCambiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 220, 139, 40));
 
         btnGuardar.setText("Guardar");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -190,13 +121,7 @@ public class PanelCuenta extends javax.swing.JPanel {
                 btnGuardarActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 12;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
-        gridBagConstraints.ipadx = 35;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        PanelContenido.add(btnGuardar, gridBagConstraints);
+        PanelContenido.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 434, 97, -1));
 
         btnSalir.setText("Salir");
         btnSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -204,19 +129,21 @@ public class PanelCuenta extends javax.swing.JPanel {
                 btnSalirActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 12;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
-        gridBagConstraints.ipadx = 35;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        PanelContenido.add(btnSalir, gridBagConstraints);
+        PanelContenido.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(377, 434, 75, -1));
+        PanelContenido.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 90, 120, 120));
 
         add(PanelContenido, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCambiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambiarActionPerformed
-        // TODO add your handling code here:
+        JFileChooser fc= new JFileChooser();
+        fc.setDialogTitle("Buscar Imagen");
+        
+        if(fc.showOpenDialog(this) == JFileChooser.APPROVE_OPTION){
+            
+        
+        rsscalelabel.RSScaleLabel.setScaleLabel(fotoperfil,fc.getSelectedFile().toString());    
+        }
     }//GEN-LAST:event_btnCambiarActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
@@ -281,7 +208,8 @@ public class PanelCuenta extends javax.swing.JPanel {
     private javax.swing.JButton btnCambiar;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnSalir;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel fotoperfil;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField txtCorreo;
     private javax.swing.JTextField txtDireccion;
     private javax.swing.JTextField txtNick;
