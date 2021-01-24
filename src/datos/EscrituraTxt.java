@@ -25,10 +25,6 @@ public class EscrituraTxt extends SignUp implements Escritura, Serializable {
         lt = new LecturaTxt();
     }
 
-    public EscrituraTxt(Cuenta usuario) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     /**
      * Funcion encargada de agregar clientes al archivo general para los
      * clientes llamado 'clientes.tsp'
@@ -153,10 +149,19 @@ public class EscrituraTxt extends SignUp implements Escritura, Serializable {
     }
 
     @Override
-    public Producto[] modificarProducto(Producto producto, int index) {
+    public Producto[] modificarProducto(Producto producto, String id) {
         String nArchivo = "productos.tsp";
         Producto[] productos = lt.obtenerProductos();
-        productos[index] = producto;
+        for(Producto p: productos){
+            try{
+                if(p.getId().equalsIgnoreCase(id)){
+                    p = producto;
+                    break;
+                }
+            }catch(NullPointerException e){
+                break;
+            }
+        }
         java.io.File aux = new java.io.File(nArchivo);
         java.io.FileOutputStream out;
         try {
@@ -173,10 +178,18 @@ public class EscrituraTxt extends SignUp implements Escritura, Serializable {
     }
 
     @Override
-    public Venta[] modificarVenta(Venta venta, int index) {
+    public Venta[] modificarVenta(Venta venta, int folio) {
         String nArchivo = "ventas.tsp";
         Venta[] ventas = lt.obtenerVenta();
-        ventas[index] = venta;
+        for (Venta v : ventas) {
+            try {
+                if (v.getFolio() == folio) {
+                    v = venta;
+                }
+            } catch (NullPointerException e) {
+                break;
+            }
+        }
         java.io.File aux = new java.io.File(nArchivo);
         java.io.FileOutputStream out;
         try {
@@ -192,5 +205,4 @@ public class EscrituraTxt extends SignUp implements Escritura, Serializable {
         return ventas;
     }
 
-    
 }

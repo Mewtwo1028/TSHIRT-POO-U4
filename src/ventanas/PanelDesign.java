@@ -7,10 +7,8 @@ package ventanas;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
-import static javax.swing.JOptionPane.showMessageDialog;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 
 /**
  *
@@ -112,6 +110,13 @@ public class PanelDesign extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnComprarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarActionPerformed
+        String can = javax.swing.JOptionPane.showInputDialog(this, "Cantidad de articulos").trim();
+        try{
+            cantidad = Integer.parseInt(can);
+        }catch(NumberFormatException e){
+            javax.swing.JOptionPane.showMessageDialog(this, "Compra cancelada", "Datos incorrectos", javax.swing.JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         PaneldePago objPanelPagoT = new PaneldePago();
         
         objPanelPagoT.setVisible(true);
@@ -131,6 +136,8 @@ public class PanelDesign extends javax.swing.JPanel {
     }//GEN-LAST:event_btnCargarActionPerformed
 
 
+    public static String id = "";
+    public static int cantidad = 0;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCargar;
     private javax.swing.JButton btnComprar;

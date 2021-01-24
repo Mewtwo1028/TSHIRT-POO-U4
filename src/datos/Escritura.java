@@ -19,8 +19,8 @@ public interface Escritura {
 
     public clases.Cuenta[] modificarCuenta(clases.Cuenta cuenta, int index);
 
-    public clases.Producto[] modificarProducto(clases.Producto producto, int index);
+    public clases.Producto[] modificarProducto(clases.Producto producto, String id);
 
-    public clases.Venta[] modificarVenta(clases.Venta venta, int index);
+    public clases.Venta[] modificarVenta(clases.Venta venta, int folio);
 
 }

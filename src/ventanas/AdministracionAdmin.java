@@ -47,6 +47,8 @@ public class AdministracionAdmin extends javax.swing.JFrame {
         pnlTitulos = new javax.swing.JPanel();
         lblIcono = new javax.swing.JLabel();
         lblTitular = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        logout = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(122, 108, 105));
@@ -138,6 +140,21 @@ public class AdministracionAdmin extends javax.swing.JFrame {
 
         getContentPane().add(pnlCabecera, java.awt.BorderLayout.NORTH);
 
+        jPanel2.setBackground(new java.awt.Color(122, 108, 105));
+
+        logout.setBackground(new java.awt.Color(255, 0, 0));
+        logout.setForeground(new java.awt.Color(255, 0, 0));
+        logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ventanas/images/exit.png"))); // NOI18N
+        logout.setOpaque(true);
+        logout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                logoutMouseClicked(evt);
+            }
+        });
+        jPanel2.add(logout);
+
+        getContentPane().add(jPanel2, java.awt.BorderLayout.LINE_START);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -173,13 +190,23 @@ public class AdministracionAdmin extends javax.swing.JFrame {
         this.puntoInicial = evt.getPoint();
     }//GEN-LAST:event_lblTitularMousePressed
 
+    private void logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseClicked
+        int opt = javax.swing.JOptionPane.showConfirmDialog(this, "¿Desea salir de la sesion?", "Cerrar Sesin", javax.swing.JOptionPane.YES_NO_OPTION, javax.swing.JOptionPane.WARNING_MESSAGE);
+        if(opt == javax.swing.JOptionPane.YES_OPTION){
+            Login.main(null);
+            this.dispose();
+        }
+    }//GEN-LAST:event_logoutMouseClicked
+
     private Point puntoInicial;
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lblCerrar;
     private javax.swing.JLabel lblIcono;
     private javax.swing.JLabel lblMaximizar;
     private javax.swing.JLabel lblMinimizar;
     private javax.swing.JLabel lblTitular;
+    private javax.swing.JLabel logout;
     private javax.swing.JPanel pnlCabecera;
     private ventanas.PanelInfoVentas pnlInfoVentas;
     private ventanas.PanelInventario pnlInventario1;

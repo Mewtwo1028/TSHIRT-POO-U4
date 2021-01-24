@@ -5,9 +5,6 @@
  */
 package ventanas;
 
-import clases.Cuenta;
-import clases.Garantia;
-import clases.Producto;
 import clases.Venta;
 import excepciones.ExVacio;
 
@@ -22,7 +19,7 @@ public class PanelInfoVentas extends javax.swing.JPanel {
      */
     public PanelInfoVentas() {
         initComponents();
-        this.setVisible(true);
+        llenarTabla();
     }
 
     /**
@@ -46,21 +43,10 @@ public class PanelInfoVentas extends javax.swing.JPanel {
         tblVentas = new javax.swing.JTable();
         lblUsuario = new javax.swing.JLabel();
         lblFolio = new javax.swing.JLabel();
-        lblGarantia = new javax.swing.JLabel();
-        lblExpirado = new javax.swing.JLabel();
-        lblCobertura = new javax.swing.JLabel();
-        lblCobrado = new javax.swing.JLabel();
         lblProducto = new javax.swing.JLabel();
         lblFecha = new javax.swing.JLabel();
         cmbUsuario = new javax.swing.JComboBox<>();
         cmbProducto = new javax.swing.JComboBox<>();
-        cmbGarantia = new javax.swing.JComboBox<>();
-        chkExpirado = new javax.swing.JCheckBox();
-        chkCobrado = new javax.swing.JCheckBox();
-        pnlCobertura = new javax.swing.JPanel();
-        txtArchivoCobertura = new javax.swing.JTextField();
-        lblBuscarArchivo = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         btnGuardar = new javax.swing.JButton();
         txtFolio = new javax.swing.JTextField();
         txtFecha = new com.toedter.calendar.JDateChooser();
@@ -98,14 +84,14 @@ public class PanelInfoVentas extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Producto", "Fecha", "Folio", "Garantia", "Expirado", "Cobertura", "Cobrado"
+                "Producto", "Fecha", "Folio"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class, java.lang.String.class, java.lang.Boolean.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -157,58 +143,6 @@ public class PanelInfoVentas extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         add(lblFolio, gridBagConstraints);
 
-        lblGarantia.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        lblGarantia.setForeground(new java.awt.Color(255, 255, 255));
-        lblGarantia.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblGarantia.setText("Garantia");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 30;
-        gridBagConstraints.ipady = 20;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        add(lblGarantia, gridBagConstraints);
-
-        lblExpirado.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        lblExpirado.setForeground(new java.awt.Color(255, 255, 255));
-        lblExpirado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblExpirado.setText("Expirado");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 30;
-        gridBagConstraints.ipady = 20;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        add(lblExpirado, gridBagConstraints);
-
-        lblCobertura.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        lblCobertura.setForeground(new java.awt.Color(255, 255, 255));
-        lblCobertura.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblCobertura.setText("Cobertura");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 7;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 30;
-        gridBagConstraints.ipady = 20;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        add(lblCobertura, gridBagConstraints);
-
-        lblCobrado.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        lblCobrado.setForeground(new java.awt.Color(255, 255, 255));
-        lblCobrado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblCobrado.setText("Cobrado");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 30;
-        gridBagConstraints.ipady = 20;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        add(lblCobrado, gridBagConstraints);
-
         lblProducto.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         lblProducto.setForeground(new java.awt.Color(255, 255, 255));
         lblProducto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -257,60 +191,6 @@ public class PanelInfoVentas extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         add(cmbProducto, gridBagConstraints);
 
-        cmbGarantia.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        cmbGarantia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione" }));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 40;
-        gridBagConstraints.ipady = 5;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        add(cmbGarantia, gridBagConstraints);
-
-        chkExpirado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 45;
-        gridBagConstraints.ipady = 5;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        add(chkExpirado, gridBagConstraints);
-
-        chkCobrado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 45;
-        gridBagConstraints.ipady = 5;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        add(chkCobrado, gridBagConstraints);
-
-        pnlCobertura.setLayout(new java.awt.BorderLayout());
-
-        txtArchivoCobertura.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        txtArchivoCobertura.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        pnlCobertura.add(txtArchivoCobertura, java.awt.BorderLayout.CENTER);
-
-        lblBuscarArchivo.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        lblBuscarArchivo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblBuscarArchivo.setText("Crear Archivo");
-        pnlCobertura.add(lblBuscarArchivo, java.awt.BorderLayout.PAGE_END);
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel1.setText("...");
-        pnlCobertura.add(jLabel1, java.awt.BorderLayout.LINE_END);
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 7;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 45;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        add(pnlCobertura, gridBagConstraints);
-
         btnGuardar.setText("Guardar");
         btnGuardar.setEnabled(false);
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -341,11 +221,11 @@ public class PanelInfoVentas extends javax.swing.JPanel {
     private void itEditarVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itEditarVentaActionPerformed
         btnGuardar.setEnabled(true);
         seleccion = tblVentas.getSelectedRow();
-        String val = (String)tblVentas.getValueAt(seleccion, 0);
+        String val = (String) tblVentas.getValueAt(seleccion, 0);
         valorCombo(cmbUsuario, val);
         val = (String) tblVentas.getValueAt(seleccion, 1);
         valorCombo(cmbProducto, val);
-        
+
         //tblVentas.setValueAt(cmbUsuario.getSelectedItem(), seleccion, 0);
         //tblVentas.setValueAt(cmbProducto.getSelectedItem(), seleccion, 1);
         //tblVentas.setValueAt(date, seleccion, 2);
@@ -355,19 +235,37 @@ public class PanelInfoVentas extends javax.swing.JPanel {
         //tblVentas.setValueAt(chkCobrado.isSelected(), seleccion, 6);
     }//GEN-LAST:event_itEditarVentaActionPerformed
 
-    private void valorCombo(javax.swing.JComboBox<String> combo, String val){
-        for(int i = 1; i < combo.getItemCount(); i++){
-            if(val.equalsIgnoreCase(combo.getItemAt(i))){
+    private void llenarTabla() {
+        ventas = lt.obtenerVenta();
+        javax.swing.table.DefaultTableModel dtm = (javax.swing.table.DefaultTableModel) tblVentas.getModel();
+        for (Venta v : ventas) {
+            try {
+                for (clases.Producto p : v.getProductos()) {
+                    try {
+                        dtm.addRow(new Object[]{p.getId(), v.getFecha(), v.getFolio()});
+                    } catch (NullPointerException e) {
+                    }
+
+                }
+            } catch (NullPointerException e) {
+                break;
+            }
+
+        }
+    }
+
+    private void valorCombo(javax.swing.JComboBox<String> combo, String val) {
+        for (int i = 1; i < combo.getItemCount(); i++) {
+            if (val.equalsIgnoreCase(combo.getItemAt(i))) {
                 combo.setSelectedIndex(i);
                 break;
             }
         }
     }
-    
+
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         try {
             validarCombo(cmbProducto);
-            validarCombo(cmbGarantia);
         } catch (ExVacio e) {
             javax.swing.JOptionPane.showMessageDialog(this, e.getMessage(), "Error de seleccion", javax.swing.JOptionPane.ERROR_MESSAGE);
             return;
@@ -389,12 +287,18 @@ public class PanelInfoVentas extends javax.swing.JPanel {
         tblVentas.setValueAt(cmbProducto.getSelectedItem(), seleccion, 0);
         tblVentas.setValueAt(date, seleccion, 1);
         tblVentas.setValueAt(txtFolio.getText().trim(), seleccion, 2);
-        tblVentas.setValueAt(cmbGarantia.getSelectedItem(), seleccion, 3);
-        tblVentas.setValueAt(chkExpirado.isSelected(), seleccion, 4);
-        tblVentas.setValueAt(chkCobrado.isSelected(), seleccion, 5);
-        
-        ventas[seleccion].setFecha(txtFecha.getCalendar());
-        
+
+        int folio = Integer.parseInt(txtFolio.getText().trim());
+        for (Venta venta : ventas) {
+            try {
+                if (venta.getFolio() == folio) {
+                    es.modificarVenta(venta, folio);
+                    break;
+                }
+            } catch (NullPointerException e) {
+                break;
+            }
+        }
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     private void validarCombo(javax.swing.JComboBox combo) throws ExVacio {
@@ -405,15 +309,11 @@ public class PanelInfoVentas extends javax.swing.JPanel {
     }
 
     private int seleccion;
-    private Cuenta cuentas[];
-    private Producto productos[];
-    private Garantia garantias[];
-    private Venta ventas[];
+    private clases.Venta[] ventas;
+    private final datos.Escritura es = new datos.EscrituraTxt();
+    private final datos.Lectura lt = new datos.LecturaTxt();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGuardar;
-    private javax.swing.JCheckBox chkCobrado;
-    private javax.swing.JCheckBox chkExpirado;
-    private javax.swing.JComboBox<String> cmbGarantia;
     private javax.swing.JComboBox<String> cmbProducto;
     private javax.swing.JComboBox<String> cmbUsuario;
     private javax.swing.JMenuItem itBorrarRegistro;
@@ -421,22 +321,14 @@ public class PanelInfoVentas extends javax.swing.JPanel {
     private javax.swing.JMenuItem itCobertura;
     private javax.swing.JMenuItem itEditarRegistro;
     private javax.swing.JMenuItem itEditarVenta;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
-    private javax.swing.JLabel lblBuscarArchivo;
-    private javax.swing.JLabel lblCobertura;
-    private javax.swing.JLabel lblCobrado;
-    private javax.swing.JLabel lblExpirado;
     private javax.swing.JLabel lblFecha;
     private javax.swing.JLabel lblFolio;
-    private javax.swing.JLabel lblGarantia;
     private javax.swing.JLabel lblProducto;
     private javax.swing.JLabel lblUsuario;
     private javax.swing.JPopupMenu menuPop;
-    private javax.swing.JPanel pnlCobertura;
     private javax.swing.JTable tblVentas;
-    private javax.swing.JTextField txtArchivoCobertura;
     private com.toedter.calendar.JDateChooser txtFecha;
     private javax.swing.JTextField txtFolio;
     // End of variables declaration//GEN-END:variables

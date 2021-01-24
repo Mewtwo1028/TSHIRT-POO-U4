@@ -8,7 +8,6 @@ package ventanas;
 import excepciones.ExVacio;
 import javax.swing.JFileChooser;
 import javax.swing.*;
-import javax.swing.JOptionPane.*;
 import static javax.swing.JOptionPane.showMessageDialog;
 import javax.swing.JTextField;
 
@@ -18,7 +17,7 @@ import javax.swing.JTextField;
  */
 public class PanelCuenta extends javax.swing.JPanel {
     
-    public static clases.Cuenta cuenta;
+    public static clases.Cuenta cuenta = new clases.Cuenta();
     public static int index;
 
     /**

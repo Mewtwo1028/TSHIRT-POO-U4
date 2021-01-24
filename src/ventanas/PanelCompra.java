@@ -19,6 +19,7 @@ public class PanelCompra extends javax.swing.JPanel {
         lblNick.setText(PanelCuenta.cuenta.getNickName());
         lblNombre.setText(PanelCuenta.cuenta.getUsuario().getNombre());
         lblDireccion.setText(PanelCuenta.cuenta.getUsuario().getDireccion());
+        llenarTabla();
     }
 
     /**
@@ -92,9 +93,10 @@ public class PanelCompra extends javax.swing.JPanel {
         /*jlabe
         rsscalelabel.RSScaleLabel.setScaleLabel(fotoperfil,fc.getSelectedFile().toString()); */
     }//GEN-LAST:event_FotoMouseClicked
-   
-
-       
+  
+    private void llenarTabla(){
+        
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Foto;
