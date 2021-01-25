@@ -2,26 +2,24 @@ package clases;
 
 import static javax.swing.JOptionPane.*;
 
-public class Producto implements java.io.Serializable{
+public class Producto implements java.io.Serializable {
 
-    private String talla, marca, id, tipo;
-    private int precio;
-    public static String ultId = "";
+    private String talla, marca, id;
+    private int precio, cantidad;
 
     public Producto() {
         talla = "";
         marca = "";
         id = "";
-        tipo = "";
         precio = 0;
     }
 
-    public Producto(String talla, String marca, String id, String tipo, int precio) {
+    public Producto(String talla, String marca, String id, int precio, int cantidad) {
         this.talla = talla;
         this.marca = marca;
         this.id = id;
-        this.tipo = tipo;
         this.precio = precio;
+        this.cantidad = cantidad;
 
     }
 
@@ -29,14 +27,13 @@ public class Producto implements java.io.Serializable{
         id = showInputDialog("Ingrese el ID del producto");
         talla = showInputDialog("ingrese el numero de talla: ");
         marca = showInputDialog("ingrese la marca deseada: ");
-        tipo = showInputDialog("ingrese el tipo de playera deseada: ");
         precio = Integer.parseInt(showInputDialog("precio del producto"));
 
     }
 
     @Override
     public String toString() {
-        String a = id + "\n" + talla + "\n" + marca + "\n" + tipo + "\n" + precio;
+        String a = id + "\n" + talla + "\n" + marca + "\n" + precio;
 
         return a;
     }
@@ -65,20 +62,20 @@ public class Producto implements java.io.Serializable{
         this.id = id;
     }
 
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-
     public int getPrecio() {
         return precio;
     }
 
     public void setPrecio(int precio) {
         this.precio = precio;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
     }
 
 }

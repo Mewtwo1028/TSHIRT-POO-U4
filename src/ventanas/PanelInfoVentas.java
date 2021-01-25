@@ -240,13 +240,7 @@ public class PanelInfoVentas extends javax.swing.JPanel {
         javax.swing.table.DefaultTableModel dtm = (javax.swing.table.DefaultTableModel) tblVentas.getModel();
         for (Venta v : ventas) {
             try {
-                for (clases.Producto p : v.getProductos()) {
-                    try {
-                        dtm.addRow(new Object[]{p.getId(), v.getFecha(), v.getFolio()});
-                    } catch (NullPointerException e) {
-                    }
-
-                }
+                dtm.addRow(new Object[]{v.getProducto().getId(), v.getFecha(), v.getFolio()});
             } catch (NullPointerException e) {
                 break;
             }

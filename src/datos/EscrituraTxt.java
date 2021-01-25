@@ -98,7 +98,9 @@ public class EscrituraTxt extends SignUp implements Escritura, Serializable {
     }
 
     @Override
-    public boolean agregarVenta(Venta venta) {
+    public boolean agregarVenta(Venta venta, Producto producto) {
+        venta.setProducto(producto);
+        venta.setFolio(++Venta.ultFolio);
         String nArchivo = "ventas.tsp";
         Venta[] ventas = lt.obtenerVenta();
         for (int i = 0; i < ventas.length; i++) {
@@ -119,6 +121,7 @@ public class EscrituraTxt extends SignUp implements Escritura, Serializable {
                     System.out.println(c);
                 }
             }
+            System.out.println("listo");
             return true;
         } catch (FileNotFoundException ex) {
             Logger.getLogger(EscrituraTxt.class.getName()).log(Level.SEVERE, null, ex);

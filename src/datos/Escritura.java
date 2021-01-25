@@ -15,7 +15,7 @@ public interface Escritura {
 
     public boolean agregarProducto(clases.Producto producto);
 
-    public boolean agregarVenta(clases.Venta venta);
+    public boolean agregarVenta(clases.Venta venta, clases.Producto producto);
 
     public clases.Cuenta[] modificarCuenta(clases.Cuenta cuenta, int index);
 

@@ -59,18 +59,6 @@ public class LecturaTxt implements Lectura {
             java.io.ObjectInputStream reader = new java.io.ObjectInputStream(in);
             productos = (Producto[]) reader.readObject();
             in.close();
-            if (Producto.ultId.equals("")) {
-                int ult = 0;
-                for (Producto p : productos) {
-                    try {
-                        if (Integer.parseInt(p.getId()) > ult) {
-                            ult = Integer.parseInt(p.getId());
-                        }
-                    } catch (NullPointerException e) {
-                        break;
-                    }
-                }
-            }
         } catch (FileNotFoundException ex) {
             Logger.getLogger(LecturaTxt.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException | ClassNotFoundException ex) {
@@ -97,6 +85,11 @@ public class LecturaTxt implements Lectura {
             in = new java.io.FileInputStream(archivo);
             java.io.ObjectInputStream reader = new java.io.ObjectInputStream(in);
             ventas = (Venta[]) reader.readObject();
+            for (Venta v : ventas) {
+                if (v != null) {
+                    Venta.ultFolio = (v.getFolio() > Venta.ultFolio) ? v.getFolio() : Venta.ultFolio;
+                }
+            }
         } catch (FileNotFoundException ex) {
             Logger.getLogger(LecturaTxt.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException | ClassNotFoundException ex) {

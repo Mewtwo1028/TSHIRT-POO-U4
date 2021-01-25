@@ -6,6 +6,7 @@ public class Cuenta implements java.io.Serializable {
     private String nickName, contrasena;
     private Cliente usuario;
     private int tipo;
+    private String numTarjeta, cadTarjeta, claveTarjeta;
 
     public static final int ADMINISTRADOR = 0, CLIENTE = 1;
 
@@ -77,7 +78,29 @@ public class Cuenta implements java.io.Serializable {
     public void setTipo(int tipo) {
         this.tipo = tipo;
     }
-    
-    
 
+    public String getNumTarjeta() {
+        return numTarjeta;
+    }
+
+    public void setNumTarjeta(String numTarjeta) {
+        this.numTarjeta = numTarjeta;
+    }
+
+    public String getCadTarjeta() {
+        return cadTarjeta;
+    }
+
+    public void setCadTarjeta(int mes, int anio) {
+        this.cadTarjeta = mes + "/" + anio;
+    }
+
+    public String getClaveTarjeta() {
+        return claveTarjeta;
+    }
+
+    public void setClaveTarjeta(String claveTarjeta) {
+        this.claveTarjeta = claveTarjeta;
+    }
+    
 }

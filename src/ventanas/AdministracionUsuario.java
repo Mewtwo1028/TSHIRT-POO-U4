@@ -154,6 +154,8 @@ public class AdministracionUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_lblMaximizarMouseClicked
 
     private void lblCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCerrarMouseClicked
+        datos.Escritura es = new datos.EscrituraTxt();
+        es.modificarCuenta(PanelCuenta.cuenta, PanelCuenta.index);
         System.exit(0);
     }//GEN-LAST:event_lblCerrarMouseClicked
 
@@ -180,6 +182,8 @@ public class AdministracionUsuario extends javax.swing.JFrame {
     private void logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseClicked
         int opt = javax.swing.JOptionPane.showConfirmDialog(this, "¿Desea salir de la sesion?", "Cerrar Sesin", javax.swing.JOptionPane.YES_NO_OPTION, javax.swing.JOptionPane.WARNING_MESSAGE);
         if(opt == javax.swing.JOptionPane.YES_OPTION){
+            datos.Escritura es = new datos.EscrituraTxt();
+            es.modificarCuenta(PanelCuenta.cuenta, PanelCuenta.index);
             Login.main(null);
             this.dispose();
         }
