@@ -245,8 +245,8 @@ public class PaneldePago extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNombreTActionPerformed
 
     private void txtNombreTKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreTKeyTyped
-        char c= evt.getKeyChar();
-        if((c<'a'||c>'z') && (c<'A'||c>'Z')&& ( c != ' ')){
+        char c = evt.getKeyChar();
+        if ((c < 'a' || c > 'z') && (c < 'A' || c > 'Z') && (c != ' ')) {
             evt.consume();
         }
     }//GEN-LAST:event_txtNombreTKeyTyped
@@ -256,29 +256,29 @@ public class PaneldePago extends javax.swing.JFrame {
     }//GEN-LAST:event_txtCSActionPerformed
 
     private void txtNumeroTKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumeroTKeyTyped
-       char validar = evt.getKeyChar();
-        if((validar<'0'||validar>'9')){
+        char validar = evt.getKeyChar();
+        if ((validar < '0' || validar > '9')) {
             evt.consume();
         }
     }//GEN-LAST:event_txtNumeroTKeyTyped
 
     private void txtMesKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMesKeyTyped
-         char validar = evt.getKeyChar();
-        if((validar<'0'||validar>'9')){
+        char validar = evt.getKeyChar();
+        if ((validar < '0' || validar > '9')) {
             evt.consume();
         }
     }//GEN-LAST:event_txtMesKeyTyped
 
     private void txtAnoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAnoKeyTyped
-         char validar = evt.getKeyChar();
-        if((validar<'0'||validar>'9')){
+        char validar = evt.getKeyChar();
+        if ((validar < '0' || validar > '9')) {
             evt.consume();
         }
     }//GEN-LAST:event_txtAnoKeyTyped
 
     private void txtCSKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCSKeyTyped
         char validar = evt.getKeyChar();
-        if((validar<'0'||validar>'9')){
+        if ((validar < '0' || validar > '9')) {
             evt.consume();
         }
     }//GEN-LAST:event_txtCSKeyTyped
@@ -286,57 +286,55 @@ public class PaneldePago extends javax.swing.JFrame {
     private void btnPagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagarActionPerformed
         FileOutputStream fbs;
         java.util.Date an = new Date();
-        
+
         datosg();
-        int t=cmbTtarjeta.getSelectedIndex();
-        datos[4]=cmbTtarjeta.getItemAt(t);
-        String vali[]=new String[2];
-        vali[0]=txtMes.getText();
-        vali[1]=txtAno.getText();
-        fecha=Integer.parseInt(vali[0]);
-        ano=Integer.parseInt(vali[1]);
-        datos[2]=fecha+"/"+ano;
-        
+        int t = cmbTtarjeta.getSelectedIndex();
+        datos[4] = cmbTtarjeta.getItemAt(t);
+        String vali[] = new String[2];
+        vali[0] = txtMes.getText();
+        vali[1] = txtAno.getText();
+        fecha = Integer.parseInt(vali[0]);
+        ano = Integer.parseInt(vali[1]);
+        datos[2] = fecha + "/" + ano;
+
         String nTarj = txtNumeroT.getText();
-        
+
         //Validación de numero de tarjeta según empresa
-        
-        if (t == 1 && (nTarj.startsWith("4") == false))
-        {
-            showMessageDialog(this,"Error 29: La tarjeta Visa debe empezar con el dígito 4");
+        if (t == 1 && !(nTarj.startsWith("4"))) {
+            showMessageDialog(this, "Error 29: La tarjeta Visa debe empezar con el dígito 4");
+            return;
+        } else if (t == 2 && !(nTarj.startsWith("5"))) {
+            showMessageDialog(this, "Error 27: La tarjeta Master Card debe empezar con el dígito 5");
+            return;
+        } else if (t == 3 && !(nTarj.startsWith("3"))) {
+            showMessageDialog(this, "Error 28: La tarjeta American Express debe empezar con el dígito 3");
+            return;
         }
-        else if(t == 2 && (nTarj.startsWith("5") == false))
-        {
-            showMessageDialog(this,"Error 27: La tarjeta Master Card debe empezar con el dígito 5");
-        }
-        else if(t == 3 && (nTarj.startsWith("3") == false))
-        {
-            showMessageDialog(this,"Error 28: La tarjeta American Express debe empezar con el dígito 3");
-        }
-        if( t==0 ||datos[0].length()<5 || datos[1].length()<16 || datos[2].length()<4 || datos[3].length()<3 || fecha<0 && fecha>12 || ano<21){
-            
-            showMessageDialog(this,"Error verifica que todos los campos esten llenos correctamente");
-           
-        }else{
-        
+        if (t == 0 || datos[0].length() < 5 || datos[1].length() < 16 || datos[2].length() < 4 || datos[3].length() < 3 || fecha < 0 && fecha > 12 || ano < 21) {
+
+            showMessageDialog(this, "Error verifica que todos los campos esten llenos correctamente");
+            return;
+
+        } else {
+
             try {
-             fbs = new java.io.FileOutputStream("ListadePagos.tsp");
-                java.io.DataOutputStream fds=new java.io.DataOutputStream(fbs);
-                for(int i=0; i<5; i++){
+                fbs = new java.io.FileOutputStream("ListadePagos.tsp");
+                java.io.DataOutputStream fds = new java.io.DataOutputStream(fbs);
+                for (int i = 0; i < 5; i++) {
                     fds.writeUTF(datos[i]);
-                    
-                    
-             }
+                }
                 fds.writeUTF("\n");
                 fds.close();
-         } catch (FileNotFoundException ex) {
+            } catch (FileNotFoundException ex) {
                 Logger.getLogger(PaneldePago.class.getName()).log(Level.SEVERE, null, ex);
             } catch (IOException ex) {
-               Logger.getLogger(PaneldePago.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(PaneldePago.class.getName()).log(Level.SEVERE, null, ex);
             }
-       }
-        
-        showMessageDialog(this,"Datos ingresados correctamente \n Ya puede cerrar esta ventana");
+        }
+        PanelCuenta.cuenta.setCadTarjeta(Integer.parseInt(txtMes.getText().trim()), Integer.parseInt(txtAno.getText().trim()));
+        PanelCuenta.cuenta.setNumTarjeta(txtNumeroT.getText().trim());
+        PanelCuenta.cuenta.setClaveTarjeta(txtCS.getText().trim());
+        showMessageDialog(this, "Datos ingresados correctamente \n Ya puede cerrar esta ventana");
 
     }//GEN-LAST:event_btnPagarActionPerformed
 
@@ -367,18 +365,16 @@ public class PaneldePago extends javax.swing.JFrame {
     private void txtAnoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtAnoMouseClicked
         txtAno.setText("");
     }//GEN-LAST:event_txtAnoMouseClicked
-    
-    private void datosg(){
-        
-        
-        datos[0]=txtNombreT.getText();
-        datos[1]=txtNumeroT.getText();
-        
-        
-        datos[3]=txtCS.getText();
-        
-        
+
+    private void datosg() {
+
+        datos[0] = txtNombreT.getText();
+        datos[1] = txtNumeroT.getText();
+
+        datos[3] = txtCS.getText();
+
     }
+
     /**
      * @param args the command line arguments
      */
@@ -413,10 +409,10 @@ public class PaneldePago extends javax.swing.JFrame {
             }
         });
     }
-    String datos[]=new String [5];
-    
-    int fecha=0;
-    int ano=0;
+    String datos[] = new String[5];
+
+    int fecha = 0;
+    int ano = 0;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnPagar;
     private javax.swing.JComboBox<String> cmbTtarjeta;

@@ -1,13 +1,12 @@
 package clases;
 
-import java.util.Arrays;
 import java.util.Calendar;
 import static javax.swing.JOptionPane.*;
 
 public class Venta implements java.io.Serializable {
 
     protected int importe;
-    private Producto[] productos;
+    private Producto producto;
     private Calendar fecha;
     private int folio;
     public static int ultFolio = 0;
@@ -18,7 +17,7 @@ public class Venta implements java.io.Serializable {
         fecha = new java.util.GregorianCalendar();
     }
 
-    public Venta(int importe, Cliente cliente) // Builder
+    public Venta(int importe, Cliente cliente, Producto producto) // Builder
     {
         this.importe = importe;
         this.fecha = new java.util.GregorianCalendar();
@@ -27,7 +26,7 @@ public class Venta implements java.io.Serializable {
 
     @Override
     public String toString() {
-        return "Producto: " + Arrays.toString(productos) + ", Importe: " + importe;
+        return "Producto: " + producto + ", Importe: " + importe;
     }
 
     public void leer() {
@@ -42,16 +41,16 @@ public class Venta implements java.io.Serializable {
         this.importe = importe;
     }
 
-    public Producto[] getProductos() {
-        return productos;
+    public Producto getProducto() {
+        return producto;
     }
 
-    public void setProductos(Producto[] productos) {
-        this.productos = productos;
+    public void setProducto(Producto producto) {
+        this.producto = producto;
     }
 
     public String getFecha() {
-        return fecha.get(Calendar.DATE) + "/" + (1 + fecha.get(Calendar.MONTH)) + "" + fecha.get(Calendar.YEAR);
+        return fecha.get(Calendar.DATE) + "/" + (1 + fecha.get(Calendar.MONTH)) + "/" + fecha.get(Calendar.YEAR);
     }
 
     public void setFecha(Calendar fecha) {
@@ -66,4 +65,13 @@ public class Venta implements java.io.Serializable {
         this.folio = folio;
     }
 
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    
 }

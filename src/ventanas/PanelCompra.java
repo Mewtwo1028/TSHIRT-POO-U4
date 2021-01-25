@@ -39,6 +39,7 @@ public class PanelCompra extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         tablacompras = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
+        btnAct = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(122, 108, 105));
         setLayout(new java.awt.BorderLayout());
@@ -78,13 +79,21 @@ public class PanelCompra extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Producto", "Precio", "Cantidad", "Id"
+                "Producto", "Precio", "Cantidad"
             }
         ));
         jScrollPane2.setViewportView(tablacompras);
 
         PanelContenido.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(5, 235, 613, 154));
         PanelContenido.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 130, 130));
+
+        btnAct.setText("Actualizar Tabla");
+        btnAct.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActActionPerformed(evt);
+            }
+        });
+        PanelContenido.add(btnAct, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 160, -1, -1));
 
         add(PanelContenido, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
@@ -93,14 +102,32 @@ public class PanelCompra extends javax.swing.JPanel {
         /*jlabe
         rsscalelabel.RSScaleLabel.setScaleLabel(fotoperfil,fc.getSelectedFile().toString()); */
     }//GEN-LAST:event_FotoMouseClicked
-  
-    private void llenarTabla(){
-        
+
+    private void btnActActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActActionPerformed
+        llenarTabla();
+    }//GEN-LAST:event_btnActActionPerformed
+
+    private void llenarTabla() {
+        datos.Lectura lt = new datos.LecturaTxt();
+        clases.Venta[] ventas = lt.obtenerVenta();
+        javax.swing.table.DefaultTableModel dtm = (javax.swing.table.DefaultTableModel) tablacompras.getModel();
+        dtm.setRowCount(0);
+        for (clases.Venta v : ventas) {
+            try {
+                System.out.println(v);
+                if (v.getCliente().getCodigo().equals(PanelCuenta.cuenta.getUsuario().getCodigo())) {
+                    dtm.addRow(new Object[]{v.getProducto().getId(), v.getProducto().getPrecio(), v.getProducto().getCantidad()});
+                }
+            } catch (NullPointerException e) {
+                break;
+            }
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Foto;
     private javax.swing.JPanel PanelContenido;
+    private javax.swing.JButton btnAct;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblDireccion;
