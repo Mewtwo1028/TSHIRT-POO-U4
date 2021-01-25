@@ -401,8 +401,11 @@ public class SignUp extends javax.swing.JFrame implements Serializable {
              return;
          }
          
-         
-        Cliente cliente = new Cliente("",txtNombre.getText(),Integer.parseInt(txtEdad.getText()),txtCorreo.getText(),txtDireccion.getText(),cbxMayorista.isSelected());
+         char n1,n2;
+         n1 = txtNombre.getText().charAt(0);
+         n2 = txtNombre.getText().charAt(1);
+         String aux = n1+n2+txtApellido.getText();
+        Cliente cliente = new Cliente(aux,txtNombre.getText(),Integer.parseInt(txtEdad.getText()),txtCorreo.getText(),txtDireccion.getText(),cbxMayorista.isSelected());
         Cuenta usuario = new Cuenta(txtNickname.getText(),txtContrasena.getText(), cliente, Cuenta.CLIENTE);
         EscrituraTxt add = new EscrituraTxt ();
         add.agregarCuenta(usuario);

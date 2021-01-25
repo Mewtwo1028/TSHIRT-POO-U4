@@ -25,6 +25,8 @@ public class Login extends javax.swing.JFrame implements ActionListener, KeyList
      */
     public Login() {
         initComponents();
+        datos.EscrituraTxt es = new datos.EscrituraTxt();
+        es.agregarCuenta(new Cuenta("admin", "admin", new clases.Cliente("", "", 20, "", "", false), Cuenta.ADMINISTRADOR));
     }
 
     /**
