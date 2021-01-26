@@ -4,36 +4,32 @@ import static javax.swing.JOptionPane.*;
 
 public class Producto implements java.io.Serializable {
 
-    private String talla, marca, id;
-    private int precio, cantidad;
+    private String talla, nombre;
+    private int precio;
 
     public Producto() {
         talla = "";
-        marca = "";
-        id = "";
+        nombre = "";
         precio = 0;
     }
 
-    public Producto(String talla, String marca, String id, int precio, int cantidad) {
+    public Producto(String talla, String nombre, int precio){
         this.talla = talla;
-        this.marca = marca;
-        this.id = id;
+        this.nombre = nombre;
         this.precio = precio;
-        this.cantidad = cantidad;
 
     }
 
     public void leer() {
-        id = showInputDialog("Ingrese el ID del producto");
         talla = showInputDialog("ingrese el numero de talla: ");
-        marca = showInputDialog("ingrese la marca deseada: ");
+        nombre = showInputDialog("ingrese el nombre deseado: ");
         precio = Integer.parseInt(showInputDialog("precio del producto"));
 
     }
 
     @Override
     public String toString() {
-        String a = id + "\n" + talla + "\n" + marca + "\n" + precio;
+        String a = talla + "\n" + nombre + "\n" + precio;
 
         return a;
     }
@@ -46,20 +42,12 @@ public class Producto implements java.io.Serializable {
         this.talla = talla;
     }
 
-    public String getMarca() {
-        return marca;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public int getPrecio() {
@@ -68,14 +56,6 @@ public class Producto implements java.io.Serializable {
 
     public void setPrecio(int precio) {
         this.precio = precio;
-    }
-
-    public int getCantidad() {
-        return cantidad;
-    }
-
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
     }
 
 }

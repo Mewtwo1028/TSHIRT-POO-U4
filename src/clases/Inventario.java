@@ -4,30 +4,29 @@ import static javax.swing.JOptionPane.*;
 
 public class Inventario implements java.io.Serializable {
 
-    private String idCajon, producto;
-    private int cantidad;
+    private String idCajon;
+    private int cantidad,fecha;
 
     public Inventario() {
         this.idCajon = "";
-        this.producto = "";
+        this.fecha = 0;
         this.cantidad = 0;
     }
 
-    public Inventario(String idCajon, String producto, int cantidad) {
+    public Inventario(String idCajon, int fecha, int cantidad) {
         this.idCajon = idCajon;
-        this.producto = producto;
+        this.fecha = fecha;
         this.cantidad = cantidad;
     }
 
     public void leer() {
         idCajon = showInputDialog("Dame el id del cajon");
-        producto = showInputDialog("Dame el nombre del producto");
         cantidad = Integer.parseInt(showInputDialog("Cantidad del producto"));
     }
 
     @Override
     public String toString() {
-        return idCajon + " - " + producto + " - " + cantidad;
+        return idCajon + " - " + cantidad + " - " + fecha;
     }
 
     public String getIdCajon() {
@@ -38,20 +37,20 @@ public class Inventario implements java.io.Serializable {
         this.idCajon = idCajon;
     }
 
-    public String getProducto() {
-        return producto;
-    }
-
-    public void setProducto(String producto) {
-        this.producto = producto;
-    }
-
     public int getCantidad() {
         return cantidad;
     }
 
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
+    }
+    
+     public int getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(int fecha) {
+        this.fecha = fecha;
     }
 
 }
