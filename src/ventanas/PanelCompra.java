@@ -116,7 +116,7 @@ public class PanelCompra extends javax.swing.JPanel {
             try {
                 System.out.println(v);
                 if (v.getCliente().getCodigo().equals(PanelCuenta.cuenta.getUsuario().getCodigo())) {
-                    dtm.addRow(new Object[]{v.getProducto().getId(), v.getProducto().getPrecio(), v.getProducto().getCantidad()});
+                    dtm.addRow(new Object[]{v.getProducto().getNombre(), v.getProducto().getPrecio(), v.getProducto().getCantidad()});
                 }
             } catch (NullPointerException e) {
                 break;

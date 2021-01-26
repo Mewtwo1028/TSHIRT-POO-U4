@@ -5,18 +5,20 @@ import static javax.swing.JOptionPane.*;
 public class Producto implements java.io.Serializable {
 
     private String talla, nombre;
-    private int precio;
+    private int precio, cantidad;
 
     public Producto() {
         talla = "";
         nombre = "";
         precio = 0;
+        cantidad = 0;
     }
 
-    public Producto(String talla, String nombre, int precio){
+    public Producto(String talla, String nombre, int precio, int cantidad){
         this.talla = talla;
         this.nombre = nombre;
         this.precio = precio;
+        this.cantidad = cantidad;
 
     }
 
@@ -57,5 +59,15 @@ public class Producto implements java.io.Serializable {
     public void setPrecio(int precio) {
         this.precio = precio;
     }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+    
+    
 
 }

@@ -157,7 +157,7 @@ public class EscrituraTxt extends SignUp implements Escritura, Serializable {
         Producto[] productos = lt.obtenerProductos();
         for(Producto p: productos){
             try{
-                if(p.getId().equalsIgnoreCase(id)){
+                if(p.getNombre().equalsIgnoreCase(id)){
                     p = producto;
                     break;
                 }

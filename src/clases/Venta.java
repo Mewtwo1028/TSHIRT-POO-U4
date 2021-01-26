@@ -9,6 +9,9 @@ public class Venta implements java.io.Serializable {
     private Producto producto;
     private Calendar fecha;
     private Cliente cliente;
+    private int folio;
+    
+    public static int ultFolio;
 
     public Venta() {
         total = 0;
@@ -61,6 +64,14 @@ public class Venta implements java.io.Serializable {
 
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
+    }
+
+    public int getFolio() {
+        return folio;
+    }
+
+    public void setFolio(int folio) {
+        this.folio = folio;
     }
 
     

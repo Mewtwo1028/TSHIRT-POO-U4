@@ -79,5 +79,13 @@ public class Cuenta implements java.io.Serializable {
         this.tipo = tipo;
     }
 
+    public Tarjeta getTarjeta() {
+        return tarjeta;
+    }
+
+    public void setTarjeta(Tarjeta tarjeta) {
+        this.tarjeta = tarjeta;
+    }
+
        
 }

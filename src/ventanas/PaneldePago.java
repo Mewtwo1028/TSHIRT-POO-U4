@@ -331,9 +331,8 @@ public class PaneldePago extends javax.swing.JFrame {
                 Logger.getLogger(PaneldePago.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        PanelCuenta.cuenta.setCadTarjeta(Integer.parseInt(txtMes.getText().trim()), Integer.parseInt(txtAno.getText().trim()));
-        PanelCuenta.cuenta.setNumTarjeta(txtNumeroT.getText().trim());
-        PanelCuenta.cuenta.setClaveTarjeta(txtCS.getText().trim());
+        String exp = Integer.parseInt(txtMes.getText().trim()) + "/" + Integer.parseInt(txtAno.getText().trim());
+        PanelCuenta.cuenta.setTarjeta(new clases.Tarjeta(txtNombreT.getText().trim(), txtNumeroT.getText().trim(), exp, Integer.parseInt(txtCS.getText().trim())));
         showMessageDialog(this, "Datos ingresados correctamente \n Ya puede cerrar esta ventana");
 
     }//GEN-LAST:event_btnPagarActionPerformed

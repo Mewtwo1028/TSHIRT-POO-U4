@@ -129,8 +129,7 @@ public class PanelDesign extends javax.swing.JPanel {
             return;
         }
         clases.Cuenta c = PanelCuenta.cuenta;
-        System.out.println(c.getNumTarjeta());
-        String numT = c.getNumTarjeta(), cadT = c.getCadTarjeta();
+        String numT = c.getTarjeta().getNumero(), cadT = c.getTarjeta().getExpiracion();
         if (numT == null || cadT == null) {
             PaneldePago objPanelPagoT = new PaneldePago();
 
@@ -139,13 +138,13 @@ public class PanelDesign extends javax.swing.JPanel {
         }
         String clave = javax.swing.JOptionPane.showInputDialog(this,
                 "Introduza su clave a 3 o 4 digitos para la tarjeta con terminacion " + numT.substring(numT.length() - 4, numT.length()));
-        if (!clave.equals(c.getClaveTarjeta())) {
+        if (!clave.equals(c.getTarjeta().getCvv() + "")) {
             javax.swing.JOptionPane.showMessageDialog(this, "Clave incorrecta, compra revocada", "Error de validacion", javax.swing.JOptionPane.ERROR_MESSAGE);
         } else {
             datos.Escritura es = new datos.EscrituraTxt();
             String talla = ((String)cmbTalla.getSelectedItem()).split("-")[1], marca = "Generica", nombre = txtNombre.getText().trim();
             int precio = Integer.parseInt(((String)cmbTalla.getSelectedItem()).split("-")[0].trim());
-            clases.Producto p = new clases.Producto(talla, marca, nombre, precio, cantidad);
+            clases.Producto p = new clases.Producto(talla, nombre, precio, cantidad);
             
             es.agregarVenta(new clases.Venta(precio*cantidad, c.getUsuario(), null), p);
             javax.swing.JOptionPane.showMessageDialog(this, "Compra realizada con exito", "Compra completada", javax.swing.JOptionPane.INFORMATION_MESSAGE);
