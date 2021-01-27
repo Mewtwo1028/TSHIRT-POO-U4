@@ -129,13 +129,13 @@ public class PanelDesign extends javax.swing.JPanel {
             return;
         }
         clases.Cuenta c = PanelCuenta.cuenta;
-        String numT = c.getTarjeta().getNumero(), cadT = c.getTarjeta().getExpiracion();
-        if (numT == null || cadT == null) {
+        if (c.getTarjeta() == null) {
             PaneldePago objPanelPagoT = new PaneldePago();
 
             objPanelPagoT.setVisible(true);
             return;
         }
+        String numT = c.getTarjeta().getNumero();
         String clave = javax.swing.JOptionPane.showInputDialog(this,
                 "Introduza su clave a 3 o 4 digitos para la tarjeta con terminacion " + numT.substring(numT.length() - 4, numT.length()));
         if (!clave.equals(c.getTarjeta().getCvv() + "")) {
